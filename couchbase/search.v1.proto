@@ -241,7 +241,36 @@ message SearchQueryRequest {
 }
 
 message SearchQueryResponse {
-  repeated bytes hits = 1;
+
+  message SearchQueryRow {
+    string id = 1;
+    double score = 2;
+    string index = 3;
+    bytes explanation = 4;
+    bytes locations = 5;
+    map<string, bytes> fields = 6;
+    map<string, Fragment> fragments = 7;
+  }
+
+  message Fragment {
+    repeated string string_list = 1;
+  }
+
+  message Facet {
+    FacetResultType facet_result_type = 1;
+    string name = 2;
+    string field = 3;
+    int64 total = 4;
+    int64 missing = 5;
+    int64 other = 6;
+  }
+
+  enum FacetResultType {
+    UNKNOWN = 0;
+    TERM = 1;
+    NUMERIC_RANGE = 2;
+    DATE_RANGE = 3;
+  }
 
   message MetaData {
     google.protobuf.Duration execution_time = 1;
@@ -252,7 +281,8 @@ message SearchQueryResponse {
     uint64 error_partition_count = 6;
 
     // errors
-    // facets
   }
-  optional MetaData meta_data = 2;
+  repeated SearchQueryRow hits = 1;
+  map<string, Facet> facets = 2;
+  optional MetaData meta_data = 3;
 }
