@@ -18,10 +18,9 @@ message BooleanFieldQuery {
 
 message BooleanQuery {
   float boost = 1;
-  Query must = 2;
-  Query must_not = 3;
-  Query should = 4;
-  uint32 should_min = 5;
+  ConjunctionQuery must = 2;
+  DisjunctionQuery must_not = 3;
+  DisjunctionQuery should = 4;
 }
 
 message ConjunctionQuery {
