@@ -253,7 +253,7 @@ message SearchQueryResponse {
   }
 
   message Fragment {
-    repeated string string_list = 1;
+    repeated string content = 1;
   }
 
   message Facet {
