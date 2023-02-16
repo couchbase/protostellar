@@ -279,8 +279,7 @@ message SearchQueryResponse {
     uint64 total_partition_count = 4;
     uint64 success_partition_count = 5;
     uint64 error_partition_count = 6;
-
-    // errors
+    map<string, string> errors = 7;
   }
   repeated SearchQueryRow hits = 1;
   map<string, Facet> facets = 2;
