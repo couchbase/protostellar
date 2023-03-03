@@ -160,10 +160,7 @@ message InsertRequest {
     google.protobuf.Timestamp expiry_time = 7;
     uint32 expiry_secs = 10;
   }
-  oneof durability_spec {
-    LegacyDurabilitySpec legacy_durability_spec = 8;
-    DurabilityLevel durability_level = 9;
-  }
+  optional DurabilityLevel durability_level = 9;
 }
 
 message InsertResponse {
@@ -182,10 +179,7 @@ message UpsertRequest {
     google.protobuf.Timestamp expiry_time = 7;
     uint32 expiry_secs = 10;
   }
-  oneof durability_spec {
-    LegacyDurabilitySpec legacy_durability_spec = 8;
-    DurabilityLevel durability_level = 9;
-  }
+  optional DurabilityLevel durability_level = 9;
 }
 
 message UpsertResponse {
@@ -205,10 +199,7 @@ message ReplaceRequest {
     google.protobuf.Timestamp expiry_time = 8;
     uint32 expiry_secs = 11;
   }
-  oneof durability_spec {
-    LegacyDurabilitySpec legacy_durability_spec = 9;
-    DurabilityLevel durability_level = 10;
-  }
+  optional DurabilityLevel durability_level = 10;
 }
 
 message ReplaceResponse {
@@ -222,10 +213,7 @@ message RemoveRequest {
   string collection_name = 3;
   string key = 4;
   optional uint64 cas = 5;
-  oneof durability_spec {
-    LegacyDurabilitySpec legacy_durability_spec = 6;
-    DurabilityLevel durability_level = 7;
-  }
+  optional DurabilityLevel durability_level = 7;
 }
 
 message RemoveResponse {
@@ -244,10 +232,7 @@ message IncrementRequest {
     uint32 expiry_secs = 10;
   }
   optional int64 initial = 7;
-  oneof durability_spec {
-    LegacyDurabilitySpec legacy_durability_spec = 8;
-    DurabilityLevel durability_level = 9;
-  }
+  optional DurabilityLevel durability_level = 9;
 }
 
 message IncrementResponse {
@@ -267,10 +252,7 @@ message DecrementRequest {
     uint32 expiry_secs = 10;
   }
   optional int64 initial = 7;
-  oneof durability_spec {
-    LegacyDurabilitySpec legacy_durability_spec = 8;
-    DurabilityLevel durability_level = 9;
-  }
+  optional DurabilityLevel durability_level = 9;
 }
 
 message DecrementResponse {
@@ -286,10 +268,7 @@ message AppendRequest {
   string key = 4;
   bytes content = 5;
   optional uint64 cas = 6;
-  oneof durability_spec {
-    LegacyDurabilitySpec legacy_durability_spec = 7;
-    DurabilityLevel durability_level = 8;
-  }
+  optional DurabilityLevel durability_level = 8;
 }
 
 message AppendResponse {
@@ -304,10 +283,7 @@ message PrependRequest {
   string key = 4;
   bytes content = 5;
   optional uint64 cas = 6;
-  oneof durability_spec {
-    LegacyDurabilitySpec legacy_durability_spec = 7;
-    DurabilityLevel durability_level = 8;
-  }
+  optional DurabilityLevel durability_level = 8;
 }
 
 message PrependResponse {
@@ -390,10 +366,7 @@ message MutateInRequest {
   }
   optional StoreSemantic store_semantic = 6;
 
-  oneof durability_spec {
-    LegacyDurabilitySpec legacy_durability_spec = 7;
-    DurabilityLevel durability_level = 8;
-  }
+  optional DurabilityLevel durability_level = 8;
 
   optional uint64 cas = 9;
 
