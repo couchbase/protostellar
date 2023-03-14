@@ -35,23 +35,23 @@ message QueryRequest {
 
   optional string client_context_id = 7;
 
-  enum QueryScanConsistency {
+  enum ScanConsistency {
     NOT_BOUNDED = 0;
     REQUEST_PLUS = 1;
   }
-  optional QueryScanConsistency scan_consistency = 8;
+  optional ScanConsistency scan_consistency = 8;
   repeated bytes positional_parameters = 9;
   map<string, bytes> named_parameters = 10;
   optional bool flex_index = 11;
   optional bool preserve_expiry = 12;
   repeated couchbase.kv.v1.MutationToken consistent_with = 13;
 
-  enum QueryProfileMode {
+  enum ProfileMode {
     OFF = 0;
     PHASES = 1;
     TIMINGS = 2;
   }
-  optional QueryProfileMode profile_mode = 14;
+  optional ProfileMode profile_mode = 14;
 }
 
 message QueryResponse {
@@ -63,7 +63,7 @@ message QueryResponse {
       string message = 2;
     }
 
-    enum MetaDataStatus {
+    enum Status {
       RUNNING = 0;
       SUCCESS = 1;
       ERRORS = 2;
@@ -90,7 +90,7 @@ message QueryResponse {
       uint64 warning_count = 8;
     }
     optional Metrics metrics = 3;
-    MetaDataStatus status = 4;
+    Status status = 4;
     repeated Warning warnings = 5;
     optional bytes profile = 6;
     bytes signature = 7;

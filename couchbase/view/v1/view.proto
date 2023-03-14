@@ -29,7 +29,7 @@ message ViewQueryRequest {
     CONTINUE = 0;
     STOP = 1;
   }
-  enum DesignDocumentNamespace {
+  enum Namespace {
     PRODUCTION = 0;
     DEVELOPMENT = 1;
   }
@@ -50,7 +50,7 @@ message ViewQueryRequest {
   optional string end_key_doc_id = 16;
   optional ErrorMode on_error = 17;
   optional bool debug = 18;
-  optional DesignDocumentNamespace namespace = 19;
+  optional Namespace namespace = 19;
   optional Order order = 20;
 }
 
