@@ -1,0 +1,12 @@
+version: v1
+deps:
+  - buf.build/googleapis/googleapis
+breaking:
+  use:
+    - WIRE
+lint:
+  use:
+    - DEFAULT
+  except:
+    # we use optional fields
+    - ENUM_ZERO_VALUE_SUFFIX
