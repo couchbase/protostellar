@@ -36,8 +36,8 @@ message QueryRequest {
   optional string client_context_id = 7;
 
   enum ScanConsistency {
-    NOT_BOUNDED = 0;
-    REQUEST_PLUS = 1;
+    SCAN_CONSISTENCY_NOT_BOUNDED = 0;
+    SCAN_CONSISTENCY_REQUEST_PLUS = 1;
   }
   optional ScanConsistency scan_consistency = 8;
   repeated bytes positional_parameters = 9;
@@ -47,9 +47,9 @@ message QueryRequest {
   repeated couchbase.kv.v1.MutationToken consistent_with = 13;
 
   enum ProfileMode {
-    OFF = 0;
-    PHASES = 1;
-    TIMINGS = 2;
+    PROFILE_MODE_OFF = 0;
+    PROFILE_MODE_PHASES = 1;
+    PROFILE_MODE_TIMINGS = 2;
   }
   optional ProfileMode profile_mode = 14;
 }
@@ -64,16 +64,16 @@ message QueryResponse {
     }
 
     enum Status {
-      RUNNING = 0;
-      SUCCESS = 1;
-      ERRORS = 2;
-      COMPLETED = 3;
-      STOPPED = 4;
-      TIMEOUT = 5;
-      CLOSED = 6;
-      FATAL = 7;
-      ABORTED = 8;
-      UNKNOWN = 9;
+      STATUS_RUNNING = 0;
+      STATUS_SUCCESS = 1;
+      STATUS_ERRORS = 2;
+      STATUS_COMPLETED = 3;
+      STATUS_STOPPED = 4;
+      STATUS_TIMEOUT = 5;
+      STATUS_CLOSED = 6;
+      STATUS_FATAL = 7;
+      STATUS_ABORTED = 8;
+      STATUS_UNKNOWN = 9;
     }
 
     string request_id = 1;
