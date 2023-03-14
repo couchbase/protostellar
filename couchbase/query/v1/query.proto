@@ -9,7 +9,7 @@ option java_multiple_files = true;
 package couchbase.query.v1;
 
 import "google/protobuf/duration.proto";
-import "couchbase/kv.v1.proto";
+import "couchbase/kv/v1/kv.proto";
 
 service Query {
   rpc Query(QueryRequest) returns (stream QueryResponse) {}

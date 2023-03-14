@@ -8,7 +8,7 @@ option java_multiple_files = true;
 
 package couchbase.admin.bucket.v1;
 
-import "couchbase/kv.v1.proto";
+import "couchbase/kv/v1/kv.proto";
 
 service BucketAdmin {
   rpc ListBuckets(ListBucketsRequest) returns (ListBucketsResponse) {}
