@@ -13,10 +13,10 @@ import "google/protobuf/timestamp.proto";
 
 service KvService {
   rpc Get(GetRequest) returns (GetResponse) {}
-  rpc GetAndTouch(GetAndTouchRequest) returns (GetResponse) {}
-  rpc GetAndLock(GetAndLockRequest) returns (GetResponse) {}
+  rpc GetAndTouch(GetAndTouchRequest) returns (GetAndTouchResponse) {}
+  rpc GetAndLock(GetAndLockRequest) returns (GetAndLockResponse) {}
   rpc Unlock(UnlockRequest) returns (UnlockResponse) {}
-  rpc GetReplica(GetReplicaRequest) returns (GetResponse) {}
+  rpc GetReplica(GetReplicaRequest) returns (GetReplicaResponse) {}
   rpc Touch(TouchRequest) returns (TouchResponse) {}
   rpc Exists(ExistsRequest) returns (ExistsResponse) {}
 
@@ -76,6 +76,14 @@ message GetRequest {
   string key = 4;
 }
 
+message GetResponse {
+  bytes content = 1;
+  DocumentContentType content_type = 2;
+  DocumentCompressionType compression_type = 5;
+  uint64 cas = 3;
+  google.protobuf.Timestamp expiry = 4;
+}
+
 message GetAndTouchRequest {
   string bucket_name = 1;
   string scope_name = 2;
@@ -87,12 +95,28 @@ message GetAndTouchRequest {
   }
 }
 
+message GetAndTouchResponse {
+  bytes content = 1;
+  DocumentContentType content_type = 2;
+  DocumentCompressionType compression_type = 5;
+  uint64 cas = 3;
+  google.protobuf.Timestamp expiry = 4;
+}
+
 message GetAndLockRequest {
   string bucket_name = 1;
   string scope_name = 2;
   string collection_name = 3;
   string key = 4;
   uint32 lock_time = 5;
+}
+
+message GetAndLockResponse {
+  bytes content = 1;
+  DocumentContentType content_type = 2;
+  DocumentCompressionType compression_type = 5;
+  uint64 cas = 3;
+  google.protobuf.Timestamp expiry = 4;
 }
 
 message GetReplicaRequest {
@@ -103,7 +127,7 @@ message GetReplicaRequest {
   uint32 replica_index = 5;
 }
 
-message GetResponse {
+message GetReplicaResponse {
   bytes content = 1;
   DocumentContentType content_type = 2;
   DocumentCompressionType compression_type = 5;
