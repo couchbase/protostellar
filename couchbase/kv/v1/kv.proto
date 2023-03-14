@@ -35,9 +35,9 @@ service KvService {
 }
 
 enum DurabilityLevel {
-  MAJORITY = 0;
-  MAJORITY_AND_PERSIST_TO_ACTIVE = 1;
-  PERSIST_TO_MAJORITY = 2;
+  DURABILITY_LEVEL_MAJORITY = 0;
+  DURABILITY_LEVEL_MAJORITY_AND_PERSIST_TO_ACTIVE = 1;
+  DURABILITY_LEVEL_PERSIST_TO_MAJORITY = 2;
 }
 
 message LegacyDurabilitySpec {
@@ -47,19 +47,19 @@ message LegacyDurabilitySpec {
 
 enum DocumentContentType {
   // Indicates that we are not able to determine the document content type.
-  UNKNOWN = 0;
+  DOCUMENT_CONTENT_TYPE_UNKNOWN = 0;
 
   // Indicates that the content is raw binary data.
-  BINARY = 1;
+  DOCUMENT_CONTENT_TYPE_BINARY = 1;
 
   // Indicates that the content is JSON
-  JSON = 2;
+  DOCUMENT_CONTENT_TYPE_JSON = 2;
 }
 
 enum DocumentCompressionType {
-  NONE = 0;
+  DOCUMENT_COMPRESSION_TYPE_NONE = 0;
 
-  SNAPPY = 1;
+  DOCUMENT_COMPRESSION_TYPE_SNAPPY = 1;
 }
 
 message MutationToken {
@@ -323,9 +323,9 @@ message LookupInRequest {
 
   message Spec {
     enum Operation {
-      GET = 0;
-      EXISTS = 1;
-      COUNT = 2;
+      OPERATION_GET = 0;
+      OPERATION_EXISTS = 1;
+      OPERATION_COUNT = 2;
     }
     Operation operation = 1;
 
@@ -359,15 +359,15 @@ message MutateInRequest {
 
   message Spec {
     enum Operation {
-      INSERT = 0;
-      UPSERT = 1;
-      REPLACE = 2;
-      REMOVE = 3;
-      ARRAY_APPEND = 4;
-      ARRAY_PREPEND = 5;
-      ARRAY_INSERT = 6;
-      ARRAY_ADD_UNIQUE = 7;
-      COUNTER = 8;
+      OPERATION_INSERT = 0;
+      OPERATION_UPSERT = 1;
+      OPERATION_REPLACE = 2;
+      OPERATION_REMOVE = 3;
+      OPERATION_ARRAY_APPEND = 4;
+      OPERATION_ARRAY_PREPEND = 5;
+      OPERATION_ARRAY_INSERT = 6;
+      OPERATION_ARRAY_ADD_UNIQUE = 7;
+      OPERATION_COUNTER = 8;
     }
     Operation operation = 1;
 
@@ -384,9 +384,9 @@ message MutateInRequest {
   repeated Spec specs = 5;
 
   enum StoreSemantic {
-    REPLACE = 0;
-    UPSERT = 1;
-    INSERT = 2;
+    STORE_SEMANTIC_REPLACE = 0;
+    STORE_SEMANTIC_UPSERT = 1;
+    STORE_SEMANTIC_INSERT = 2;
   }
   optional StoreSemantic store_semantic = 6;
 
