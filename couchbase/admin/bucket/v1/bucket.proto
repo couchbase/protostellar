@@ -10,7 +10,7 @@ package couchbase.admin.bucket.v1;
 
 import "couchbase/kv/v1/kv.proto";
 
-service BucketAdmin {
+service BucketAdminService {
   rpc ListBuckets(ListBucketsRequest) returns (ListBucketsResponse) {}
 
   rpc CreateBucket(CreateBucketRequest) returns (CreateBucketResponse) {}

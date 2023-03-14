@@ -11,7 +11,7 @@ package couchbase.query.v1;
 import "google/protobuf/duration.proto";
 import "couchbase/kv/v1/kv.proto";
 
-service Query {
+service QueryService {
   rpc Query(QueryRequest) returns (stream QueryResponse) {}
 }
 
