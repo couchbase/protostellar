@@ -8,7 +8,7 @@ option java_multiple_files = true;
 
 package couchbase.view.v1;
 
-service View {
+service ViewService {
   rpc ViewQuery(ViewQueryRequest) returns (stream ViewQueryResponse) {}
 }
 

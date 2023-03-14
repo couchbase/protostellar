@@ -11,7 +11,7 @@ package couchbase.kv.v1;
 import "google/rpc/status.proto";
 import "google/protobuf/timestamp.proto";
 
-service Kv {
+service KvService {
   rpc Get(GetRequest) returns (GetResponse) {}
   rpc GetAndTouch(GetAndTouchRequest) returns (GetResponse) {}
   rpc GetAndLock(GetAndLockRequest) returns (GetResponse) {}

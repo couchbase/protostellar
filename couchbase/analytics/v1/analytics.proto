@@ -10,7 +10,7 @@ package couchbase.analytics.v1;
 
 import "google/protobuf/duration.proto";
 
-service Analytics {
+service AnalyticsService {
   rpc AnalyticsQuery(AnalyticsQueryRequest)
       returns (stream AnalyticsQueryResponse) {}
 }

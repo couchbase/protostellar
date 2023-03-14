@@ -8,7 +8,7 @@ option java_multiple_files = true;
 
 package couchbase.admin.collection.v1;
 
-service CollectionAdmin {
+service CollectionAdminService {
   rpc ListCollections(ListCollectionsRequest)
       returns (ListCollectionsResponse) {}
 
