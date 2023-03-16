@@ -1,5 +1,11 @@
 name: Buf Lint
-on: [push]
+on:
+  push:
+    tags:
+      - v*
+    branches:
+      - master
+  pull_request:
 jobs:
   buf-lint:
     name: Buf Lint
