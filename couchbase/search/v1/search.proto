@@ -208,6 +208,43 @@ message Sorting {
   }
 }
 
+message DateRange {
+  string name = 1;
+  optional string start = 2;
+  optional string end = 3;
+}
+
+message DateRangeFacet {
+  string field = 1;
+  uint32 size = 2;
+  repeated DateRange date_ranges = 3;
+}
+
+message NumericRange {
+  string name = 1;
+  optional float min = 2;
+  optional float max = 3;
+}
+
+message NumericRangeFacet {
+  string field = 1;
+  uint32 size = 2;
+  repeated NumericRange numeric_ranges = 3;
+}
+
+message TermFacet {
+  string field = 1;
+  uint32 size = 2;
+}
+
+message Facet {
+  oneof facet {
+    DateRangeFacet date_range_facet = 1;
+    NumericRangeFacet numeric_range_facet = 2;
+    TermFacet term_facet = 3;
+  }
+}
+
 service SearchService {
   rpc SearchQuery(SearchQueryRequest) returns (stream SearchQueryResponse) {}
 }
@@ -234,6 +271,7 @@ message SearchQueryRequest {
   bool disable_scoring = 11;
   repeated string collections = 12;
   bool include_locations = 13;
+  map<string, Facet> facets = 14;
 }
 
 message SearchQueryResponse {
