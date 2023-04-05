@@ -277,16 +277,101 @@ message SearchQueryRequest {
 message SearchQueryResponse {
   repeated bytes hits = 1;
 
+  message SearchQueryRow {
+    string id = 1;
+    double score = 2;
+    string index = 3;
+    bytes explanation = 4;
+    repeated Location locations = 5;
+    map<string, Fragment> fragments = 6;
+    map<string, bytes> fields = 7;
+  }
+
+  message Location {
+    string field = 1;
+    string term = 2;
+    uint32 position = 3;
+    uint32 start = 4;
+    uint32 end = 5;
+    repeated uint32 array_positions = 6; 
+  }
+
+  message Fragment {
+    repeated string content = 1;
+  }
+
+  message FacetResult {
+    oneof search_facet {
+      TermFacetResult term_facet = 1;
+      DateRangeFacetResult date_range_facet = 2;
+      NumericRangeFacetResult numeric_range_facet = 3;
+    }
+  }
+
+  message TermResult {
+    string name = 1;
+    string field = 2;
+    uint64 size = 3;
+  }
+  
+  message TermFacetResult {
+    string name = 1;
+    string field = 2;
+    int64 total = 3;
+    int64 missing = 4;
+    int64 other = 5;
+    repeated TermResult terms = 6;
+  }
+  
+  message DateRangeResult {
+    string name = 1;
+    string field = 2;
+    uint64 size = 3;
+    google.protobuf.Duration start = 4;
+    google.protobuf.Duration end = 5;
+  }
+
+  message DateRangeFacetResult {
+    string name = 1;
+    string field = 2;
+    int64 total = 3;
+    int64 missing = 4;
+    int64 other = 5;
+    repeated DateRangeResult date_ranges = 6;
+  }
+
+  message NumericRangeResult{
+    string name = 1;
+    string field = 2;
+    uint64 size = 3;
+    uint64 min = 4;
+    uint64 max = 5;
+  }
+
+  message NumericRangeFacetResult{
+    string name = 1;
+    string field = 2;
+    int64 total = 3;
+    int64 missing = 4;
+    int64 other = 5;
+    repeated NumericRangeResult numeric_ranges = 6;
+  }
+
   message MetaData {
+    SearchMetrics metrics = 1;
+    map<string, string> errors = 2;
+  }
+
+  message SearchMetrics {
     google.protobuf.Duration execution_time = 1;
     uint64 total_rows = 2;
     double max_score = 3;
     uint64 total_partition_count = 4;
     uint64 success_partition_count = 5;
     uint64 error_partition_count = 6;
-
-    // errors
-    // facets
   }
-  optional MetaData meta_data = 2;
+
+  repeated SearchQueryRow hits = 1;
+  map<string, FacetResult> facets = 2;
+  optional MetaData meta_data = 3;
 }
