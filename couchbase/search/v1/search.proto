@@ -18,10 +18,9 @@ message BooleanFieldQuery {
 
 message BooleanQuery {
   optional float boost = 1;
-  optional Query must = 2;
-  optional Query must_not = 3;
-  optional Query should = 4;
-  optional uint32 should_min = 5;
+  optional ConjunctionQuery must = 2;
+  optional DisjunctionQuery must_not = 3;
+  optional DisjunctionQuery should = 4;
 }
 
 message ConjunctionQuery {
@@ -275,8 +274,6 @@ message SearchQueryRequest {
 }
 
 message SearchQueryResponse {
-  repeated bytes hits = 1;
-
   message SearchQueryRow {
     string id = 1;
     double score = 2;
