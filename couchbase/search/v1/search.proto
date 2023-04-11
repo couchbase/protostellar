@@ -9,6 +9,7 @@ option java_multiple_files = true;
 package couchbase.search.v1;
 
 import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
 
 message BooleanFieldQuery {
   optional float boost = 1;
@@ -310,7 +311,7 @@ message SearchQueryResponse {
     string field = 2;
     uint64 size = 3;
   }
-  
+
   message TermFacetResult {
     string name = 1;
     string field = 2;
@@ -319,13 +320,12 @@ message SearchQueryResponse {
     int64 other = 5;
     repeated TermResult terms = 6;
   }
-  
+
   message DateRangeResult {
     string name = 1;
-    string field = 2;
-    uint64 size = 3;
-    google.protobuf.Duration start = 4;
-    google.protobuf.Duration end = 5;
+    uint64 size = 2;
+    google.protobuf.Timestamp start = 3;
+    google.protobuf.Timestamp end = 4;
   }
 
   message DateRangeFacetResult {
@@ -339,10 +339,9 @@ message SearchQueryResponse {
 
   message NumericRangeResult{
     string name = 1;
-    string field = 2;
-    uint64 size = 3;
-    uint64 min = 4;
-    uint64 max = 5;
+    uint64 size = 2;
+    uint64 min = 3;
+    uint64 max = 4;
   }
 
   message NumericRangeFacetResult{
