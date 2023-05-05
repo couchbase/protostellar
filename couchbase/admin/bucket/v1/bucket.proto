@@ -61,7 +61,7 @@ message ListBucketsResponse {
     EvictionMode eviction_mode = 7;
     uint32 max_expiry_secs = 8;
     CompressionMode compression_mode = 9;
-    couchbase.kv.v1.DurabilityLevel minimum_durability_level = 10;
+    optional couchbase.kv.v1.DurabilityLevel minimum_durability_level = 10;
     StorageBackend storage_backend = 11;
     ConflictResolutionType conflict_resolution_type = 12;
   }
