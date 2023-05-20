@@ -57,6 +57,7 @@ message GetRequest {
   string scope_name = 2;
   string collection_name = 3;
   string key = 4;
+  repeated string project = 5;
 }
 
 message GetResponse {
