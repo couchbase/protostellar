@@ -108,4 +108,6 @@ message BuildDeferredIndexesRequest {
   optional string collection_name = 3;
 }
 
-message BuildDeferredIndexesResponse {}
+message BuildDeferredIndexesResponse {
+  repeated string index_names = 1;
+}
