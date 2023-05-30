@@ -316,7 +316,7 @@ message SearchQueryResponse {
   }
 
   message TermFacetResult {
-    string name = 1;
+    reserved 1;
     string field = 2;
     int64 total = 3;
     int64 missing = 4;
@@ -332,7 +332,7 @@ message SearchQueryResponse {
   }
 
   message DateRangeFacetResult {
-    string name = 1;
+    reserved 1;
     string field = 2;
     int64 total = 3;
     int64 missing = 4;
@@ -348,7 +348,7 @@ message SearchQueryResponse {
   }
 
   message NumericRangeFacetResult{
-    string name = 1;
+    reserved 1;
     string field = 2;
     int64 total = 3;
     int64 missing = 4;
