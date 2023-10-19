@@ -20,8 +20,7 @@ service BucketAdminService {
 
 enum BucketType {
   BUCKET_TYPE_COUCHBASE = 0;
-  BUCKET_TYPE_MEMCACHED = 1;
-  BUCKET_TYPE_EPHEMERAL = 2;
+  BUCKET_TYPE_EPHEMERAL = 1;
 }
 
 enum EvictionMode {
