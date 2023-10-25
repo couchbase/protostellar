@@ -173,6 +173,7 @@ message UpsertRequest {
     google.protobuf.Timestamp expiry_time = 7;
     uint32 expiry_secs = 10;
   }
+  optional bool preserve_expiry_on_existing = 12;
   optional DurabilityLevel durability_level = 9;
   reserved 6;
 }
