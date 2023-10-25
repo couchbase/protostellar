@@ -405,13 +405,16 @@ message RangeScanRequest {
 
   bool key_only = 9;
 
-  message Range {
-    string start_key = 1;
-    string end_key = 2;
-    bool inclusive_start = 3;
-    bool inclusive_end = 4;
+  message KeyRange {
+    optional string start = 1;
+    optional string end = 2;
+    optional bool exclusive_start = 3;
+    optional bool inclusive_end = 4;
   }
-  Range range = 7;
+  oneof {
+    KeyRange key_range = 7;
+    string key_prefix = 9;
+  }
 
   message Sampling {
     int64 seed = 1;
