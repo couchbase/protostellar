@@ -41,6 +41,11 @@ enum DurabilityLevel {
   DURABILITY_LEVEL_PERSIST_TO_MAJORITY = 2;
 }
 
+enum CompressionEnabled {
+  COMPRESSION_ENABLED_OPTIONAL = 0;
+  COMPRESSION_ENABLED_ALWAYS = 1;
+}
+
 message LegacyDurabilitySpec {
   uint32 num_replicated = 1;
   uint32 num_persisted = 2;
@@ -59,10 +64,14 @@ message GetRequest {
   string collection_name = 3;
   string key = 4;
   repeated string project = 5;
+  optional CompressionEnabled compression = 6;
 }
 
 message GetResponse {
-  bytes content = 1;
+  oneof content {
+    bytes content_uncompressed = 1;
+    bytes content_compressed = 7;
+  }
   uint32 content_flags = 6;
   uint64 cas = 3;
   google.protobuf.Timestamp expiry = 4;
@@ -78,10 +87,14 @@ message GetAndTouchRequest {
     google.protobuf.Timestamp expiry_time = 5;
     uint32 expiry_secs = 6;
   }
+  optional CompressionEnabled compression = 7;
 }
 
 message GetAndTouchResponse {
-  bytes content = 1;
+  oneof content {
+    bytes content_uncompressed = 1;
+    bytes content_compressed = 7;
+  }
   uint32 content_flags = 6;
   uint64 cas = 3;
   google.protobuf.Timestamp expiry = 4;
@@ -94,10 +107,14 @@ message GetAndLockRequest {
   string collection_name = 3;
   string key = 4;
   uint32 lock_time = 5;
+  optional CompressionEnabled compression = 6;
 }
 
 message GetAndLockResponse {
-  bytes content = 1;
+  oneof content {
+    bytes content_uncompressed = 1;
+    bytes content_compressed = 7;
+  }
   uint32 content_flags = 6;
   uint64 cas = 3;
   google.protobuf.Timestamp expiry = 4;
@@ -147,7 +164,10 @@ message InsertRequest {
   string scope_name = 2;
   string collection_name = 3;
   string key = 4;
-  bytes content = 5;
+  oneof content {
+    bytes content_uncompressed = 5;
+    bytes content_compressed = 12;
+  }
   uint32 content_flags = 11;
   oneof expiry {
     google.protobuf.Timestamp expiry_time = 7;
@@ -167,7 +187,10 @@ message UpsertRequest {
   string scope_name = 2;
   string collection_name = 3;
   string key = 4;
-  bytes content = 5;
+  oneof content {
+    bytes content_uncompressed = 5;
+    bytes content_compressed = 13;
+  }
   uint32 content_flags = 11;
   oneof expiry {
     google.protobuf.Timestamp expiry_time = 7;
@@ -188,7 +211,10 @@ message ReplaceRequest {
   string scope_name = 2;
   string collection_name = 3;
   string key = 4;
-  bytes content = 5;
+  oneof content {
+    bytes content_uncompressed = 5;
+    bytes content_compressed = 13;
+  }
   uint32 content_flags = 12;
   optional uint64 cas = 7;
   oneof expiry {
