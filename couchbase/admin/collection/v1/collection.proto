@@ -17,6 +17,8 @@ service CollectionAdminService {
   rpc DeleteScope(DeleteScopeRequest) returns (DeleteScopeResponse) {}
   rpc CreateCollection(CreateCollectionRequest)
       returns (CreateCollectionResponse) {}
+  rpc UpdateCollection(UpdateCollectionRequest)
+      returns (UpdateCollectionResponse) {}
   rpc DeleteCollection(DeleteCollectionRequest)
       returns (DeleteCollectionResponse) {}
 }
@@ -27,6 +29,7 @@ message ListCollectionsResponse {
   message Collection {
     string name = 1;
     optional uint32 max_expiry_secs = 2;
+    optional bool history_retention_enabled = 3;
   }
 
   message Scope {
@@ -35,6 +38,7 @@ message ListCollectionsResponse {
   }
 
   repeated Scope scopes = 1;
+  uint64 manifest_uid = 2;
 }
 
 message CreateScopeRequest {
@@ -42,23 +46,42 @@ message CreateScopeRequest {
   string scope_name = 2;
 }
 
-message CreateScopeResponse {}
+message CreateScopeResponse {
+  uint64 manifest_uid = 1;
+}
 
 message DeleteScopeRequest {
   string bucket_name = 1;
   string scope_name = 2;
 }
 
-message DeleteScopeResponse {}
+message DeleteScopeResponse {
+  uint64 manifest_uid = 1;
+}
 
 message CreateCollectionRequest {
   string bucket_name = 1;
   string scope_name = 2;
   string collection_name = 3;
   optional uint32 max_expiry_secs = 4;
+  optional bool history_retention_enabled = 5;
 }
 
-message CreateCollectionResponse {}
+message CreateCollectionResponse {
+  uint64 manifest_uid = 1;
+}
+
+message UpdateCollectionRequest {
+  string bucket_name = 1;
+  string scope_name = 2;
+  string collection_name = 3;
+  optional uint32 max_expiry_secs = 4;
+  optional bool history_retention_enabled = 5;
+}
+
+message UpdateCollectionResponse {
+  uint64 manifest_uid = 1;
+}
 
 message DeleteCollectionRequest {
   string bucket_name = 1;
@@ -66,4 +89,6 @@ message DeleteCollectionRequest {
   string collection_name = 3;
 }
 
-message DeleteCollectionResponse {}
+message DeleteCollectionResponse {
+  uint64 manifest_uid = 1;
+}
