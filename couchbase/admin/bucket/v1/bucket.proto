@@ -64,6 +64,9 @@ message ListBucketsResponse {
     optional couchbase.kv.v1.DurabilityLevel minimum_durability_level = 10;
     optional StorageBackend storage_backend = 11;
     ConflictResolutionType conflict_resolution_type = 12;
+    optional bool history_retention_collection_default = 13;
+    optional uint64 history_retention_bytes = 14;
+    optional uint32 history_retention_duration_secs = 15;
   }
 
   repeated Bucket buckets = 1;
@@ -82,6 +85,9 @@ message CreateBucketRequest {
   optional couchbase.kv.v1.DurabilityLevel minimum_durability_level = 10;
   optional StorageBackend storage_backend = 11;
   optional ConflictResolutionType conflict_resolution_type = 12;
+  optional bool history_retention_collection_default = 13;
+  optional uint64 history_retention_bytes = 14;
+  optional uint32 history_retention_duration_secs = 15;
 }
 
 message CreateBucketResponse { string bucket_uuid = 1; }
@@ -95,6 +101,9 @@ message UpdateBucketRequest {
   optional uint32 max_expiry_secs = 6;
   optional CompressionMode compression_mode = 7;
   optional couchbase.kv.v1.DurabilityLevel minimum_durability_level = 8;
+  optional bool history_retention_collection_default = 10;
+  optional uint64 history_retention_bytes = 11;
+  optional uint32 history_retention_duration_secs = 12;
 }
 
 message UpdateBucketResponse {}
