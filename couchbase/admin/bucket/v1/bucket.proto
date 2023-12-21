@@ -17,6 +17,8 @@ service BucketAdminService {
   rpc CreateBucket(CreateBucketRequest) returns (CreateBucketResponse) {}
   rpc UpdateBucket(UpdateBucketRequest) returns (UpdateBucketResponse) {}
   rpc DeleteBucket(DeleteBucketRequest) returns (DeleteBucketResponse) {}
+
+  rpc FlushBucket(FlushBucketRequest) returns (FlushBucketResponse) {}
 }
 
 enum BucketType {
@@ -111,3 +113,7 @@ message UpdateBucketResponse {}
 message DeleteBucketRequest { string bucket_name = 1; }
 
 message DeleteBucketResponse {}
+
+message FlushBucketRequest { string bucket_name = 1; }
+
+message FlushBucketResponse {}
