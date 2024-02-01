@@ -21,6 +21,8 @@ service HooksService {
 
   rpc WatchBarrier(WatchBarrierRequest) returns (stream WatchBarrierResponse) {}
   rpc SignalBarrier(SignalBarrierRequest) returns (SignalBarrierResponse) {}
+
+  rpc WatchRequests(WatchRequestsRequest) returns (stream WatchRequestsResponse) {}
 }
 
 message CreateHooksContextRequest { string id = 1; }
@@ -122,3 +124,18 @@ message SignalBarrierRequest {
 }
 
 message SignalBarrierResponse {}
+
+message WatchRequestsRequest {
+  string hooks_context_id = 1;
+}
+
+message WatchRequestsResponse { 
+  message MetaDataEntry {
+    string key = 1;
+    string value = 2;
+  }
+
+  repeated MetaDataEntry meta_data = 1;
+  string full_method = 2;
+  google.protobuf.Any payload = 3;
+}
