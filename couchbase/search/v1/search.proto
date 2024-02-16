@@ -246,6 +246,18 @@ message Facet {
   }
 }
 
+message KnnQuery {
+  string field = 1;
+  int64 k = 2;
+  repeated float vector = 3;
+  optional float boost = 4;
+}
+
+enum KnnOperator {
+  KNN_OPERATOR_OR = 0;
+  KNN_OPERATOR_AND = 1;
+}
+
 service SearchService {
   rpc SearchQuery(SearchQueryRequest) returns (stream SearchQueryResponse) {}
 }
@@ -273,6 +285,9 @@ message SearchQueryRequest {
   repeated string collections = 12;
   bool include_locations = 13;
   map<string, Facet> facets = 14;
+
+  repeated KnnQuery knn = 17;
+  optional KnnOperator knn_operator = 18;
 
   optional string bucket_name = 15;
   optional string scope_name = 16;
