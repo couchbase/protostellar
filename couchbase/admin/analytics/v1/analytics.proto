@@ -1,0 +1,220 @@
+syntax = "proto3";
+
+option go_package = "github.com/couchbase/goprotostellar/genproto/admin_analytics_v1;admin_analytics_v1";
+option ruby_package = "Couchbase::Protostellar::Generated::Admin::Analytics::V1";
+option php_namespace = "Couchbase\\Protostellar\\Generated\\Admin\\Analytics\\V1";
+option java_package = "com.couchbase.client.protostellar.admin.analytics.v1";
+option java_multiple_files = true;
+option csharp_namespace = "Couchbase.Protostellar.Admin.Analytics.V1";
+
+import "google/protobuf/timestamp.proto";
+
+package couchbase.admin.analytics.v1;
+
+enum LinkStatus {
+  LINK_STATUS_UNKNOWN = 0;
+  LINK_STATUS_HEALTHY = 1;
+  LINK_STATUS_STOPPED = 2;
+  LINK_STATUS_UNHEALTHY = 3;
+  LINK_STATUS_SUSPENDED = 4;
+}
+
+enum CouchbaseEncryptionMode {
+  COUCHBASE_ENCRYPTION_MODE_NONE = 0;
+  COUCHBASE_ENCRYPTION_MODE_HALF = 1;
+  COUCHBASE_ENCRYPTION_MODE_FULL = 2;
+}
+
+service AnalyticsAdminService {
+  rpc CreateLink(CreateLinkRequest) returns (CreateLinkResponse) {}
+  rpc GetLink(GetLinkRequest) returns (GetLinkResponse) {}
+  rpc UpdateLink(UpdateLinkRequest) returns (UpdateLinkResponse) {}
+  rpc DeleteLink(DeleteLinkRequest) returns (DeleteLinkResponse) {}
+
+  rpc GetIngestionStatus(GetIngestionStatusRequest)
+      returns (GetIngestionStatusResponse) {}
+}
+
+message CreateLinkRequest {
+  message CouchbaseLink {
+    string hostname = 1;
+    CouchbaseEncryptionMode encryption_mode = 2;
+    optional string username = 3;
+    optional string password = 4;
+    optional string certificate = 5;
+    optional string client_certificate = 6;
+    optional string client_key = 7;
+  }
+
+  message S3Link {
+    string access_key_id = 1;
+    string secret_access_key = 2;
+    optional string session_token = 3;
+    string region = 4;
+    optional string service_endpoint = 5;
+  }
+
+  message AzureBlobLink {
+    optional string account_name = 1;
+    optional string account_key = 2;
+    optional string shared_access_signature = 3;
+    optional string managed_identity_id = 4;
+    optional string client_id = 5;
+    optional string tenant_id = 6;
+    optional string client_secret = 7;
+    optional string client_certificate_password = 8;
+    optional string endpoint = 9;
+  }
+
+  message GcsLink { optional string json_credentials = 1; }
+
+  string analytics_scope_name = 1;
+  string link_name = 2;
+
+  oneof link {
+    CouchbaseLink couchbase_link = 3;
+    S3Link s3_link = 4;
+    AzureBlobLink azureblob_link = 5;
+    GcsLink gcs_link = 6;
+  }
+}
+
+message CreateLinkResponse {}
+
+message GetLinkRequest {
+  string analytics_scope_name = 1;
+  string link_name = 2;
+}
+
+message GetLinkResponse {
+  message CouchbaseLink {
+    string uuid = 1;
+    string active_hostname = 2;
+    string bootstrap_hostname = 3;
+    bool is_bootstrap_alternate_address = 4;
+    optional string certificate = 5;
+    // client_certificate
+    // client_key
+    // cluster_compatibility
+    CouchbaseEncryptionMode encryption_mode = 6;
+    // nodes
+    string username = 7;
+    // password
+  }
+
+  message S3Link {
+    string access_key_id = 1;
+    string region = 2;
+    // secret_access_key
+    // session_token
+    optional string service_endpoint = 3;
+  }
+
+  message AzureBlobLink {
+    // account_key
+    optional string account_name = 1;
+    // client_certificate
+    // client_certificate_password
+    optional string client_id = 2;
+    // client_secret
+    string endpoint = 3;
+    optional string managed_identity_id = 4;
+    // shared_access_signature
+    optional string tenant_id = 5;
+  }
+
+  message GcsLink {
+    bool use_application_default_credentials = 1;
+    string endpoint = 2;
+    // json_credentials
+  }
+
+  oneof link {
+    CouchbaseLink couchbase_link = 1;
+    S3Link s3_link = 2;
+    AzureBlobLink azureblob_link = 3;
+    GcsLink gcs_link = 4;
+  }
+}
+
+message UpdateLinkRequest {
+  message CouchbaseLink {
+    string hostname = 1;
+    CouchbaseEncryptionMode encryption_mode = 2;
+    optional string username = 3;
+    optional string password = 4;
+    optional string certificate = 5;
+    optional string client_certificate = 6;
+    optional string client_key = 7;
+  }
+
+  message S3Link {
+    string access_key_id = 1;
+    string secret_access_key = 2;
+    optional string session_token = 3;
+    string region = 4;
+    optional string service_endpoint = 5;
+  }
+
+  message AzureBlobLink {
+    optional string account_name = 1;
+    optional string account_key = 2;
+    optional string shared_access_signature = 3;
+    optional string managed_identity_id = 4;
+    optional string client_id = 5;
+    optional string tenant_id = 6;
+    optional string client_secret = 7;
+    optional string client_certificate_password = 8;
+    optional string endpoint = 9;
+  }
+
+  message GcsLink { optional string json_credentials = 1; }
+
+  string analytics_scope_name = 1;
+  string link_name = 2;
+
+  oneof link {
+    CouchbaseLink couchbase_link = 3;
+    S3Link s3_link = 4;
+    AzureBlobLink azureblob_link = 5;
+    GcsLink gcs_link = 6;
+  }
+}
+
+message UpdateLinkResponse {}
+
+message DeleteLinkRequest {
+  string analytics_scope_name = 1;
+  string link_name = 2;
+}
+
+message DeleteLinkResponse {}
+
+message GetIngestionStatusRequest {}
+
+message GetIngestionStatusResponse {
+  message Link {
+    message State {
+      message Scope {
+        message Collection { string collection_name = 1; }
+
+        string scope_name = 1;
+        repeated Collection collections = 2;
+      }
+
+      google.protobuf.Timestamp timestamp = 1;
+      double progress = 2;
+      optional int64 time_lag_ms = 3;
+      optional int64 items_processed = 4;
+      optional int64 seqno_advances = 5;
+      repeated Scope scopes = 6;
+    }
+
+    string link_name = 1;
+    string analytics_scope_name = 2;
+    LinkStatus status = 3;
+    repeated State states = 4;
+  }
+
+  repeated Link links = 1;
+}
