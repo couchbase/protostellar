@@ -17,8 +17,8 @@ service AnalyticsService {
 }
 
 message AnalyticsQueryRequest {
-  optional string bucket_name = 8;
-  optional string scope_name = 9;
+  reserved 8; // bucket_name
+  optional string analytics_scope_name = 9;
   string statement = 1;
 
   optional bool read_only = 2;
@@ -32,6 +32,17 @@ message AnalyticsQueryRequest {
   optional ScanConsistency scan_consistency = 5;
   repeated bytes positional_parameters = 6;
   map<string, bytes> named_parameters = 7;
+
+  enum PlanFormat {
+    PLAN_FORMAT_JSON = 0;
+    PLAN_FORMAT_STRING = 1;
+  }
+  optional PlanFormat plan_format = 10;
+  optional bool include_logical_plan = 11;
+  optional bool include_organized_logical_plan = 12;
+  optional bool include_expression_tree = 13;
+  optional bool include_rewritten_expression_tree = 14;
+  optional int32 max_warnings = 15;
 }
 
 message AnalyticsQueryResponse {
@@ -61,6 +72,11 @@ message AnalyticsQueryResponse {
     bytes signature = 4;
     repeated Warning warnings = 5;
     string status = 6;
+
+    optional bytes logical_plan = 7;
+    optional bytes optimized_logical_plan = 8;
+    optional string expression_tree = 9;
+    optional string rewritten_expression_tree = 10;
   }
   optional MetaData meta_data = 2;
 }
