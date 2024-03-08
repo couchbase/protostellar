@@ -47,6 +47,14 @@ message QueryRequest {
   optional bool preserve_expiry = 12;
   repeated couchbase.kv.v1.MutationToken consistent_with = 13;
 
+  enum DurabilityLevel {
+    DURABILITY_LEVEL_NONE = 0;
+    DURABILITY_LEVEL_MAJORITY = 1;
+    DURABILITY_LEVEL_MAJORITY_AND_PERSIST_TO_ACTIVE = 2;
+    DURABILITY_LEVEL_PERSIST_TO_MAJORITY = 3;
+  }
+  optional DurabilityLevel durability_level = 15;
+
   enum ProfileMode {
     PROFILE_MODE_OFF = 0;
     PROFILE_MODE_PHASES = 1;
