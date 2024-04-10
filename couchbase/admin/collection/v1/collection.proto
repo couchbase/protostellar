@@ -28,7 +28,10 @@ message ListCollectionsRequest { string bucket_name = 1; }
 message ListCollectionsResponse {
   message Collection {
     string name = 1;
-    optional uint32 max_expiry_secs = 2;
+    oneof max_expiry_secs {
+      uint32 secs = 2;
+      bool inherit_expiry = 4;
+    }
     optional bool history_retention_enabled = 3;
   }
 
@@ -63,7 +66,10 @@ message CreateCollectionRequest {
   string bucket_name = 1;
   string scope_name = 2;
   string collection_name = 3;
-  optional uint32 max_expiry_secs = 4;
+  oneof max_expiry_secs {
+    uint32 secs = 4;
+    bool inherit_expiry = 6;
+  }
   optional bool history_retention_enabled = 5;
 }
 
@@ -75,7 +81,10 @@ message UpdateCollectionRequest {
   string bucket_name = 1;
   string scope_name = 2;
   string collection_name = 3;
-  optional uint32 max_expiry_secs = 4;
+  oneof max_expiry_secs {
+    uint32 secs = 4;
+    bool inherit_expiry = 6;
+  }
   optional bool history_retention_enabled = 5;
 }
 
