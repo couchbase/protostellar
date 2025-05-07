@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option go_package = "github.com/couchbase/goprotostellar/genproto/datastream_v1;datastream_v1";
+option ruby_package = "Couchbase::Protostellar::Generated::Datastream::V1";
+option php_namespace = "Couchbase\\Protostellar\\Generated\\Datastream\\V1";
+option java_package = "com.couchbase.client.protostellar.datastream.v1";
+option java_multiple_files = true;
+option csharp_namespace = "Couchbase.Protostellar.Datastream.V1";
+
+package couchbase.datastream.v1;
+
+service DatastreamService {
+  rpc StreamCollection(StreamCollectionRequest)
+      returns (stream StreamCollectionResponse) {}
+}
+
+message StreamCollectionRequest {
+  string bucket_name = 1;
+  string scope_name = 2;
+  string collection_name = 3;
+  optional string filter = 4;
+}
+
+message StreamCollectionResponse {
+  oneof response {
+    StreamCollectionMutation mutation = 1;
+    StreamCollectionDeletion deletion = 2;
+  }
+}
+
+message StreamCollectionMutation {
+  string key = 1;
+  bytes value = 2;
+}
+
+message StreamCollectionDeletion { string key = 1; }
