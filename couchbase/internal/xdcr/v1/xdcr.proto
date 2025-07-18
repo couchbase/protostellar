@@ -84,7 +84,7 @@ message CheckDocumentRequest {
   optional google.protobuf.Timestamp expiry_time = 8;
   bool is_deleted = 9;
   optional HlvRecord hlv_record = 10;
-  bool true_conflict_detection = 11;
+  optional bool true_conflict_detection = 11;
 }
 
 message CheckDocumentResponse {
@@ -109,7 +109,7 @@ message PushDocumentRequest {
   optional google.protobuf.Timestamp expiry_time = 11;
   bool is_deleted = 12;
   optional HlvRecord hlv_record = 13;
-  bool true_conflict_detection = 14;
+  optional bool true_conflict_detection = 14;
 }
 
 message PushDocumentResponse {
