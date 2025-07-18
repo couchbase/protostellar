@@ -80,7 +80,7 @@ message CheckDocumentRequest {
   uint64 revno = 6;
   uint32 content_flags = 7;
   // content_type from PushDocument
-  // content_compressed from PushDocument
+  // content from PushDocument
   optional google.protobuf.Timestamp expiry_time = 8;
   bool is_deleted = 9;
   optional HlvRecord hlv_record = 10;
@@ -101,7 +101,11 @@ message PushDocumentRequest {
   uint64 revno = 7;
   uint32 content_flags = 8;
   ContentType content_type = 9;
-  bytes content_compressed = 10;
+  oneof content {
+    bytes content_uncompressed = 15;
+    bytes content_compressed = 10;
+  }
+  map<string, bytes> xattrs = 16;
   optional google.protobuf.Timestamp expiry_time = 11;
   bool is_deleted = 12;
   optional HlvRecord hlv_record = 13;
