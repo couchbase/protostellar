@@ -422,4 +422,5 @@ message GetAllReplicasResponse {
   bytes content = 2;
   uint32 content_flags = 3;
   uint64 cas = 4;
+  google.rpc.Status status = 5;
 }
