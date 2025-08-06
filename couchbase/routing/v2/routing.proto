@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option go_package = "github.com/couchbase/goprotostellar/genproto/routing_v2;routing_v2";
+option ruby_package = "Couchbase::Protostellar::Generated::Routing::V2";
+option php_namespace = "Couchbase\\Protostellar\\Generated\\Routing\\V2";
+option java_package = "com.couchbase.client.protostellar.routing.v2";
+option java_multiple_files = true;
+option csharp_namespace = "Couchbase.Protostellar.Routing.V2";
+
+package couchbase.routing.v2;
+
+service RoutingService {
+  rpc WatchRouting(WatchRoutingRequest) returns (stream WatchRoutingResponse) {}
+}
+
+message WatchRoutingRequest {
+  // Specifies the specific bucket that will be accessed.
+  optional string bucket_name = 1;
+}
+
+message ServerRouting {
+  uint32 num_local_servers = 1;
+  uint32 num_group_servers = 2;
+}
+
+message VbucketRouting {
+  uint32 num_vbuckets = 1;
+  repeated uint32 local_vbuckets = 2;
+  repeated uint32 group_vbuckets = 3;
+}
+
+message WatchRoutingResponse {
+  optional ServerRouting server_routing = 1;
+  optional ServerRouting views_routing = 2;
+  optional ServerRouting query_routing = 3;
+  optional ServerRouting search_routing = 4;
+  optional ServerRouting analytics_routing = 5;
+  optional VbucketRouting vbucket_data_routing = 6;
+}
