@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option go_package = "github.com/couchbase/goprotostellar/genproto/annotations_v1;annotations_v1";
+option ruby_package = "Couchbase::Protostellar::Generated::Annotations::V1";
+option php_namespace = "Couchbase\\Protostellar\\Generated\\Annotations\\V1";
+option java_package = "com.couchbase.client.protostellar.annotations.v1";
+option java_multiple_files = true;
+option csharp_namespace = "Couchbase.Protostellar.Annotations.V1";
+
+package couchbase;
+
+import "google/protobuf/descriptor.proto";
+
+enum StabilityLevel {
+    GA = 0;
+    BETA = 1;
+    ALPHA = 2;
+}
+
+extend google.protobuf.MethodOptions {
+    optional StabilityLevel method_stability = 50000;
+}
+
+extend google.protobuf.FieldOptions {
+    optional StabilityLevel field_stability = 50001;
+}
+
+extend google.protobuf.ServiceOptions {
+    optional StabilityLevel service_stability = 50002;
+}
+
