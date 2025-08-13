@@ -110,13 +110,12 @@ message CheckDocumentRequest {
   uint32 content_flags = 7;
   // content_type from PushDocument
   // content from PushDocument
-  optional google.protobuf.Timestamp expiry_time = 8;
-  bool is_deleted = 9;
+  bool has_xattrs = 8;
+  optional google.protobuf.Timestamp expiry_time = 9;
+  bool is_deleted = 10;
 }
 
-message CheckDocumentResponse {
-  // need conflict result
-}
+message CheckDocumentResponse {}
 
 message PushDocumentRequest {
   string bucket_name = 1;
