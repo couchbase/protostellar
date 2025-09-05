@@ -9,6 +9,7 @@ import "google/protobuf/timestamp.proto";
 service XdcrService {
   rpc Heartbeat(HeartbeatRequest) returns (HeartbeatResponse) {}
 
+  // Make this a watch call instead
   rpc GetBucketInfo(GetBucketInfoRequest) returns (GetBucketInfoResponse) {}
   rpc GetVbucketInfo(GetVbucketInfoRequest)
       returns (stream GetVbucketInfoResponse) {}
@@ -33,9 +34,11 @@ enum ConflictResolutionType {
 }
 
 message GetBucketInfoResponse {
-  string bucket_uuid = 1;
-  uint32 num_vbuckets = 2;
-  ConflictResolutionType conflict_resolution_type = 3;
+  string cluster_uuid = 1;
+  string bucket_uuid = 2;
+  uint32 num_vbuckets = 3;
+  ConflictResolutionType conflict_resolution_type = 4;
+  bool cross_cluster_versioning_enabled = 5;
 }
 
 // This is the one we should use, streaming individual vbuckets as we get them
@@ -115,7 +118,7 @@ message CheckDocumentRequest {
   bool is_deleted = 10;
 }
 
-message CheckDocumentResponse {}
+message CheckDocumentResponse { bool exists = 1; }
 
 message PushDocumentRequest {
   string bucket_name = 1;
@@ -134,6 +137,8 @@ message PushDocumentRequest {
   map<string, bytes> xattrs = 16;
   optional google.protobuf.Timestamp expiry_time = 11;
   bool is_deleted = 12;
+  // this covers disambiguating cluster_uuid, bucket_uuid, etc...
+  optional string vb_uuid = 13;
 }
 
 message PushDocumentResponse {
