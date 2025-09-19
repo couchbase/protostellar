@@ -9,7 +9,7 @@ import "google/protobuf/timestamp.proto";
 service XdcrService {
   rpc Heartbeat(HeartbeatRequest) returns (HeartbeatResponse) {}
 
-  // Make this a watch call instead
+  rpc GetClusterInfo(GetClusterInfoRequest) returns (GetClusterInfoResponse) {}
   rpc GetBucketInfo(GetBucketInfoRequest) returns (GetBucketInfoResponse) {}
   rpc GetVbucketInfo(GetVbucketInfoRequest)
       returns (stream GetVbucketInfoResponse) {}
@@ -25,6 +25,10 @@ message HeartbeatRequest { bytes payload = 1; }
 
 message HeartbeatResponse {}
 
+message GetClusterInfoRequest {}
+
+message GetClusterInfoResponse { string cluster_uuid = 1; }
+
 message GetBucketInfoRequest { string bucket_name = 1; }
 
 enum ConflictResolutionType {
@@ -34,7 +38,6 @@ enum ConflictResolutionType {
 }
 
 message GetBucketInfoResponse {
-  string cluster_uuid = 1;
   string bucket_uuid = 2;
   uint32 num_vbuckets = 3;
   ConflictResolutionType conflict_resolution_type = 4;
@@ -42,19 +45,25 @@ message GetBucketInfoResponse {
 }
 
 // This is the one we should use, streaming individual vbuckets as we get them
-message GetVbucketInfoRequest { string bucket_name = 1; }
+message GetVbucketInfoRequest {
+  string bucket_name = 1;
+  repeated uint32 vbucket_ids = 2;
+  optional bool include_history = 3;
+  optional bool include_max_cas = 4;
+}
 
 message GetVbucketInfoResponse {
-  message FailoverEntry {
+  message HistoryEntry {
     uint64 uuid = 1;
     uint64 seqno = 2;
   }
 
   message VbucketState {
     uint32 vbucket_id = 1;
-    repeated FailoverEntry failover_log = 2;
+    uint64 uuid = 2;
     uint64 high_seqno = 3;
-    uint64 max_cas = 4;
+    repeated HistoryEntry history = 4;
+    optional uint64 max_cas = 5;
   }
 
   repeated VbucketState vbuckets = 2;
@@ -85,6 +94,7 @@ message GetDocumentRequest {
   string collection_name = 3;
   string key = 5;
   bool include_content = 6;
+  optional bool include_xattrs = 7;
 }
 
 message GetDocumentResponse {
@@ -95,6 +105,7 @@ message GetDocumentResponse {
   uint32 content_flags = 6;
   optional bytes content_compressed = 7;
   uint64 revno = 8;
+  map<string, bytes> xattrs = 9;
 }
 
 enum ContentType {
