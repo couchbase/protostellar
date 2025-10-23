@@ -1,0 +1,161 @@
+syntax = "proto3";
+
+option go_package = "github.com/couchbase/goprotostellar/genproto/internal_xdcr_v1;internal_xdcr_v1";
+
+package couchbase.internal.xdcr.v1;
+
+import "google/protobuf/timestamp.proto";
+
+/*
+@uncommitted This service is not yet stable and may change without warning.
+*/
+service XdcrService {
+  rpc Heartbeat(HeartbeatRequest) returns (HeartbeatResponse) {}
+
+  rpc GetClusterInfo(GetClusterInfoRequest) returns (GetClusterInfoResponse) {}
+  rpc GetBucketInfo(GetBucketInfoRequest) returns (GetBucketInfoResponse) {}
+  rpc GetVbucketInfo(GetVbucketInfoRequest)
+      returns (stream GetVbucketInfoResponse) {}
+  rpc WatchCollections(WatchCollectionsRequest)
+      returns (stream WatchCollectionsResponse) {}
+
+  rpc GetDocument(GetDocumentRequest) returns (GetDocumentResponse) {}
+  rpc CheckDocument(CheckDocumentRequest) returns (CheckDocumentResponse) {}
+  rpc PushDocument(PushDocumentRequest) returns (PushDocumentResponse) {}
+}
+
+message HeartbeatRequest { bytes payload = 1; }
+
+message HeartbeatResponse {}
+
+message GetClusterInfoRequest {}
+
+message GetClusterInfoResponse { string cluster_uuid = 1; }
+
+message GetBucketInfoRequest { string bucket_name = 1; }
+
+enum ConflictResolutionType {
+  CONFLICT_RESOLUTION_TYPE_TIMESTAMP = 0;
+  CONFLICT_RESOLUTION_TYPE_SEQUENCE_NUMBER = 1;
+  CONFLICT_RESOLUTION_TYPE_CUSTOM = 2;
+}
+
+message GetBucketInfoResponse {
+  string bucket_uuid = 2;
+  uint32 num_vbuckets = 3;
+  ConflictResolutionType conflict_resolution_type = 4;
+  bool cross_cluster_versioning_enabled = 5;
+}
+
+// This is the one we should use, streaming individual vbuckets as we get them
+message GetVbucketInfoRequest {
+  string bucket_name = 1;
+  repeated uint32 vbucket_ids = 2;
+  optional bool include_history = 3;
+  optional bool include_max_cas = 4;
+}
+
+message GetVbucketInfoResponse {
+  message HistoryEntry {
+    uint64 uuid = 1;
+    uint64 seqno = 2;
+  }
+
+  message VbucketState {
+    uint32 vbucket_id = 1;
+    uint64 uuid = 2;
+    uint64 high_seqno = 3;
+    repeated HistoryEntry history = 4;
+    optional uint64 max_cas = 5;
+  }
+
+  repeated VbucketState vbuckets = 2;
+}
+
+message WatchCollectionsRequest { string bucket_name = 1; }
+
+message WatchCollectionsResponse {
+  message Collection {
+    uint32 collection_id = 1;
+    string collection_name = 2;
+  }
+
+  message Scope {
+    uint32 scope_id = 1;
+    string scope_name = 2;
+
+    repeated Collection collections = 3;
+  }
+
+  uint32 manifest_uid = 1;
+  repeated Scope scopes = 2;
+}
+
+message GetDocumentRequest {
+  string bucket_name = 1;
+  string scope_name = 2;
+  string collection_name = 3;
+  string key = 5;
+  bool include_content = 6;
+  optional bool include_xattrs = 7;
+}
+
+message GetDocumentResponse {
+  uint64 cas = 1;
+  google.protobuf.Timestamp expiry = 2;
+  bool is_deleted = 3;
+  uint32 datatype = 5;
+  uint32 content_flags = 6;
+  optional bytes content_compressed = 7;
+  uint64 revno = 8;
+  map<string, bytes> xattrs = 9;
+}
+
+enum ContentType {
+  CONTENT_TYPE_NONJSON = 0;
+  CONTENT_TYPE_JSON = 1;
+}
+
+message CheckDocumentRequest {
+  string bucket_name = 1;
+  string scope_name = 2;
+  string collection_name = 3;
+  string key = 4;
+  // check_cas from PushDocument
+  uint64 store_cas = 5;
+  uint64 revno = 6;
+  uint32 content_flags = 7;
+  // content_type from PushDocument
+  // content from PushDocument
+  bool has_xattrs = 8;
+  optional google.protobuf.Timestamp expiry_time = 9;
+  bool is_deleted = 10;
+}
+
+message CheckDocumentResponse { bool exists = 1; }
+
+message PushDocumentRequest {
+  string bucket_name = 1;
+  string scope_name = 2;
+  string collection_name = 3;
+  string key = 4;
+  optional uint64 check_cas = 5;
+  uint64 store_cas = 6;
+  uint64 revno = 7;
+  uint32 content_flags = 8;
+  ContentType content_type = 9;
+  oneof content {
+    bytes content_uncompressed = 15;
+    bytes content_compressed = 10;
+  }
+  map<string, bytes> xattrs = 16;
+  optional google.protobuf.Timestamp expiry_time = 11;
+  bool is_deleted = 12;
+  // this covers disambiguating cluster_uuid, bucket_uuid, etc...
+  optional string vb_uuid = 13;
+}
+
+message PushDocumentResponse {
+  uint64 cas = 1;
+  uint64 seqno = 2;
+}
