@@ -152,7 +152,7 @@ message PushDocumentRequest {
   optional google.protobuf.Timestamp expiry_time = 11;
   bool is_deleted = 12;
   // this covers disambiguating cluster_uuid, bucket_uuid, etc...
-  optional string vb_uuid = 13;
+  optional uint64 vb_uuid = 13;
 }
 
 message PushDocumentResponse {
