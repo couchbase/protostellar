@@ -1,1 +1,1 @@
-routing.v1 previously existed, but was never fully implemented.
+routing.v1 is deprecated, and was never fully implemented.
