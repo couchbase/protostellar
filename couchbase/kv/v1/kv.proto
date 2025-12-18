@@ -106,7 +106,7 @@ message GetAndLockRequest {
   string scope_name = 2;
   string collection_name = 3;
   string key = 4;
-  uint32 lock_time_secs = 5;
+  uint32 lock_time = 5;
   optional CompressionEnabled compression = 6;
 }
 
