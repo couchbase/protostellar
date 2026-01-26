@@ -4,6 +4,7 @@ option go_package = "github.com/couchbase/goprotostellar/genproto/internal_xdcr_
 
 package couchbase.internal.xdcr.v1;
 
+import "google/rpc/status.proto";
 import "google/protobuf/timestamp.proto";
 
 /*
@@ -22,6 +23,8 @@ service XdcrService {
   rpc GetDocument(GetDocumentRequest) returns (GetDocumentResponse) {}
   rpc CheckDocument(CheckDocumentRequest) returns (CheckDocumentResponse) {}
   rpc PushDocument(PushDocumentRequest) returns (PushDocumentResponse) {}
+
+  rpc PushDocuments(PushDocumentsRequest) returns (PushDocumentsResponse) {}
 }
 
 message HeartbeatRequest { bytes payload = 1; }
@@ -165,3 +168,22 @@ message PushDocumentResponse {
   uint64 cas = 1;
   uint64 seqno = 2;
 }
+
+message PushDocumentsOp {
+  oneof op {
+    PushDocumentRequest push = 1;
+    CheckDocumentRequest check = 2;
+  }
+}
+
+message PushDocumentsRequest { repeated PushDocumentsOp ops = 1; }
+
+message PushDocumentsResult {
+  oneof result {
+    PushDocumentResponse push_response = 1;
+    CheckDocumentResponse check_response = 2;
+    google.rpc.Status status = 3;
+  }
+}
+
+message PushDocumentsResponse { repeated PushDocumentsResult results = 1; }
