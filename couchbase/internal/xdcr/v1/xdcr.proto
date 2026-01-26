@@ -40,11 +40,17 @@ enum ConflictResolutionType {
   CONFLICT_RESOLUTION_TYPE_CUSTOM = 2;
 }
 
+enum BucketType {
+  BUCKET_TYPE_COUCHBASE = 0;
+  BUCKET_TYPE_EPHEMERAL = 1;
+}
+
 message GetBucketInfoResponse {
   string bucket_uuid = 2;
   uint32 num_vbuckets = 3;
   ConflictResolutionType conflict_resolution_type = 4;
   bool cross_cluster_versioning_enabled = 5;
+  optional BucketType bucket_type = 6;
 }
 
 // This is the one we should use, streaming individual vbuckets as we get them
