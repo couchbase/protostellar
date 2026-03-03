@@ -1,0 +1,8 @@
+module-title = "Protostellar API Reference"
+input-descriptor-file = "descriptor.pb"
+output-dir = "gen-docs"
+hidden-packages = [
+    "couchbase.internal.hooks.v1",
+    "couchbase.internal.xdcr.v1",
+    "google.protobuf", "google.rpc"
+]
