@@ -1,0 +1,50 @@
+name: API Docs
+on:
+  push:
+    tags:
+      - v*
+    branches:
+      - master
+permissions:
+  contents: write
+jobs:
+  generate-docs:
+    name: Generate API Docs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: bufbuild/buf-setup-action@v1
+        with:
+          version: "v1.56.0"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install sabledocs
+        run: pip install sabledocs
+
+      - name: Build protobuf descriptor
+        run: buf build -o descriptor.pb
+
+      - name: Generate documentation
+        run: sabledocs
+
+      - name: Determine target directory
+        id: target_dir
+        run: |
+          if [ "$GITHUB_REF" = "refs/heads/master" ]; then
+            echo "DIR=master" >> $GITHUB_OUTPUT
+          else
+            TAG_NAME=${GITHUB_REF#refs/tags/}
+            echo "DIR=${TAG_NAME}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./gen-docs
+          destination_dir: ${{ steps.target_dir.outputs.DIR }}
+          keep_files: true
