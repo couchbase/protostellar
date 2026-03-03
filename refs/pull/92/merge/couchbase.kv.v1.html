@@ -1,0 +1,5904 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Protostellar API Reference</title>
+    <link rel="stylesheet" href="static/mystyles.css" />
+    <script src="static/fontawesome.js"></script>
+    <script src="static/lunr.js"></script>
+    <script src="static/theme.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="level pt-6 mb-5 pb-2 bottom-border">
+        <div class="level-left">
+          <p class="level-item has-text-centered is-size-3 has-text-weight-medium">
+            <a class="link is-info" href="index.html">
+              Protostellar API Reference
+            </a>
+          </p>
+        </div>
+
+        <div class="level-right">
+          
+          <form action="search.html" class="mr-2 has-text-centered">
+            <input type="text" name="query" class="input mr-3 navbar-search-query-input" placeholder="Search">
+            <input type="submit" class="button is-primary mr-5" value="Search" />
+          </form>
+          
+
+          <p class="level-item has-text-centered is-size-5">
+            <a href="" class="link is-info mr-5" target="_blank">
+              
+              <span>Source</span>
+            </a>
+
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite" type="button">
+              <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <mask class="moon" id="moon-mask">
+                  <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                  <circle cx="24" cy="10" r="6" fill="black" />
+                </mask>
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                <g class="sun-beams" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+              </svg>
+            </button>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <div id="main-content" class="container mb-6">
+  <p class="mb-2">
+    <a style="font-size: 0.9em" href="index.html">← Back to packages</a>
+  </p>
+  <h3 class="title is-3">
+    
+    Package <code>couchbase.kv.v1</code>
+    
+  </h3>
+
+  <div class="block">
+    
+    <p>
+      <a href="#service-couchbase.kv.v1.KvService">
+        <span class="tag" style="min-width: 6em">Service</span>
+        <code>KvService</code> 
+      </a>
+    </p>
+    
+
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.AppendRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>AppendRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.AppendResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>AppendResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.DecrementRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DecrementRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.DecrementResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DecrementResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.ExistsRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ExistsRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.ExistsResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ExistsResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.LookupInRequest.Spec.Flags">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Flags</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.LookupInRequest.Flags">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Flags</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.MutateInRequest.Spec.Flags">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Flags</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.MutateInRequest.Flags">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Flags</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.GetAllReplicasRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetAllReplicasRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.GetAllReplicasResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetAllReplicasResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.GetAndLockRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetAndLockRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.GetAndLockResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetAndLockResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.GetAndTouchRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetAndTouchRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.GetAndTouchResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetAndTouchResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.GetRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.GetResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.IncrementRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>IncrementRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.IncrementResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>IncrementResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.InsertRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>InsertRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.InsertResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>InsertResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.LegacyDurabilitySpec">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>LegacyDurabilitySpec</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.LookupInRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>LookupInRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.LookupInResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>LookupInResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.MutateInRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>MutateInRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.MutateInResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>MutateInResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.MutationToken">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>MutationToken</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.PrependRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>PrependRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.PrependResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>PrependResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.RemoveRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>RemoveRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.RemoveResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>RemoveResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.ReplaceRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ReplaceRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.ReplaceResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ReplaceResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.LookupInRequest.Spec">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Spec</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.LookupInResponse.Spec">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Spec</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.MutateInRequest.Spec">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Spec</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.MutateInResponse.Spec">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Spec</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.TouchRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TouchRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.TouchResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TouchResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.UnlockRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UnlockRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.UnlockResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UnlockResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.UpsertRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UpsertRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.kv.v1.UpsertResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UpsertResponse</code> 
+        </a>
+      </p>
+      
+    
+
+    
+      <p>
+        <a href="#enum-couchbase.kv.v1.CompressionEnabled">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>CompressionEnabled</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.kv.v1.DurabilityLevel">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>DurabilityLevel</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.kv.v1.LookupInRequest.Spec.Operation">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>Operation</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.kv.v1.MutateInRequest.Spec.Operation">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>Operation</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.kv.v1.MutateInRequest.StoreSemantic">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>StoreSemantic</code> 
+        </a>
+      </p>
+    
+  </div>
+
+  <div class="block">
+      
+  </div>
+
+  
+
+  <div class="block">
+    <h3 class="title is-3">
+      Services
+    </h3>
+
+    
+    <div>
+      
+
+<h4 class="title is-4 type-heading" id="service-couchbase.kv.v1.KvService">
+  <a href="#service-couchbase.kv.v1.KvService" title="couchbase.kv.v1.KvService">service KvService</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-Get">
+      <a href="#service-couchbase.kv.v1.KvService-Get">
+        rpc <code>Get</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.GetRequest"><span title="couchbase.kv.v1.GetRequest">couchbase.kv.v1.GetRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.GetResponse"><span title="couchbase.kv.v1.GetResponse">couchbase.kv.v1.GetResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-GetAndTouch">
+      <a href="#service-couchbase.kv.v1.KvService-GetAndTouch">
+        rpc <code>GetAndTouch</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.GetAndTouchRequest"><span title="couchbase.kv.v1.GetAndTouchRequest">couchbase.kv.v1.GetAndTouchRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.GetAndTouchResponse"><span title="couchbase.kv.v1.GetAndTouchResponse">couchbase.kv.v1.GetAndTouchResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-GetAndLock">
+      <a href="#service-couchbase.kv.v1.KvService-GetAndLock">
+        rpc <code>GetAndLock</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.GetAndLockRequest"><span title="couchbase.kv.v1.GetAndLockRequest">couchbase.kv.v1.GetAndLockRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.GetAndLockResponse"><span title="couchbase.kv.v1.GetAndLockResponse">couchbase.kv.v1.GetAndLockResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-Unlock">
+      <a href="#service-couchbase.kv.v1.KvService-Unlock">
+        rpc <code>Unlock</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.UnlockRequest"><span title="couchbase.kv.v1.UnlockRequest">couchbase.kv.v1.UnlockRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.UnlockResponse"><span title="couchbase.kv.v1.UnlockResponse">couchbase.kv.v1.UnlockResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-Touch">
+      <a href="#service-couchbase.kv.v1.KvService-Touch">
+        rpc <code>Touch</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.TouchRequest"><span title="couchbase.kv.v1.TouchRequest">couchbase.kv.v1.TouchRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.TouchResponse"><span title="couchbase.kv.v1.TouchResponse">couchbase.kv.v1.TouchResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-Exists">
+      <a href="#service-couchbase.kv.v1.KvService-Exists">
+        rpc <code>Exists</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.ExistsRequest"><span title="couchbase.kv.v1.ExistsRequest">couchbase.kv.v1.ExistsRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.ExistsResponse"><span title="couchbase.kv.v1.ExistsResponse">couchbase.kv.v1.ExistsResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-Insert">
+      <a href="#service-couchbase.kv.v1.KvService-Insert">
+        rpc <code>Insert</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.InsertRequest"><span title="couchbase.kv.v1.InsertRequest">couchbase.kv.v1.InsertRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.InsertResponse"><span title="couchbase.kv.v1.InsertResponse">couchbase.kv.v1.InsertResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-Upsert">
+      <a href="#service-couchbase.kv.v1.KvService-Upsert">
+        rpc <code>Upsert</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.UpsertRequest"><span title="couchbase.kv.v1.UpsertRequest">couchbase.kv.v1.UpsertRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.UpsertResponse"><span title="couchbase.kv.v1.UpsertResponse">couchbase.kv.v1.UpsertResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-Replace">
+      <a href="#service-couchbase.kv.v1.KvService-Replace">
+        rpc <code>Replace</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.ReplaceRequest"><span title="couchbase.kv.v1.ReplaceRequest">couchbase.kv.v1.ReplaceRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.ReplaceResponse"><span title="couchbase.kv.v1.ReplaceResponse">couchbase.kv.v1.ReplaceResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-Remove">
+      <a href="#service-couchbase.kv.v1.KvService-Remove">
+        rpc <code>Remove</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.RemoveRequest"><span title="couchbase.kv.v1.RemoveRequest">couchbase.kv.v1.RemoveRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.RemoveResponse"><span title="couchbase.kv.v1.RemoveResponse">couchbase.kv.v1.RemoveResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-Increment">
+      <a href="#service-couchbase.kv.v1.KvService-Increment">
+        rpc <code>Increment</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.IncrementRequest"><span title="couchbase.kv.v1.IncrementRequest">couchbase.kv.v1.IncrementRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.IncrementResponse"><span title="couchbase.kv.v1.IncrementResponse">couchbase.kv.v1.IncrementResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-Decrement">
+      <a href="#service-couchbase.kv.v1.KvService-Decrement">
+        rpc <code>Decrement</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.DecrementRequest"><span title="couchbase.kv.v1.DecrementRequest">couchbase.kv.v1.DecrementRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.DecrementResponse"><span title="couchbase.kv.v1.DecrementResponse">couchbase.kv.v1.DecrementResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-Append">
+      <a href="#service-couchbase.kv.v1.KvService-Append">
+        rpc <code>Append</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.AppendRequest"><span title="couchbase.kv.v1.AppendRequest">couchbase.kv.v1.AppendRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.AppendResponse"><span title="couchbase.kv.v1.AppendResponse">couchbase.kv.v1.AppendResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-Prepend">
+      <a href="#service-couchbase.kv.v1.KvService-Prepend">
+        rpc <code>Prepend</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.PrependRequest"><span title="couchbase.kv.v1.PrependRequest">couchbase.kv.v1.PrependRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.PrependResponse"><span title="couchbase.kv.v1.PrependResponse">couchbase.kv.v1.PrependResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-LookupIn">
+      <a href="#service-couchbase.kv.v1.KvService-LookupIn">
+        rpc <code>LookupIn</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.LookupInRequest"><span title="couchbase.kv.v1.LookupInRequest">couchbase.kv.v1.LookupInRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.LookupInResponse"><span title="couchbase.kv.v1.LookupInResponse">couchbase.kv.v1.LookupInResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-MutateIn">
+      <a href="#service-couchbase.kv.v1.KvService-MutateIn">
+        rpc <code>MutateIn</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutateInRequest"><span title="couchbase.kv.v1.MutateInRequest">couchbase.kv.v1.MutateInRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutateInResponse"><span title="couchbase.kv.v1.MutateInResponse">couchbase.kv.v1.MutateInResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.kv.v1.KvService-GetAllReplicas">
+      <a href="#service-couchbase.kv.v1.KvService-GetAllReplicas">
+        rpc <code>GetAllReplicas</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.GetAllReplicasRequest"><span title="couchbase.kv.v1.GetAllReplicasRequest">couchbase.kv.v1.GetAllReplicasRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.kv.v1.html#message-couchbase.kv.v1.GetAllReplicasResponse"><span title="couchbase.kv.v1.GetAllReplicasResponse">couchbase.kv.v1.GetAllReplicasResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+ 
+    </div>
+    
+  </div>
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Messages
+    </h3>
+
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.AppendRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.AppendRequest" title="couchbase.kv.v1.AppendRequest">message AppendRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        content
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        durability_level
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.DurabilityLevel">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.DurabilityLevel"><span title="couchbase.kv.v1.DurabilityLevel">couchbase.kv.v1.DurabilityLevel</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.AppendResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.AppendResponse" title="couchbase.kv.v1.AppendResponse">message AppendResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        mutation_token
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutationToken">
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutationToken"><span title="couchbase.kv.v1.MutationToken">couchbase.kv.v1.MutationToken</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.DecrementRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.DecrementRequest" title="couchbase.kv.v1.DecrementRequest">message DecrementRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        delta
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        initial
+      </td>
+      <td>
+        <code title="int64">
+          
+            optional
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        durability_level
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.DurabilityLevel">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.DurabilityLevel"><span title="couchbase.kv.v1.DurabilityLevel">couchbase.kv.v1.DurabilityLevel</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof expiry</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            6
+          </td>
+          <td>
+            expiry_time
+          </td>
+          <td>
+            <code title="google.protobuf.Timestamp">
+              
+              <span>google.protobuf.Timestamp</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            10
+          </td>
+          <td>
+            expiry_secs
+          </td>
+          <td>
+            <code title="uint32">
+              
+              <span>uint32</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.DecrementResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.DecrementResponse" title="couchbase.kv.v1.DecrementResponse">message DecrementResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        content
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        mutation_token
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutationToken">
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutationToken"><span title="couchbase.kv.v1.MutationToken">couchbase.kv.v1.MutationToken</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.ExistsRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.ExistsRequest" title="couchbase.kv.v1.ExistsRequest">message ExistsRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.ExistsResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.ExistsResponse" title="couchbase.kv.v1.ExistsResponse">message ExistsResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        result
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.LookupInRequest.Spec.Flags">
+  <span>
+    <a href="#message-couchbase.kv.v1.LookupInRequest.Spec.Flags" title="couchbase.kv.v1.LookupInRequest.Spec.Flags">message Flags</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.LookupInRequest.Spec"><span title="couchbase.kv.v1.LookupInRequest.Spec">couchbase.kv.v1.LookupInRequest.Spec</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        xattr
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.LookupInRequest.Flags">
+  <span>
+    <a href="#message-couchbase.kv.v1.LookupInRequest.Flags" title="couchbase.kv.v1.LookupInRequest.Flags">message Flags</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.LookupInRequest"><span title="couchbase.kv.v1.LookupInRequest">couchbase.kv.v1.LookupInRequest</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        access_deleted
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.MutateInRequest.Spec.Flags">
+  <span>
+    <a href="#message-couchbase.kv.v1.MutateInRequest.Spec.Flags" title="couchbase.kv.v1.MutateInRequest.Spec.Flags">message Flags</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutateInRequest.Spec"><span title="couchbase.kv.v1.MutateInRequest.Spec">couchbase.kv.v1.MutateInRequest.Spec</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        create_path
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        xattr
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.MutateInRequest.Flags">
+  <span>
+    <a href="#message-couchbase.kv.v1.MutateInRequest.Flags" title="couchbase.kv.v1.MutateInRequest.Flags">message Flags</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutateInRequest"><span title="couchbase.kv.v1.MutateInRequest">couchbase.kv.v1.MutateInRequest</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        access_deleted
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.GetAllReplicasRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.GetAllReplicasRequest" title="couchbase.kv.v1.GetAllReplicasRequest">message GetAllReplicasRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.GetAllReplicasResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.GetAllReplicasResponse" title="couchbase.kv.v1.GetAllReplicasResponse">message GetAllReplicasResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        is_replica
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        content
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        content_flags
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.GetAndLockRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.GetAndLockRequest" title="couchbase.kv.v1.GetAndLockRequest">message GetAndLockRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        lock_time_secs
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        compression
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.CompressionEnabled">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.CompressionEnabled"><span title="couchbase.kv.v1.CompressionEnabled">couchbase.kv.v1.CompressionEnabled</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.GetAndLockResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.GetAndLockResponse" title="couchbase.kv.v1.GetAndLockResponse">message GetAndLockResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        expiry
+      </td>
+      <td>
+        <code title="google.protobuf.Timestamp">
+          
+          <span>google.protobuf.Timestamp</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        content_flags
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof content</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            1
+          </td>
+          <td>
+            content_uncompressed
+          </td>
+          <td>
+            <code title="bytes">
+              
+              <span>bytes</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            7
+          </td>
+          <td>
+            content_compressed
+          </td>
+          <td>
+            <code title="bytes">
+              
+              <span>bytes</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.GetAndTouchRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.GetAndTouchRequest" title="couchbase.kv.v1.GetAndTouchRequest">message GetAndTouchRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        compression
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.CompressionEnabled">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.CompressionEnabled"><span title="couchbase.kv.v1.CompressionEnabled">couchbase.kv.v1.CompressionEnabled</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof expiry</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            5
+          </td>
+          <td>
+            expiry_time
+          </td>
+          <td>
+            <code title="google.protobuf.Timestamp">
+              
+              <span>google.protobuf.Timestamp</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            6
+          </td>
+          <td>
+            expiry_secs
+          </td>
+          <td>
+            <code title="uint32">
+              
+              <span>uint32</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.GetAndTouchResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.GetAndTouchResponse" title="couchbase.kv.v1.GetAndTouchResponse">message GetAndTouchResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        expiry
+      </td>
+      <td>
+        <code title="google.protobuf.Timestamp">
+          
+          <span>google.protobuf.Timestamp</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        content_flags
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof content</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            1
+          </td>
+          <td>
+            content_uncompressed
+          </td>
+          <td>
+            <code title="bytes">
+              
+              <span>bytes</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            7
+          </td>
+          <td>
+            content_compressed
+          </td>
+          <td>
+            <code title="bytes">
+              
+              <span>bytes</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.GetRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.GetRequest" title="couchbase.kv.v1.GetRequest">message GetRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        project
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        compression
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.CompressionEnabled">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.CompressionEnabled"><span title="couchbase.kv.v1.CompressionEnabled">couchbase.kv.v1.CompressionEnabled</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.GetResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.GetResponse" title="couchbase.kv.v1.GetResponse">message GetResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        expiry
+      </td>
+      <td>
+        <code title="google.protobuf.Timestamp">
+          
+          <span>google.protobuf.Timestamp</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        content_flags
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof content</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            1
+          </td>
+          <td>
+            content_uncompressed
+          </td>
+          <td>
+            <code title="bytes">
+              
+              <span>bytes</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            7
+          </td>
+          <td>
+            content_compressed
+          </td>
+          <td>
+            <code title="bytes">
+              
+              <span>bytes</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.IncrementRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.IncrementRequest" title="couchbase.kv.v1.IncrementRequest">message IncrementRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        delta
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        initial
+      </td>
+      <td>
+        <code title="int64">
+          
+            optional
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        durability_level
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.DurabilityLevel">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.DurabilityLevel"><span title="couchbase.kv.v1.DurabilityLevel">couchbase.kv.v1.DurabilityLevel</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof expiry</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            6
+          </td>
+          <td>
+            expiry_time
+          </td>
+          <td>
+            <code title="google.protobuf.Timestamp">
+              
+              <span>google.protobuf.Timestamp</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            10
+          </td>
+          <td>
+            expiry_secs
+          </td>
+          <td>
+            <code title="uint32">
+              
+              <span>uint32</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.IncrementResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.IncrementResponse" title="couchbase.kv.v1.IncrementResponse">message IncrementResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        content
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        mutation_token
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutationToken">
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutationToken"><span title="couchbase.kv.v1.MutationToken">couchbase.kv.v1.MutationToken</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.InsertRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.InsertRequest" title="couchbase.kv.v1.InsertRequest">message InsertRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        durability_level
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.DurabilityLevel">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.DurabilityLevel"><span title="couchbase.kv.v1.DurabilityLevel">couchbase.kv.v1.DurabilityLevel</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>11</td>
+      <td>
+        content_flags
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof content</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            5
+          </td>
+          <td>
+            content_uncompressed
+          </td>
+          <td>
+            <code title="bytes">
+              
+              <span>bytes</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            12
+          </td>
+          <td>
+            content_compressed
+          </td>
+          <td>
+            <code title="bytes">
+              
+              <span>bytes</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof expiry</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            7
+          </td>
+          <td>
+            expiry_time
+          </td>
+          <td>
+            <code title="google.protobuf.Timestamp">
+              
+              <span>google.protobuf.Timestamp</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            10
+          </td>
+          <td>
+            expiry_secs
+          </td>
+          <td>
+            <code title="uint32">
+              
+              <span>uint32</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.InsertResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.InsertResponse" title="couchbase.kv.v1.InsertResponse">message InsertResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        mutation_token
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutationToken">
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutationToken"><span title="couchbase.kv.v1.MutationToken">couchbase.kv.v1.MutationToken</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.LegacyDurabilitySpec">
+  <span>
+    <a href="#message-couchbase.kv.v1.LegacyDurabilitySpec" title="couchbase.kv.v1.LegacyDurabilitySpec">message LegacyDurabilitySpec</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        num_replicated
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        num_persisted
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.LookupInRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.LookupInRequest" title="couchbase.kv.v1.LookupInRequest">message LookupInRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        specs
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.LookupInRequest.Spec">
+          
+            repeated
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.LookupInRequest.Spec"><span title="couchbase.kv.v1.LookupInRequest.Spec">couchbase.kv.v1.LookupInRequest.Spec</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        flags
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.LookupInRequest.Flags">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.LookupInRequest.Flags"><span title="couchbase.kv.v1.LookupInRequest.Flags">couchbase.kv.v1.LookupInRequest.Flags</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.LookupInResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.LookupInResponse" title="couchbase.kv.v1.LookupInResponse">message LookupInResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        specs
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.LookupInResponse.Spec">
+          
+            repeated
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.LookupInResponse.Spec"><span title="couchbase.kv.v1.LookupInResponse.Spec">couchbase.kv.v1.LookupInResponse.Spec</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.MutateInRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.MutateInRequest" title="couchbase.kv.v1.MutateInRequest">message MutateInRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        specs
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutateInRequest.Spec">
+          
+            repeated
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutateInRequest.Spec"><span title="couchbase.kv.v1.MutateInRequest.Spec">couchbase.kv.v1.MutateInRequest.Spec</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        store_semantic
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutateInRequest.StoreSemantic">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.MutateInRequest.StoreSemantic"><span title="couchbase.kv.v1.MutateInRequest.StoreSemantic">couchbase.kv.v1.MutateInRequest.StoreSemantic</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        durability_level
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.DurabilityLevel">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.DurabilityLevel"><span title="couchbase.kv.v1.DurabilityLevel">couchbase.kv.v1.DurabilityLevel</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>
+        flags
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutateInRequest.Flags">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutateInRequest.Flags"><span title="couchbase.kv.v1.MutateInRequest.Flags">couchbase.kv.v1.MutateInRequest.Flags</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof expiry</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            11
+          </td>
+          <td>
+            expiry_time
+          </td>
+          <td>
+            <code title="google.protobuf.Timestamp">
+              
+              <span>google.protobuf.Timestamp</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            12
+          </td>
+          <td>
+            expiry_secs
+          </td>
+          <td>
+            <code title="uint32">
+              
+              <span>uint32</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.MutateInResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.MutateInResponse" title="couchbase.kv.v1.MutateInResponse">message MutateInResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        specs
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutateInResponse.Spec">
+          
+            repeated
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutateInResponse.Spec"><span title="couchbase.kv.v1.MutateInResponse.Spec">couchbase.kv.v1.MutateInResponse.Spec</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        mutation_token
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutationToken">
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutationToken"><span title="couchbase.kv.v1.MutationToken">couchbase.kv.v1.MutationToken</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.MutationToken">
+  <span>
+    <a href="#message-couchbase.kv.v1.MutationToken" title="couchbase.kv.v1.MutationToken">message MutationToken</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        vbucket_id
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        vbucket_uuid
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        seq_no
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.PrependRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.PrependRequest" title="couchbase.kv.v1.PrependRequest">message PrependRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        content
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        durability_level
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.DurabilityLevel">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.DurabilityLevel"><span title="couchbase.kv.v1.DurabilityLevel">couchbase.kv.v1.DurabilityLevel</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.PrependResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.PrependResponse" title="couchbase.kv.v1.PrependResponse">message PrependResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        mutation_token
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutationToken">
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutationToken"><span title="couchbase.kv.v1.MutationToken">couchbase.kv.v1.MutationToken</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.RemoveRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.RemoveRequest" title="couchbase.kv.v1.RemoveRequest">message RemoveRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        durability_level
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.DurabilityLevel">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.DurabilityLevel"><span title="couchbase.kv.v1.DurabilityLevel">couchbase.kv.v1.DurabilityLevel</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.RemoveResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.RemoveResponse" title="couchbase.kv.v1.RemoveResponse">message RemoveResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        mutation_token
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutationToken">
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutationToken"><span title="couchbase.kv.v1.MutationToken">couchbase.kv.v1.MutationToken</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.ReplaceRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.ReplaceRequest" title="couchbase.kv.v1.ReplaceRequest">message ReplaceRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>
+        durability_level
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.DurabilityLevel">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.DurabilityLevel"><span title="couchbase.kv.v1.DurabilityLevel">couchbase.kv.v1.DurabilityLevel</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>12</td>
+      <td>
+        content_flags
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof content</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            5
+          </td>
+          <td>
+            content_uncompressed
+          </td>
+          <td>
+            <code title="bytes">
+              
+              <span>bytes</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            13
+          </td>
+          <td>
+            content_compressed
+          </td>
+          <td>
+            <code title="bytes">
+              
+              <span>bytes</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof expiry</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            8
+          </td>
+          <td>
+            expiry_time
+          </td>
+          <td>
+            <code title="google.protobuf.Timestamp">
+              
+              <span>google.protobuf.Timestamp</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            11
+          </td>
+          <td>
+            expiry_secs
+          </td>
+          <td>
+            <code title="uint32">
+              
+              <span>uint32</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.ReplaceResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.ReplaceResponse" title="couchbase.kv.v1.ReplaceResponse">message ReplaceResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        mutation_token
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutationToken">
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutationToken"><span title="couchbase.kv.v1.MutationToken">couchbase.kv.v1.MutationToken</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.LookupInRequest.Spec">
+  <span>
+    <a href="#message-couchbase.kv.v1.LookupInRequest.Spec" title="couchbase.kv.v1.LookupInRequest.Spec">message Spec</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.LookupInRequest"><span title="couchbase.kv.v1.LookupInRequest">couchbase.kv.v1.LookupInRequest</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        operation
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.LookupInRequest.Spec.Operation">
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.LookupInRequest.Spec.Operation"><span title="couchbase.kv.v1.LookupInRequest.Spec.Operation">couchbase.kv.v1.LookupInRequest.Spec.Operation</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        path
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        flags
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.LookupInRequest.Spec.Flags">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.LookupInRequest.Spec.Flags"><span title="couchbase.kv.v1.LookupInRequest.Spec.Flags">couchbase.kv.v1.LookupInRequest.Spec.Flags</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.LookupInResponse.Spec">
+  <span>
+    <a href="#message-couchbase.kv.v1.LookupInResponse.Spec" title="couchbase.kv.v1.LookupInResponse.Spec">message Spec</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.LookupInResponse"><span title="couchbase.kv.v1.LookupInResponse">couchbase.kv.v1.LookupInResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        status
+      </td>
+      <td>
+        <code title="google.rpc.Status">
+          
+          <span>google.rpc.Status</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        content
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.MutateInRequest.Spec">
+  <span>
+    <a href="#message-couchbase.kv.v1.MutateInRequest.Spec" title="couchbase.kv.v1.MutateInRequest.Spec">message Spec</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutateInRequest"><span title="couchbase.kv.v1.MutateInRequest">couchbase.kv.v1.MutateInRequest</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        operation
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutateInRequest.Spec.Operation">
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.MutateInRequest.Spec.Operation"><span title="couchbase.kv.v1.MutateInRequest.Spec.Operation">couchbase.kv.v1.MutateInRequest.Spec.Operation</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        path
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        content
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        flags
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutateInRequest.Spec.Flags">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutateInRequest.Spec.Flags"><span title="couchbase.kv.v1.MutateInRequest.Spec.Flags">couchbase.kv.v1.MutateInRequest.Spec.Flags</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.MutateInResponse.Spec">
+  <span>
+    <a href="#message-couchbase.kv.v1.MutateInResponse.Spec" title="couchbase.kv.v1.MutateInResponse.Spec">message Spec</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutateInResponse"><span title="couchbase.kv.v1.MutateInResponse">couchbase.kv.v1.MutateInResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        content
+      </td>
+      <td>
+        <code title="bytes">
+          
+            optional
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.TouchRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.TouchRequest" title="couchbase.kv.v1.TouchRequest">message TouchRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof expiry</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            5
+          </td>
+          <td>
+            expiry_time
+          </td>
+          <td>
+            <code title="google.protobuf.Timestamp">
+              
+              <span>google.protobuf.Timestamp</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            6
+          </td>
+          <td>
+            expiry_secs
+          </td>
+          <td>
+            <code title="uint32">
+              
+              <span>uint32</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.TouchResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.TouchResponse" title="couchbase.kv.v1.TouchResponse">message TouchResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        mutation_token
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutationToken">
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutationToken"><span title="couchbase.kv.v1.MutationToken">couchbase.kv.v1.MutationToken</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.UnlockRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.UnlockRequest" title="couchbase.kv.v1.UnlockRequest">message UnlockRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.UnlockResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.UnlockResponse" title="couchbase.kv.v1.UnlockResponse">message UnlockResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.UpsertRequest">
+  <span>
+    <a href="#message-couchbase.kv.v1.UpsertRequest" title="couchbase.kv.v1.UpsertRequest">message UpsertRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        durability_level
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.DurabilityLevel">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.DurabilityLevel"><span title="couchbase.kv.v1.DurabilityLevel">couchbase.kv.v1.DurabilityLevel</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>11</td>
+      <td>
+        content_flags
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>12</td>
+      <td>
+        preserve_expiry_on_existing
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof content</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            5
+          </td>
+          <td>
+            content_uncompressed
+          </td>
+          <td>
+            <code title="bytes">
+              
+              <span>bytes</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            13
+          </td>
+          <td>
+            content_compressed
+          </td>
+          <td>
+            <code title="bytes">
+              
+              <span>bytes</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof expiry</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            7
+          </td>
+          <td>
+            expiry_time
+          </td>
+          <td>
+            <code title="google.protobuf.Timestamp">
+              
+              <span>google.protobuf.Timestamp</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            10
+          </td>
+          <td>
+            expiry_secs
+          </td>
+          <td>
+            <code title="uint32">
+              
+              <span>uint32</span>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.kv.v1.UpsertResponse">
+  <span>
+    <a href="#message-couchbase.kv.v1.UpsertResponse" title="couchbase.kv.v1.UpsertResponse">message UpsertResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        mutation_token
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutationToken">
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutationToken"><span title="couchbase.kv.v1.MutationToken">couchbase.kv.v1.MutationToken</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Enums
+    </h3>
+
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.kv.v1.CompressionEnabled">
+  <a href="#enum-couchbase.kv.v1.CompressionEnabled" title="couchbase.kv.v1.CompressionEnabled">enum CompressionEnabled</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>COMPRESSION_ENABLED_OPTIONAL</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>COMPRESSION_ENABLED_ALWAYS</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.kv.v1.DurabilityLevel">
+  <a href="#enum-couchbase.kv.v1.DurabilityLevel" title="couchbase.kv.v1.DurabilityLevel">enum DurabilityLevel</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>DURABILITY_LEVEL_MAJORITY</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>DURABILITY_LEVEL_MAJORITY_AND_PERSIST_TO_ACTIVE</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>DURABILITY_LEVEL_PERSIST_TO_MAJORITY</code></td>
+      <td>2</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.kv.v1.LookupInRequest.Spec.Operation">
+  <a href="#enum-couchbase.kv.v1.LookupInRequest.Spec.Operation" title="couchbase.kv.v1.LookupInRequest.Spec.Operation">enum Operation</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>OPERATION_GET</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>OPERATION_EXISTS</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>OPERATION_COUNT</code></td>
+      <td>2</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.kv.v1.MutateInRequest.Spec.Operation">
+  <a href="#enum-couchbase.kv.v1.MutateInRequest.Spec.Operation" title="couchbase.kv.v1.MutateInRequest.Spec.Operation">enum Operation</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>OPERATION_INSERT</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>OPERATION_UPSERT</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>OPERATION_REPLACE</code></td>
+      <td>2</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>OPERATION_REMOVE</code></td>
+      <td>3</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>OPERATION_ARRAY_APPEND</code></td>
+      <td>4</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>OPERATION_ARRAY_PREPEND</code></td>
+      <td>5</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>OPERATION_ARRAY_INSERT</code></td>
+      <td>6</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>OPERATION_ARRAY_ADD_UNIQUE</code></td>
+      <td>7</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>OPERATION_COUNTER</code></td>
+      <td>8</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.kv.v1.MutateInRequest.StoreSemantic">
+  <a href="#enum-couchbase.kv.v1.MutateInRequest.StoreSemantic" title="couchbase.kv.v1.MutateInRequest.StoreSemantic">enum StoreSemantic</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>STORE_SEMANTIC_REPLACE</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>STORE_SEMANTIC_UPSERT</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>STORE_SEMANTIC_INSERT</code></td>
+      <td>2</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+
+  
+
+</div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        
+        <p>Built with <strong><a href="https://github.com/markvincze/sabledocs" target="_blank">sabledocs</a></strong>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

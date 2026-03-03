@@ -1,0 +1,2544 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Protostellar API Reference</title>
+    <link rel="stylesheet" href="static/mystyles.css" />
+    <script src="static/fontawesome.js"></script>
+    <script src="static/lunr.js"></script>
+    <script src="static/theme.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="level pt-6 mb-5 pb-2 bottom-border">
+        <div class="level-left">
+          <p class="level-item has-text-centered is-size-3 has-text-weight-medium">
+            <a class="link is-info" href="index.html">
+              Protostellar API Reference
+            </a>
+          </p>
+        </div>
+
+        <div class="level-right">
+          
+          <form action="search.html" class="mr-2 has-text-centered">
+            <input type="text" name="query" class="input mr-3 navbar-search-query-input" placeholder="Search">
+            <input type="submit" class="button is-primary mr-5" value="Search" />
+          </form>
+          
+
+          <p class="level-item has-text-centered is-size-5">
+            <a href="" class="link is-info mr-5" target="_blank">
+              
+              <span>Source</span>
+            </a>
+
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite" type="button">
+              <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <mask class="moon" id="moon-mask">
+                  <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                  <circle cx="24" cy="10" r="6" fill="black" />
+                </mask>
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                <g class="sun-beams" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+              </svg>
+            </button>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <div id="main-content" class="container mb-6">
+  <p class="mb-2">
+    <a style="font-size: 0.9em" href="index.html">← Back to packages</a>
+  </p>
+  <h3 class="title is-3">
+    
+    Package <code>couchbase.admin.search.v1</code>
+    
+  </h3>
+
+  <div class="block">
+    
+    <p>
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService">
+        <span class="tag" style="min-width: 6em">Service</span>
+        <code>SearchAdminService</code> 
+      </a>
+    </p>
+    
+
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.AllowIndexQueryingRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>AllowIndexQueryingRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.AllowIndexQueryingResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>AllowIndexQueryingResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.AnalyzeDocumentRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>AnalyzeDocumentRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.AnalyzeDocumentResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>AnalyzeDocumentResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.CreateIndexRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreateIndexRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.CreateIndexResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreateIndexResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.DeleteIndexRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DeleteIndexRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.DeleteIndexResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DeleteIndexResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.DisallowIndexQueryingRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DisallowIndexQueryingRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.DisallowIndexQueryingResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DisallowIndexQueryingResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.FreezeIndexPlanRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>FreezeIndexPlanRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.FreezeIndexPlanResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>FreezeIndexPlanResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.GetIndexRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetIndexRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.GetIndexResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetIndexResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.GetIndexedDocumentsCountRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetIndexedDocumentsCountRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.GetIndexedDocumentsCountResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetIndexedDocumentsCountResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.Index">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Index</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.ListIndexesRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ListIndexesRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.ListIndexesResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ListIndexesResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+    
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.PauseIndexIngestRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>PauseIndexIngestRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.PauseIndexIngestResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>PauseIndexIngestResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+    
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.ResumeIndexIngestRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ResumeIndexIngestRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.ResumeIndexIngestResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ResumeIndexIngestResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+    
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.UnfreezeIndexPlanRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UnfreezeIndexPlanRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.UnfreezeIndexPlanResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UnfreezeIndexPlanResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.UpdateIndexRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UpdateIndexRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.search.v1.UpdateIndexResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UpdateIndexResponse</code> 
+        </a>
+      </p>
+      
+    
+
+    
+  </div>
+
+  <div class="block">
+      
+  </div>
+
+  
+
+  <div class="block">
+    <h3 class="title is-3">
+      Services
+    </h3>
+
+    
+    <div>
+      
+
+<h4 class="title is-4 type-heading" id="service-couchbase.admin.search.v1.SearchAdminService">
+  <a href="#service-couchbase.admin.search.v1.SearchAdminService" title="couchbase.admin.search.v1.SearchAdminService">service SearchAdminService</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.search.v1.SearchAdminService-GetIndex">
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService-GetIndex">
+        rpc <code>GetIndex</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.GetIndexRequest"><span title="couchbase.admin.search.v1.GetIndexRequest">couchbase.admin.search.v1.GetIndexRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.GetIndexResponse"><span title="couchbase.admin.search.v1.GetIndexResponse">couchbase.admin.search.v1.GetIndexResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.search.v1.SearchAdminService-ListIndexes">
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService-ListIndexes">
+        rpc <code>ListIndexes</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.ListIndexesRequest"><span title="couchbase.admin.search.v1.ListIndexesRequest">couchbase.admin.search.v1.ListIndexesRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.ListIndexesResponse"><span title="couchbase.admin.search.v1.ListIndexesResponse">couchbase.admin.search.v1.ListIndexesResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.search.v1.SearchAdminService-CreateIndex">
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService-CreateIndex">
+        rpc <code>CreateIndex</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.CreateIndexRequest"><span title="couchbase.admin.search.v1.CreateIndexRequest">couchbase.admin.search.v1.CreateIndexRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.CreateIndexResponse"><span title="couchbase.admin.search.v1.CreateIndexResponse">couchbase.admin.search.v1.CreateIndexResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.search.v1.SearchAdminService-UpdateIndex">
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService-UpdateIndex">
+        rpc <code>UpdateIndex</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.UpdateIndexRequest"><span title="couchbase.admin.search.v1.UpdateIndexRequest">couchbase.admin.search.v1.UpdateIndexRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.UpdateIndexResponse"><span title="couchbase.admin.search.v1.UpdateIndexResponse">couchbase.admin.search.v1.UpdateIndexResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.search.v1.SearchAdminService-DeleteIndex">
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService-DeleteIndex">
+        rpc <code>DeleteIndex</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.DeleteIndexRequest"><span title="couchbase.admin.search.v1.DeleteIndexRequest">couchbase.admin.search.v1.DeleteIndexRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.DeleteIndexResponse"><span title="couchbase.admin.search.v1.DeleteIndexResponse">couchbase.admin.search.v1.DeleteIndexResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.search.v1.SearchAdminService-AnalyzeDocument">
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService-AnalyzeDocument">
+        rpc <code>AnalyzeDocument</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.AnalyzeDocumentRequest"><span title="couchbase.admin.search.v1.AnalyzeDocumentRequest">couchbase.admin.search.v1.AnalyzeDocumentRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.AnalyzeDocumentResponse"><span title="couchbase.admin.search.v1.AnalyzeDocumentResponse">couchbase.admin.search.v1.AnalyzeDocumentResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.search.v1.SearchAdminService-GetIndexedDocumentsCount">
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService-GetIndexedDocumentsCount">
+        rpc <code>GetIndexedDocumentsCount</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.GetIndexedDocumentsCountRequest"><span title="couchbase.admin.search.v1.GetIndexedDocumentsCountRequest">couchbase.admin.search.v1.GetIndexedDocumentsCountRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.GetIndexedDocumentsCountResponse"><span title="couchbase.admin.search.v1.GetIndexedDocumentsCountResponse">couchbase.admin.search.v1.GetIndexedDocumentsCountResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.search.v1.SearchAdminService-PauseIndexIngest">
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService-PauseIndexIngest">
+        rpc <code>PauseIndexIngest</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.PauseIndexIngestRequest"><span title="couchbase.admin.search.v1.PauseIndexIngestRequest">couchbase.admin.search.v1.PauseIndexIngestRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.PauseIndexIngestResponse"><span title="couchbase.admin.search.v1.PauseIndexIngestResponse">couchbase.admin.search.v1.PauseIndexIngestResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.search.v1.SearchAdminService-ResumeIndexIngest">
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService-ResumeIndexIngest">
+        rpc <code>ResumeIndexIngest</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.ResumeIndexIngestRequest"><span title="couchbase.admin.search.v1.ResumeIndexIngestRequest">couchbase.admin.search.v1.ResumeIndexIngestRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.ResumeIndexIngestResponse"><span title="couchbase.admin.search.v1.ResumeIndexIngestResponse">couchbase.admin.search.v1.ResumeIndexIngestResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.search.v1.SearchAdminService-AllowIndexQuerying">
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService-AllowIndexQuerying">
+        rpc <code>AllowIndexQuerying</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.AllowIndexQueryingRequest"><span title="couchbase.admin.search.v1.AllowIndexQueryingRequest">couchbase.admin.search.v1.AllowIndexQueryingRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.AllowIndexQueryingResponse"><span title="couchbase.admin.search.v1.AllowIndexQueryingResponse">couchbase.admin.search.v1.AllowIndexQueryingResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.search.v1.SearchAdminService-DisallowIndexQuerying">
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService-DisallowIndexQuerying">
+        rpc <code>DisallowIndexQuerying</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.DisallowIndexQueryingRequest"><span title="couchbase.admin.search.v1.DisallowIndexQueryingRequest">couchbase.admin.search.v1.DisallowIndexQueryingRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.DisallowIndexQueryingResponse"><span title="couchbase.admin.search.v1.DisallowIndexQueryingResponse">couchbase.admin.search.v1.DisallowIndexQueryingResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.search.v1.SearchAdminService-FreezeIndexPlan">
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService-FreezeIndexPlan">
+        rpc <code>FreezeIndexPlan</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.FreezeIndexPlanRequest"><span title="couchbase.admin.search.v1.FreezeIndexPlanRequest">couchbase.admin.search.v1.FreezeIndexPlanRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.FreezeIndexPlanResponse"><span title="couchbase.admin.search.v1.FreezeIndexPlanResponse">couchbase.admin.search.v1.FreezeIndexPlanResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.search.v1.SearchAdminService-UnfreezeIndexPlan">
+      <a href="#service-couchbase.admin.search.v1.SearchAdminService-UnfreezeIndexPlan">
+        rpc <code>UnfreezeIndexPlan</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.UnfreezeIndexPlanRequest"><span title="couchbase.admin.search.v1.UnfreezeIndexPlanRequest">couchbase.admin.search.v1.UnfreezeIndexPlanRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.UnfreezeIndexPlanResponse"><span title="couchbase.admin.search.v1.UnfreezeIndexPlanResponse">couchbase.admin.search.v1.UnfreezeIndexPlanResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+ 
+    </div>
+    
+  </div>
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Messages
+    </h3>
+
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.AllowIndexQueryingRequest">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.AllowIndexQueryingRequest" title="couchbase.admin.search.v1.AllowIndexQueryingRequest">message AllowIndexQueryingRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.AllowIndexQueryingResponse">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.AllowIndexQueryingResponse" title="couchbase.admin.search.v1.AllowIndexQueryingResponse">message AllowIndexQueryingResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.AnalyzeDocumentRequest">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.AnalyzeDocumentRequest" title="couchbase.admin.search.v1.AnalyzeDocumentRequest">message AnalyzeDocumentRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        doc
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.AnalyzeDocumentResponse">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.AnalyzeDocumentResponse" title="couchbase.admin.search.v1.AnalyzeDocumentResponse">message AnalyzeDocumentResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        status
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        analyzed
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.CreateIndexRequest">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.CreateIndexRequest" title="couchbase.admin.search.v1.CreateIndexRequest">message CreateIndexRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>CreateIndexRequest does not use Index because of the uuid field.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        params
+      </td>
+      <td>
+        <code title="map&lt;string, bytes&gt;">
+          
+          <span>map&lt;string, bytes&gt;</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        plan_params
+      </td>
+      <td>
+        <code title="map&lt;string, bytes&gt;">
+          
+          <span>map&lt;string, bytes&gt;</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        prev_index_uuid
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        source_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        source_params
+      </td>
+      <td>
+        <code title="map&lt;string, bytes&gt;">
+          
+          <span>map&lt;string, bytes&gt;</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        source_type
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        source_uuid
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        type
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>11</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.CreateIndexResponse">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.CreateIndexResponse" title="couchbase.admin.search.v1.CreateIndexResponse">message CreateIndexResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.DeleteIndexRequest">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.DeleteIndexRequest" title="couchbase.admin.search.v1.DeleteIndexRequest">message DeleteIndexRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.DeleteIndexResponse">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.DeleteIndexResponse" title="couchbase.admin.search.v1.DeleteIndexResponse">message DeleteIndexResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.DisallowIndexQueryingRequest">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.DisallowIndexQueryingRequest" title="couchbase.admin.search.v1.DisallowIndexQueryingRequest">message DisallowIndexQueryingRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.DisallowIndexQueryingResponse">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.DisallowIndexQueryingResponse" title="couchbase.admin.search.v1.DisallowIndexQueryingResponse">message DisallowIndexQueryingResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.FreezeIndexPlanRequest">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.FreezeIndexPlanRequest" title="couchbase.admin.search.v1.FreezeIndexPlanRequest">message FreezeIndexPlanRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.FreezeIndexPlanResponse">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.FreezeIndexPlanResponse" title="couchbase.admin.search.v1.FreezeIndexPlanResponse">message FreezeIndexPlanResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.GetIndexRequest">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.GetIndexRequest" title="couchbase.admin.search.v1.GetIndexRequest">message GetIndexRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.GetIndexResponse">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.GetIndexResponse" title="couchbase.admin.search.v1.GetIndexResponse">message GetIndexResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        index
+      </td>
+      <td>
+        <code title="couchbase.admin.search.v1.Index">
+          
+          <a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.Index"><span title="couchbase.admin.search.v1.Index">couchbase.admin.search.v1.Index</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.GetIndexedDocumentsCountRequest">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.GetIndexedDocumentsCountRequest" title="couchbase.admin.search.v1.GetIndexedDocumentsCountRequest">message GetIndexedDocumentsCountRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.GetIndexedDocumentsCountResponse">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.GetIndexedDocumentsCountResponse" title="couchbase.admin.search.v1.GetIndexedDocumentsCountResponse">message GetIndexedDocumentsCountResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        count
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.Index">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.Index" title="couchbase.admin.search.v1.Index">message Index</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        params
+      </td>
+      <td>
+        <code title="map&lt;string, bytes&gt;">
+          
+          <span>map&lt;string, bytes&gt;</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        plan_params
+      </td>
+      <td>
+        <code title="map&lt;string, bytes&gt;">
+          
+          <span>map&lt;string, bytes&gt;</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        source_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        source_params
+      </td>
+      <td>
+        <code title="map&lt;string, bytes&gt;">
+          
+          <span>map&lt;string, bytes&gt;</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        source_type
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        source_uuid
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        type
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        uuid
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.ListIndexesRequest">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.ListIndexesRequest" title="couchbase.admin.search.v1.ListIndexesRequest">message ListIndexesRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.ListIndexesResponse">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.ListIndexesResponse" title="couchbase.admin.search.v1.ListIndexesResponse">message ListIndexesResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        indexes
+      </td>
+      <td>
+        <code title="couchbase.admin.search.v1.Index">
+          
+            repeated
+          
+          <a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.Index"><span title="couchbase.admin.search.v1.Index">couchbase.admin.search.v1.Index</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+    
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.PauseIndexIngestRequest">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.PauseIndexIngestRequest" title="couchbase.admin.search.v1.PauseIndexIngestRequest">message PauseIndexIngestRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.PauseIndexIngestResponse">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.PauseIndexIngestResponse" title="couchbase.admin.search.v1.PauseIndexIngestResponse">message PauseIndexIngestResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+    
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.ResumeIndexIngestRequest">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.ResumeIndexIngestRequest" title="couchbase.admin.search.v1.ResumeIndexIngestRequest">message ResumeIndexIngestRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.ResumeIndexIngestResponse">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.ResumeIndexIngestResponse" title="couchbase.admin.search.v1.ResumeIndexIngestResponse">message ResumeIndexIngestResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+    
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.UnfreezeIndexPlanRequest">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.UnfreezeIndexPlanRequest" title="couchbase.admin.search.v1.UnfreezeIndexPlanRequest">message UnfreezeIndexPlanRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.UnfreezeIndexPlanResponse">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.UnfreezeIndexPlanResponse" title="couchbase.admin.search.v1.UnfreezeIndexPlanResponse">message UnfreezeIndexPlanResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.UpdateIndexRequest">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.UpdateIndexRequest" title="couchbase.admin.search.v1.UpdateIndexRequest">message UpdateIndexRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        index
+      </td>
+      <td>
+        <code title="couchbase.admin.search.v1.Index">
+          
+          <a href="couchbase.admin.search.v1.html#message-couchbase.admin.search.v1.Index"><span title="couchbase.admin.search.v1.Index">couchbase.admin.search.v1.Index</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.search.v1.UpdateIndexResponse">
+  <span>
+    <a href="#message-couchbase.admin.search.v1.UpdateIndexResponse" title="couchbase.admin.search.v1.UpdateIndexResponse">message UpdateIndexResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+
+  
+
+  
+
+</div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        
+        <p>Built with <strong><a href="https://github.com/markvincze/sabledocs" target="_blank">sabledocs</a></strong>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

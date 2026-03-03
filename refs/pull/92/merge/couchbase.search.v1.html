@@ -1,0 +1,5984 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Protostellar API Reference</title>
+    <link rel="stylesheet" href="static/mystyles.css" />
+    <script src="static/fontawesome.js"></script>
+    <script src="static/lunr.js"></script>
+    <script src="static/theme.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="level pt-6 mb-5 pb-2 bottom-border">
+        <div class="level-left">
+          <p class="level-item has-text-centered is-size-3 has-text-weight-medium">
+            <a class="link is-info" href="index.html">
+              Protostellar API Reference
+            </a>
+          </p>
+        </div>
+
+        <div class="level-right">
+          
+          <form action="search.html" class="mr-2 has-text-centered">
+            <input type="text" name="query" class="input mr-3 navbar-search-query-input" placeholder="Search">
+            <input type="submit" class="button is-primary mr-5" value="Search" />
+          </form>
+          
+
+          <p class="level-item has-text-centered is-size-5">
+            <a href="" class="link is-info mr-5" target="_blank">
+              
+              <span>Source</span>
+            </a>
+
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite" type="button">
+              <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <mask class="moon" id="moon-mask">
+                  <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                  <circle cx="24" cy="10" r="6" fill="black" />
+                </mask>
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                <g class="sun-beams" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+              </svg>
+            </button>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <div id="main-content" class="container mb-6">
+  <p class="mb-2">
+    <a style="font-size: 0.9em" href="index.html">← Back to packages</a>
+  </p>
+  <h3 class="title is-3">
+    
+    Package <code>couchbase.search.v1</code>
+    
+  </h3>
+
+  <div class="block">
+    
+    <p>
+      <a href="#service-couchbase.search.v1.SearchService">
+        <span class="tag" style="min-width: 6em">Service</span>
+        <code>SearchService</code> 
+      </a>
+    </p>
+    
+
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.BooleanFieldQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>BooleanFieldQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.BooleanQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>BooleanQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.ConjunctionQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ConjunctionQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.DateRange">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DateRange</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.DateRangeFacet">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DateRangeFacet</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryResponse.DateRangeFacetResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DateRangeFacetResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.DateRangeQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DateRangeQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryResponse.DateRangeResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DateRangeResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.DisjunctionQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DisjunctionQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.DocIdQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DocIdQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.Facet">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Facet</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryResponse.FacetResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>FacetResult</code> 
+        </a>
+      </p>
+      
+    
+      
+    
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.FieldSorting">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>FieldSorting</code> 
+        </a>
+      </p>
+      
+    
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryResponse.Fragment">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Fragment</code> 
+        </a>
+      </p>
+      
+    
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.GeoBoundingBoxQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GeoBoundingBoxQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.GeoDistanceQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GeoDistanceQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.GeoDistanceSorting">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GeoDistanceSorting</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.GeoPolygonQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GeoPolygonQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.IdSorting">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>IdSorting</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.KnnQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>KnnQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.LatLng">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>LatLng</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryResponse.Location">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Location</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.MatchAllQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>MatchAllQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.MatchNoneQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>MatchNoneQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.MatchPhraseQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>MatchPhraseQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.MatchQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>MatchQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryResponse.MetaData">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>MetaData</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.NumericRange">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>NumericRange</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.NumericRangeFacet">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>NumericRangeFacet</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryResponse.NumericRangeFacetResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>NumericRangeFacetResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.NumericRangeQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>NumericRangeQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryResponse.NumericRangeResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>NumericRangeResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.PhraseQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>PhraseQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.PrefixQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>PrefixQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.Query">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Query</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.QueryStringQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>QueryStringQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.RegexpQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>RegexpQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.ScoreSorting">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ScoreSorting</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryResponse.SearchMetrics">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>SearchMetrics</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>SearchQueryRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>SearchQueryResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryResponse.SearchQueryRow">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>SearchQueryRow</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.Sorting">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Sorting</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.TermFacet">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TermFacet</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryResponse.TermFacetResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TermFacetResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.TermQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TermQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.TermRangeQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TermRangeQuery</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.SearchQueryResponse.TermResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TermResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.search.v1.WildcardQuery">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>WildcardQuery</code> 
+        </a>
+      </p>
+      
+    
+
+    
+      <p>
+        <a href="#enum-couchbase.search.v1.SearchQueryRequest.HighlightStyle">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>HighlightStyle</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.search.v1.KnnOperator">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>KnnOperator</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.search.v1.MatchQuery.Operator">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>Operator</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.search.v1.SearchQueryRequest.ScanConsistency">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>ScanConsistency</code> 
+        </a>
+      </p>
+    
+  </div>
+
+  <div class="block">
+      
+  </div>
+
+  
+
+  <div class="block">
+    <h3 class="title is-3">
+      Services
+    </h3>
+
+    
+    <div>
+      
+
+<h4 class="title is-4 type-heading" id="service-couchbase.search.v1.SearchService">
+  <a href="#service-couchbase.search.v1.SearchService" title="couchbase.search.v1.SearchService">service SearchService</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.search.v1.SearchService-SearchQuery">
+      <a href="#service-couchbase.search.v1.SearchService-SearchQuery">
+        rpc <code>SearchQuery</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryRequest"><span title="couchbase.search.v1.SearchQueryRequest">couchbase.search.v1.SearchQueryRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse"><span title="couchbase.search.v1.SearchQueryResponse">couchbase.search.v1.SearchQueryResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+ 
+    </div>
+    
+  </div>
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Messages
+    </h3>
+
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.BooleanFieldQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.BooleanFieldQuery" title="couchbase.search.v1.BooleanFieldQuery">message BooleanFieldQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        value
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.BooleanQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.BooleanQuery" title="couchbase.search.v1.BooleanQuery">message BooleanQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        must
+      </td>
+      <td>
+        <code title="couchbase.search.v1.ConjunctionQuery">
+          
+            optional
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.ConjunctionQuery"><span title="couchbase.search.v1.ConjunctionQuery">couchbase.search.v1.ConjunctionQuery</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        must_not
+      </td>
+      <td>
+        <code title="couchbase.search.v1.DisjunctionQuery">
+          
+            optional
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.DisjunctionQuery"><span title="couchbase.search.v1.DisjunctionQuery">couchbase.search.v1.DisjunctionQuery</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        should
+      </td>
+      <td>
+        <code title="couchbase.search.v1.DisjunctionQuery">
+          
+            optional
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.DisjunctionQuery"><span title="couchbase.search.v1.DisjunctionQuery">couchbase.search.v1.DisjunctionQuery</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.ConjunctionQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.ConjunctionQuery" title="couchbase.search.v1.ConjunctionQuery">message ConjunctionQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        queries
+      </td>
+      <td>
+        <code title="couchbase.search.v1.Query">
+          
+            repeated
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.Query"><span title="couchbase.search.v1.Query">couchbase.search.v1.Query</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.DateRange">
+  <span>
+    <a href="#message-couchbase.search.v1.DateRange" title="couchbase.search.v1.DateRange">message DateRange</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        start
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        end
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.DateRangeFacet">
+  <span>
+    <a href="#message-couchbase.search.v1.DateRangeFacet" title="couchbase.search.v1.DateRangeFacet">message DateRangeFacet</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        size
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        date_ranges
+      </td>
+      <td>
+        <code title="couchbase.search.v1.DateRange">
+          
+            repeated
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.DateRange"><span title="couchbase.search.v1.DateRange">couchbase.search.v1.DateRange</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryResponse.DateRangeFacetResult">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryResponse.DateRangeFacetResult" title="couchbase.search.v1.SearchQueryResponse.DateRangeFacetResult">message DateRangeFacetResult</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse"><span title="couchbase.search.v1.SearchQueryResponse">couchbase.search.v1.SearchQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        total
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        missing
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        other
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        date_ranges
+      </td>
+      <td>
+        <code title="couchbase.search.v1.SearchQueryResponse.DateRangeResult">
+          
+            repeated
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse.DateRangeResult"><span title="couchbase.search.v1.SearchQueryResponse.DateRangeResult">couchbase.search.v1.SearchQueryResponse.DateRangeResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.DateRangeQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.DateRangeQuery" title="couchbase.search.v1.DateRangeQuery">message DateRangeQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        date_time_parser
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        start_date
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        end_date
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryResponse.DateRangeResult">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryResponse.DateRangeResult" title="couchbase.search.v1.SearchQueryResponse.DateRangeResult">message DateRangeResult</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse"><span title="couchbase.search.v1.SearchQueryResponse">couchbase.search.v1.SearchQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        size
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        start
+      </td>
+      <td>
+        <code title="google.protobuf.Timestamp">
+          
+          <span>google.protobuf.Timestamp</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        end
+      </td>
+      <td>
+        <code title="google.protobuf.Timestamp">
+          
+          <span>google.protobuf.Timestamp</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.DisjunctionQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.DisjunctionQuery" title="couchbase.search.v1.DisjunctionQuery">message DisjunctionQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        queries
+      </td>
+      <td>
+        <code title="couchbase.search.v1.Query">
+          
+            repeated
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.Query"><span title="couchbase.search.v1.Query">couchbase.search.v1.Query</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        minimum
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.DocIdQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.DocIdQuery" title="couchbase.search.v1.DocIdQuery">message DocIdQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        ids
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.Facet">
+  <span>
+    <a href="#message-couchbase.search.v1.Facet" title="couchbase.search.v1.Facet">message Facet</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof facet</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            1
+          </td>
+          <td>
+            date_range_facet
+          </td>
+          <td>
+            <code title="couchbase.search.v1.DateRangeFacet">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.DateRangeFacet"><span title="couchbase.search.v1.DateRangeFacet">couchbase.search.v1.DateRangeFacet</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            2
+          </td>
+          <td>
+            numeric_range_facet
+          </td>
+          <td>
+            <code title="couchbase.search.v1.NumericRangeFacet">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.NumericRangeFacet"><span title="couchbase.search.v1.NumericRangeFacet">couchbase.search.v1.NumericRangeFacet</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            3
+          </td>
+          <td>
+            term_facet
+          </td>
+          <td>
+            <code title="couchbase.search.v1.TermFacet">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.TermFacet"><span title="couchbase.search.v1.TermFacet">couchbase.search.v1.TermFacet</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryResponse.FacetResult">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryResponse.FacetResult" title="couchbase.search.v1.SearchQueryResponse.FacetResult">message FacetResult</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse"><span title="couchbase.search.v1.SearchQueryResponse">couchbase.search.v1.SearchQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof search_facet</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            1
+          </td>
+          <td>
+            term_facet
+          </td>
+          <td>
+            <code title="couchbase.search.v1.SearchQueryResponse.TermFacetResult">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse.TermFacetResult"><span title="couchbase.search.v1.SearchQueryResponse.TermFacetResult">couchbase.search.v1.SearchQueryResponse.TermFacetResult</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            2
+          </td>
+          <td>
+            date_range_facet
+          </td>
+          <td>
+            <code title="couchbase.search.v1.SearchQueryResponse.DateRangeFacetResult">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse.DateRangeFacetResult"><span title="couchbase.search.v1.SearchQueryResponse.DateRangeFacetResult">couchbase.search.v1.SearchQueryResponse.DateRangeFacetResult</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            3
+          </td>
+          <td>
+            numeric_range_facet
+          </td>
+          <td>
+            <code title="couchbase.search.v1.SearchQueryResponse.NumericRangeFacetResult">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse.NumericRangeFacetResult"><span title="couchbase.search.v1.SearchQueryResponse.NumericRangeFacetResult">couchbase.search.v1.SearchQueryResponse.NumericRangeFacetResult</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+    
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.FieldSorting">
+  <span>
+    <a href="#message-couchbase.search.v1.FieldSorting" title="couchbase.search.v1.FieldSorting">message FieldSorting</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        descending
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        missing
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        mode
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        type
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryResponse.Fragment">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryResponse.Fragment" title="couchbase.search.v1.SearchQueryResponse.Fragment">message Fragment</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse"><span title="couchbase.search.v1.SearchQueryResponse">couchbase.search.v1.SearchQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        content
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.GeoBoundingBoxQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.GeoBoundingBoxQuery" title="couchbase.search.v1.GeoBoundingBoxQuery">message GeoBoundingBoxQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        top_left
+      </td>
+      <td>
+        <code title="couchbase.search.v1.LatLng">
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.LatLng"><span title="couchbase.search.v1.LatLng">couchbase.search.v1.LatLng</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        bottom_right
+      </td>
+      <td>
+        <code title="couchbase.search.v1.LatLng">
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.LatLng"><span title="couchbase.search.v1.LatLng">couchbase.search.v1.LatLng</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.GeoDistanceQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.GeoDistanceQuery" title="couchbase.search.v1.GeoDistanceQuery">message GeoDistanceQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        center
+      </td>
+      <td>
+        <code title="couchbase.search.v1.LatLng">
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.LatLng"><span title="couchbase.search.v1.LatLng">couchbase.search.v1.LatLng</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        distance
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.GeoDistanceSorting">
+  <span>
+    <a href="#message-couchbase.search.v1.GeoDistanceSorting" title="couchbase.search.v1.GeoDistanceSorting">message GeoDistanceSorting</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        descending
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        center
+      </td>
+      <td>
+        <code title="couchbase.search.v1.LatLng">
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.LatLng"><span title="couchbase.search.v1.LatLng">couchbase.search.v1.LatLng</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        unit
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.GeoPolygonQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.GeoPolygonQuery" title="couchbase.search.v1.GeoPolygonQuery">message GeoPolygonQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        vertices
+      </td>
+      <td>
+        <code title="couchbase.search.v1.LatLng">
+          
+            repeated
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.LatLng"><span title="couchbase.search.v1.LatLng">couchbase.search.v1.LatLng</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.IdSorting">
+  <span>
+    <a href="#message-couchbase.search.v1.IdSorting" title="couchbase.search.v1.IdSorting">message IdSorting</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        descending
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.KnnQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.KnnQuery" title="couchbase.search.v1.KnnQuery">message KnnQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        k
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        vector
+      </td>
+      <td>
+        <code title="float">
+          
+            repeated
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.LatLng">
+  <span>
+    <a href="#message-couchbase.search.v1.LatLng" title="couchbase.search.v1.LatLng">message LatLng</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        latitude
+      </td>
+      <td>
+        <code title="double">
+          
+          <span>double</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        longitude
+      </td>
+      <td>
+        <code title="double">
+          
+          <span>double</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryResponse.Location">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryResponse.Location" title="couchbase.search.v1.SearchQueryResponse.Location">message Location</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse"><span title="couchbase.search.v1.SearchQueryResponse">couchbase.search.v1.SearchQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        term
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        position
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        start
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        end
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        array_positions
+      </td>
+      <td>
+        <code title="uint32">
+          
+            repeated
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.MatchAllQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.MatchAllQuery" title="couchbase.search.v1.MatchAllQuery">message MatchAllQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.MatchNoneQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.MatchNoneQuery" title="couchbase.search.v1.MatchNoneQuery">message MatchNoneQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.MatchPhraseQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.MatchPhraseQuery" title="couchbase.search.v1.MatchPhraseQuery">message MatchPhraseQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        phrase
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        analyzer
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.MatchQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.MatchQuery" title="couchbase.search.v1.MatchQuery">message MatchQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        value
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        analyzer
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        fuzziness
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        operator
+      </td>
+      <td>
+        <code title="couchbase.search.v1.MatchQuery.Operator">
+          
+            optional
+          
+          <a href="couchbase.search.v1.html#enum-couchbase.search.v1.MatchQuery.Operator"><span title="couchbase.search.v1.MatchQuery.Operator">couchbase.search.v1.MatchQuery.Operator</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        prefix_length
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryResponse.MetaData">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryResponse.MetaData" title="couchbase.search.v1.SearchQueryResponse.MetaData">message MetaData</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse"><span title="couchbase.search.v1.SearchQueryResponse">couchbase.search.v1.SearchQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        metrics
+      </td>
+      <td>
+        <code title="couchbase.search.v1.SearchQueryResponse.SearchMetrics">
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse.SearchMetrics"><span title="couchbase.search.v1.SearchQueryResponse.SearchMetrics">couchbase.search.v1.SearchQueryResponse.SearchMetrics</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        errors
+      </td>
+      <td>
+        <code title="map&lt;string, string&gt;">
+          
+          <span>map&lt;string, string&gt;</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.NumericRange">
+  <span>
+    <a href="#message-couchbase.search.v1.NumericRange" title="couchbase.search.v1.NumericRange">message NumericRange</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        min
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        max
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.NumericRangeFacet">
+  <span>
+    <a href="#message-couchbase.search.v1.NumericRangeFacet" title="couchbase.search.v1.NumericRangeFacet">message NumericRangeFacet</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        size
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        numeric_ranges
+      </td>
+      <td>
+        <code title="couchbase.search.v1.NumericRange">
+          
+            repeated
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.NumericRange"><span title="couchbase.search.v1.NumericRange">couchbase.search.v1.NumericRange</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryResponse.NumericRangeFacetResult">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryResponse.NumericRangeFacetResult" title="couchbase.search.v1.SearchQueryResponse.NumericRangeFacetResult">message NumericRangeFacetResult</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse"><span title="couchbase.search.v1.SearchQueryResponse">couchbase.search.v1.SearchQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        total
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        missing
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        other
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        numeric_ranges
+      </td>
+      <td>
+        <code title="couchbase.search.v1.SearchQueryResponse.NumericRangeResult">
+          
+            repeated
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse.NumericRangeResult"><span title="couchbase.search.v1.SearchQueryResponse.NumericRangeResult">couchbase.search.v1.SearchQueryResponse.NumericRangeResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.NumericRangeQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.NumericRangeQuery" title="couchbase.search.v1.NumericRangeQuery">message NumericRangeQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        min
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        max
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        inclusive_min
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        inclusive_max
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryResponse.NumericRangeResult">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryResponse.NumericRangeResult" title="couchbase.search.v1.SearchQueryResponse.NumericRangeResult">message NumericRangeResult</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse"><span title="couchbase.search.v1.SearchQueryResponse">couchbase.search.v1.SearchQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        size
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        min
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        max
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.PhraseQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.PhraseQuery" title="couchbase.search.v1.PhraseQuery">message PhraseQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        terms
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.PrefixQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.PrefixQuery" title="couchbase.search.v1.PrefixQuery">message PrefixQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        prefix
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.Query">
+  <span>
+    <a href="#message-couchbase.search.v1.Query" title="couchbase.search.v1.Query">message Query</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof query</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            1
+          </td>
+          <td>
+            boolean_field_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.BooleanFieldQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.BooleanFieldQuery"><span title="couchbase.search.v1.BooleanFieldQuery">couchbase.search.v1.BooleanFieldQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            2
+          </td>
+          <td>
+            boolean_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.BooleanQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.BooleanQuery"><span title="couchbase.search.v1.BooleanQuery">couchbase.search.v1.BooleanQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            3
+          </td>
+          <td>
+            conjunction_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.ConjunctionQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.ConjunctionQuery"><span title="couchbase.search.v1.ConjunctionQuery">couchbase.search.v1.ConjunctionQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            4
+          </td>
+          <td>
+            date_range_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.DateRangeQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.DateRangeQuery"><span title="couchbase.search.v1.DateRangeQuery">couchbase.search.v1.DateRangeQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            5
+          </td>
+          <td>
+            disjunction_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.DisjunctionQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.DisjunctionQuery"><span title="couchbase.search.v1.DisjunctionQuery">couchbase.search.v1.DisjunctionQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            6
+          </td>
+          <td>
+            doc_id_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.DocIdQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.DocIdQuery"><span title="couchbase.search.v1.DocIdQuery">couchbase.search.v1.DocIdQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            7
+          </td>
+          <td>
+            geo_bounding_box_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.GeoBoundingBoxQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.GeoBoundingBoxQuery"><span title="couchbase.search.v1.GeoBoundingBoxQuery">couchbase.search.v1.GeoBoundingBoxQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            8
+          </td>
+          <td>
+            geo_distance_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.GeoDistanceQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.GeoDistanceQuery"><span title="couchbase.search.v1.GeoDistanceQuery">couchbase.search.v1.GeoDistanceQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            9
+          </td>
+          <td>
+            geo_polygon_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.GeoPolygonQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.GeoPolygonQuery"><span title="couchbase.search.v1.GeoPolygonQuery">couchbase.search.v1.GeoPolygonQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            10
+          </td>
+          <td>
+            match_all_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.MatchAllQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.MatchAllQuery"><span title="couchbase.search.v1.MatchAllQuery">couchbase.search.v1.MatchAllQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            11
+          </td>
+          <td>
+            match_none_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.MatchNoneQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.MatchNoneQuery"><span title="couchbase.search.v1.MatchNoneQuery">couchbase.search.v1.MatchNoneQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            12
+          </td>
+          <td>
+            match_phrase_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.MatchPhraseQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.MatchPhraseQuery"><span title="couchbase.search.v1.MatchPhraseQuery">couchbase.search.v1.MatchPhraseQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            13
+          </td>
+          <td>
+            match_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.MatchQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.MatchQuery"><span title="couchbase.search.v1.MatchQuery">couchbase.search.v1.MatchQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            14
+          </td>
+          <td>
+            numeric_range_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.NumericRangeQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.NumericRangeQuery"><span title="couchbase.search.v1.NumericRangeQuery">couchbase.search.v1.NumericRangeQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            15
+          </td>
+          <td>
+            phrase_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.PhraseQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.PhraseQuery"><span title="couchbase.search.v1.PhraseQuery">couchbase.search.v1.PhraseQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            16
+          </td>
+          <td>
+            prefix_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.PrefixQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.PrefixQuery"><span title="couchbase.search.v1.PrefixQuery">couchbase.search.v1.PrefixQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            17
+          </td>
+          <td>
+            query_string_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.QueryStringQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.QueryStringQuery"><span title="couchbase.search.v1.QueryStringQuery">couchbase.search.v1.QueryStringQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            18
+          </td>
+          <td>
+            regexp_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.RegexpQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.RegexpQuery"><span title="couchbase.search.v1.RegexpQuery">couchbase.search.v1.RegexpQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            19
+          </td>
+          <td>
+            term_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.TermQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.TermQuery"><span title="couchbase.search.v1.TermQuery">couchbase.search.v1.TermQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            20
+          </td>
+          <td>
+            term_range_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.TermRangeQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.TermRangeQuery"><span title="couchbase.search.v1.TermRangeQuery">couchbase.search.v1.TermRangeQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            21
+          </td>
+          <td>
+            wildcard_query
+          </td>
+          <td>
+            <code title="couchbase.search.v1.WildcardQuery">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.WildcardQuery"><span title="couchbase.search.v1.WildcardQuery">couchbase.search.v1.WildcardQuery</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.QueryStringQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.QueryStringQuery" title="couchbase.search.v1.QueryStringQuery">message QueryStringQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        query_string
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.RegexpQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.RegexpQuery" title="couchbase.search.v1.RegexpQuery">message RegexpQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        regexp
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.ScoreSorting">
+  <span>
+    <a href="#message-couchbase.search.v1.ScoreSorting" title="couchbase.search.v1.ScoreSorting">message ScoreSorting</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        descending
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryResponse.SearchMetrics">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryResponse.SearchMetrics" title="couchbase.search.v1.SearchQueryResponse.SearchMetrics">message SearchMetrics</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse"><span title="couchbase.search.v1.SearchQueryResponse">couchbase.search.v1.SearchQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        execution_time
+      </td>
+      <td>
+        <code title="google.protobuf.Duration">
+          
+          <span>google.protobuf.Duration</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        total_rows
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        max_score
+      </td>
+      <td>
+        <code title="double">
+          
+          <span>double</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        total_partition_count
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        success_partition_count
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        error_partition_count
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryRequest">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryRequest" title="couchbase.search.v1.SearchQueryRequest">message SearchQueryRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        index_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        query
+      </td>
+      <td>
+        <code title="couchbase.search.v1.Query">
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.Query"><span title="couchbase.search.v1.Query">couchbase.search.v1.Query</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        scan_consistency
+      </td>
+      <td>
+        <code title="couchbase.search.v1.SearchQueryRequest.ScanConsistency">
+          
+          <a href="couchbase.search.v1.html#enum-couchbase.search.v1.SearchQueryRequest.ScanConsistency"><span title="couchbase.search.v1.SearchQueryRequest.ScanConsistency">couchbase.search.v1.SearchQueryRequest.ScanConsistency</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        limit
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        skip
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        include_explanation
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        highlight_style
+      </td>
+      <td>
+        <code title="couchbase.search.v1.SearchQueryRequest.HighlightStyle">
+          
+          <a href="couchbase.search.v1.html#enum-couchbase.search.v1.SearchQueryRequest.HighlightStyle"><span title="couchbase.search.v1.SearchQueryRequest.HighlightStyle">couchbase.search.v1.SearchQueryRequest.HighlightStyle</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        highlight_fields
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        fields
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>
+        sort
+      </td>
+      <td>
+        <code title="couchbase.search.v1.Sorting">
+          
+            repeated
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.Sorting"><span title="couchbase.search.v1.Sorting">couchbase.search.v1.Sorting</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>11</td>
+      <td>
+        disable_scoring
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>12</td>
+      <td>
+        collections
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>13</td>
+      <td>
+        include_locations
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>14</td>
+      <td>
+        facets
+      </td>
+      <td>
+        <code title="map&lt;string, Facet&gt;">
+          
+          <span>map&lt;string, Facet&gt;</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>15</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>16</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>17</td>
+      <td>
+        knn
+      </td>
+      <td>
+        <code title="couchbase.search.v1.KnnQuery">
+          
+            repeated
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.KnnQuery"><span title="couchbase.search.v1.KnnQuery">couchbase.search.v1.KnnQuery</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>18</td>
+      <td>
+        knn_operator
+      </td>
+      <td>
+        <code title="couchbase.search.v1.KnnOperator">
+          
+            optional
+          
+          <a href="couchbase.search.v1.html#enum-couchbase.search.v1.KnnOperator"><span title="couchbase.search.v1.KnnOperator">couchbase.search.v1.KnnOperator</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryResponse">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryResponse" title="couchbase.search.v1.SearchQueryResponse">message SearchQueryResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        hits
+      </td>
+      <td>
+        <code title="couchbase.search.v1.SearchQueryResponse.SearchQueryRow">
+          
+            repeated
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse.SearchQueryRow"><span title="couchbase.search.v1.SearchQueryResponse.SearchQueryRow">couchbase.search.v1.SearchQueryResponse.SearchQueryRow</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        facets
+      </td>
+      <td>
+        <code title="map&lt;string, FacetResult&gt;">
+          
+          <span>map&lt;string, FacetResult&gt;</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        meta_data
+      </td>
+      <td>
+        <code title="couchbase.search.v1.SearchQueryResponse.MetaData">
+          
+            optional
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse.MetaData"><span title="couchbase.search.v1.SearchQueryResponse.MetaData">couchbase.search.v1.SearchQueryResponse.MetaData</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryResponse.SearchQueryRow">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryResponse.SearchQueryRow" title="couchbase.search.v1.SearchQueryResponse.SearchQueryRow">message SearchQueryRow</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse"><span title="couchbase.search.v1.SearchQueryResponse">couchbase.search.v1.SearchQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        score
+      </td>
+      <td>
+        <code title="double">
+          
+          <span>double</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        index
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        explanation
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        locations
+      </td>
+      <td>
+        <code title="couchbase.search.v1.SearchQueryResponse.Location">
+          
+            repeated
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse.Location"><span title="couchbase.search.v1.SearchQueryResponse.Location">couchbase.search.v1.SearchQueryResponse.Location</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        fragments
+      </td>
+      <td>
+        <code title="map&lt;string, Fragment&gt;">
+          
+          <span>map&lt;string, Fragment&gt;</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        fields
+      </td>
+      <td>
+        <code title="map&lt;string, bytes&gt;">
+          
+          <span>map&lt;string, bytes&gt;</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.Sorting">
+  <span>
+    <a href="#message-couchbase.search.v1.Sorting" title="couchbase.search.v1.Sorting">message Sorting</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof sorting</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            1
+          </td>
+          <td>
+            field_sorting
+          </td>
+          <td>
+            <code title="couchbase.search.v1.FieldSorting">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.FieldSorting"><span title="couchbase.search.v1.FieldSorting">couchbase.search.v1.FieldSorting</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            2
+          </td>
+          <td>
+            geo_distance_sorting
+          </td>
+          <td>
+            <code title="couchbase.search.v1.GeoDistanceSorting">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.GeoDistanceSorting"><span title="couchbase.search.v1.GeoDistanceSorting">couchbase.search.v1.GeoDistanceSorting</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            3
+          </td>
+          <td>
+            id_sorting
+          </td>
+          <td>
+            <code title="couchbase.search.v1.IdSorting">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.IdSorting"><span title="couchbase.search.v1.IdSorting">couchbase.search.v1.IdSorting</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            4
+          </td>
+          <td>
+            score_sorting
+          </td>
+          <td>
+            <code title="couchbase.search.v1.ScoreSorting">
+              
+              <a href="couchbase.search.v1.html#message-couchbase.search.v1.ScoreSorting"><span title="couchbase.search.v1.ScoreSorting">couchbase.search.v1.ScoreSorting</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.TermFacet">
+  <span>
+    <a href="#message-couchbase.search.v1.TermFacet" title="couchbase.search.v1.TermFacet">message TermFacet</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        size
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryResponse.TermFacetResult">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryResponse.TermFacetResult" title="couchbase.search.v1.SearchQueryResponse.TermFacetResult">message TermFacetResult</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse"><span title="couchbase.search.v1.SearchQueryResponse">couchbase.search.v1.SearchQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        total
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        missing
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        other
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        terms
+      </td>
+      <td>
+        <code title="couchbase.search.v1.SearchQueryResponse.TermResult">
+          
+            repeated
+          
+          <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse.TermResult"><span title="couchbase.search.v1.SearchQueryResponse.TermResult">couchbase.search.v1.SearchQueryResponse.TermResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.TermQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.TermQuery" title="couchbase.search.v1.TermQuery">message TermQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        term
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        fuzziness
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        prefix_length
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.TermRangeQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.TermRangeQuery" title="couchbase.search.v1.TermRangeQuery">message TermRangeQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        min
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        max
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        inclusive_min
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        inclusive_max
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.SearchQueryResponse.TermResult">
+  <span>
+    <a href="#message-couchbase.search.v1.SearchQueryResponse.TermResult" title="couchbase.search.v1.SearchQueryResponse.TermResult">message TermResult</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.search.v1.html#message-couchbase.search.v1.SearchQueryResponse"><span title="couchbase.search.v1.SearchQueryResponse">couchbase.search.v1.SearchQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        size
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.search.v1.WildcardQuery">
+  <span>
+    <a href="#message-couchbase.search.v1.WildcardQuery" title="couchbase.search.v1.WildcardQuery">message WildcardQuery</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        boost
+      </td>
+      <td>
+        <code title="float">
+          
+            optional
+          
+          <span>float</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        wildcard
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Enums
+    </h3>
+
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.search.v1.SearchQueryRequest.HighlightStyle">
+  <a href="#enum-couchbase.search.v1.SearchQueryRequest.HighlightStyle" title="couchbase.search.v1.SearchQueryRequest.HighlightStyle">enum HighlightStyle</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>HIGHLIGHT_STYLE_DEFAULT</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>HIGHLIGHT_STYLE_HTML</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>HIGHLIGHT_STYLE_ANSI</code></td>
+      <td>2</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.search.v1.KnnOperator">
+  <a href="#enum-couchbase.search.v1.KnnOperator" title="couchbase.search.v1.KnnOperator">enum KnnOperator</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>KNN_OPERATOR_OR</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>KNN_OPERATOR_AND</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.search.v1.MatchQuery.Operator">
+  <a href="#enum-couchbase.search.v1.MatchQuery.Operator" title="couchbase.search.v1.MatchQuery.Operator">enum Operator</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>OPERATOR_OR</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>OPERATOR_AND</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.search.v1.SearchQueryRequest.ScanConsistency">
+  <a href="#enum-couchbase.search.v1.SearchQueryRequest.ScanConsistency" title="couchbase.search.v1.SearchQueryRequest.ScanConsistency">enum ScanConsistency</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>SCAN_CONSISTENCY_NOT_BOUNDED</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+
+  
+
+</div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        
+        <p>Built with <strong><a href="https://github.com/markvincze/sabledocs" target="_blank">sabledocs</a></strong>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

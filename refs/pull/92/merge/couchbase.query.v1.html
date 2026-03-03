@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Protostellar API Reference</title>
+    <link rel="stylesheet" href="static/mystyles.css" />
+    <script src="static/fontawesome.js"></script>
+    <script src="static/lunr.js"></script>
+    <script src="static/theme.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="level pt-6 mb-5 pb-2 bottom-border">
+        <div class="level-left">
+          <p class="level-item has-text-centered is-size-3 has-text-weight-medium">
+            <a class="link is-info" href="index.html">
+              Protostellar API Reference
+            </a>
+          </p>
+        </div>
+
+        <div class="level-right">
+          
+          <form action="search.html" class="mr-2 has-text-centered">
+            <input type="text" name="query" class="input mr-3 navbar-search-query-input" placeholder="Search">
+            <input type="submit" class="button is-primary mr-5" value="Search" />
+          </form>
+          
+
+          <p class="level-item has-text-centered is-size-5">
+            <a href="" class="link is-info mr-5" target="_blank">
+              
+              <span>Source</span>
+            </a>
+
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite" type="button">
+              <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <mask class="moon" id="moon-mask">
+                  <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                  <circle cx="24" cy="10" r="6" fill="black" />
+                </mask>
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                <g class="sun-beams" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+              </svg>
+            </button>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <div id="main-content" class="container mb-6">
+  <p class="mb-2">
+    <a style="font-size: 0.9em" href="index.html">← Back to packages</a>
+  </p>
+  <h3 class="title is-3">
+    
+    Package <code>couchbase.query.v1</code>
+    
+  </h3>
+
+  <div class="block">
+    
+    <p>
+      <a href="#service-couchbase.query.v1.QueryService">
+        <span class="tag" style="min-width: 6em">Service</span>
+        <code>QueryService</code> 
+      </a>
+    </p>
+    
+
+    
+      
+      <p>
+        <a href="#message-couchbase.query.v1.QueryResponse.MetaData">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>MetaData</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.query.v1.QueryResponse.MetaData.Metrics">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Metrics</code> 
+        </a>
+      </p>
+      
+    
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.query.v1.QueryRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>QueryRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.query.v1.QueryResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>QueryResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.query.v1.QueryRequest.TuningOptions">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TuningOptions</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.query.v1.QueryResponse.MetaData.Warning">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Warning</code> 
+        </a>
+      </p>
+      
+    
+
+    
+      <p>
+        <a href="#enum-couchbase.query.v1.QueryRequest.DurabilityLevel">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>DurabilityLevel</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.query.v1.QueryRequest.ProfileMode">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>ProfileMode</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.query.v1.QueryRequest.ScanConsistency">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>ScanConsistency</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.query.v1.QueryResponse.MetaData.Status">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>Status</code> 
+        </a>
+      </p>
+    
+  </div>
+
+  <div class="block">
+      
+  </div>
+
+  
+
+  <div class="block">
+    <h3 class="title is-3">
+      Services
+    </h3>
+
+    
+    <div>
+      
+
+<h4 class="title is-4 type-heading" id="service-couchbase.query.v1.QueryService">
+  <a href="#service-couchbase.query.v1.QueryService" title="couchbase.query.v1.QueryService">service QueryService</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.query.v1.QueryService-Query">
+      <a href="#service-couchbase.query.v1.QueryService-Query">
+        rpc <code>Query</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.query.v1.html#message-couchbase.query.v1.QueryRequest"><span title="couchbase.query.v1.QueryRequest">couchbase.query.v1.QueryRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.query.v1.html#message-couchbase.query.v1.QueryResponse"><span title="couchbase.query.v1.QueryResponse">couchbase.query.v1.QueryResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+ 
+    </div>
+    
+  </div>
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Messages
+    </h3>
+
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.query.v1.QueryResponse.MetaData">
+  <span>
+    <a href="#message-couchbase.query.v1.QueryResponse.MetaData" title="couchbase.query.v1.QueryResponse.MetaData">message MetaData</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.query.v1.html#message-couchbase.query.v1.QueryResponse"><span title="couchbase.query.v1.QueryResponse">couchbase.query.v1.QueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        request_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        client_context_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        metrics
+      </td>
+      <td>
+        <code title="couchbase.query.v1.QueryResponse.MetaData.Metrics">
+          
+            optional
+          
+          <a href="couchbase.query.v1.html#message-couchbase.query.v1.QueryResponse.MetaData.Metrics"><span title="couchbase.query.v1.QueryResponse.MetaData.Metrics">couchbase.query.v1.QueryResponse.MetaData.Metrics</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        status
+      </td>
+      <td>
+        <code title="couchbase.query.v1.QueryResponse.MetaData.Status">
+          
+          <a href="couchbase.query.v1.html#enum-couchbase.query.v1.QueryResponse.MetaData.Status"><span title="couchbase.query.v1.QueryResponse.MetaData.Status">couchbase.query.v1.QueryResponse.MetaData.Status</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        warnings
+      </td>
+      <td>
+        <code title="couchbase.query.v1.QueryResponse.MetaData.Warning">
+          
+            repeated
+          
+          <a href="couchbase.query.v1.html#message-couchbase.query.v1.QueryResponse.MetaData.Warning"><span title="couchbase.query.v1.QueryResponse.MetaData.Warning">couchbase.query.v1.QueryResponse.MetaData.Warning</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        profile
+      </td>
+      <td>
+        <code title="bytes">
+          
+            optional
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        signature
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.query.v1.QueryResponse.MetaData.Metrics">
+  <span>
+    <a href="#message-couchbase.query.v1.QueryResponse.MetaData.Metrics" title="couchbase.query.v1.QueryResponse.MetaData.Metrics">message Metrics</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.query.v1.html#message-couchbase.query.v1.QueryResponse.MetaData"><span title="couchbase.query.v1.QueryResponse.MetaData">couchbase.query.v1.QueryResponse.MetaData</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        elapsed_time
+      </td>
+      <td>
+        <code title="google.protobuf.Duration">
+          
+          <span>google.protobuf.Duration</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        execution_time
+      </td>
+      <td>
+        <code title="google.protobuf.Duration">
+          
+          <span>google.protobuf.Duration</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        result_count
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        result_size
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        mutation_count
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        sort_count
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        error_count
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        warning_count
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.query.v1.QueryRequest">
+  <span>
+    <a href="#message-couchbase.query.v1.QueryRequest" title="couchbase.query.v1.QueryRequest">message QueryRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        statement
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        read_only
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        prepared
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        tuning_options
+      </td>
+      <td>
+        <code title="couchbase.query.v1.QueryRequest.TuningOptions">
+          
+            optional
+          
+          <a href="couchbase.query.v1.html#message-couchbase.query.v1.QueryRequest.TuningOptions"><span title="couchbase.query.v1.QueryRequest.TuningOptions">couchbase.query.v1.QueryRequest.TuningOptions</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        client_context_id
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        scan_consistency
+      </td>
+      <td>
+        <code title="couchbase.query.v1.QueryRequest.ScanConsistency">
+          
+            optional
+          
+          <a href="couchbase.query.v1.html#enum-couchbase.query.v1.QueryRequest.ScanConsistency"><span title="couchbase.query.v1.QueryRequest.ScanConsistency">couchbase.query.v1.QueryRequest.ScanConsistency</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        positional_parameters
+      </td>
+      <td>
+        <code title="bytes">
+          
+            repeated
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>
+        named_parameters
+      </td>
+      <td>
+        <code title="map&lt;string, bytes&gt;">
+          
+          <span>map&lt;string, bytes&gt;</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>11</td>
+      <td>
+        flex_index
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>12</td>
+      <td>
+        preserve_expiry
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>13</td>
+      <td>
+        consistent_with
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.MutationToken">
+          
+            repeated
+          
+          <a href="couchbase.kv.v1.html#message-couchbase.kv.v1.MutationToken"><span title="couchbase.kv.v1.MutationToken">couchbase.kv.v1.MutationToken</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>14</td>
+      <td>
+        profile_mode
+      </td>
+      <td>
+        <code title="couchbase.query.v1.QueryRequest.ProfileMode">
+          
+            optional
+          
+          <a href="couchbase.query.v1.html#enum-couchbase.query.v1.QueryRequest.ProfileMode"><span title="couchbase.query.v1.QueryRequest.ProfileMode">couchbase.query.v1.QueryRequest.ProfileMode</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>15</td>
+      <td>
+        durability_level
+      </td>
+      <td>
+        <code title="couchbase.query.v1.QueryRequest.DurabilityLevel">
+          
+            optional
+          
+          <a href="couchbase.query.v1.html#enum-couchbase.query.v1.QueryRequest.DurabilityLevel"><span title="couchbase.query.v1.QueryRequest.DurabilityLevel">couchbase.query.v1.QueryRequest.DurabilityLevel</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.query.v1.QueryResponse">
+  <span>
+    <a href="#message-couchbase.query.v1.QueryResponse" title="couchbase.query.v1.QueryResponse">message QueryResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        rows
+      </td>
+      <td>
+        <code title="bytes">
+          
+            repeated
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        meta_data
+      </td>
+      <td>
+        <code title="couchbase.query.v1.QueryResponse.MetaData">
+          
+            optional
+          
+          <a href="couchbase.query.v1.html#message-couchbase.query.v1.QueryResponse.MetaData"><span title="couchbase.query.v1.QueryResponse.MetaData">couchbase.query.v1.QueryResponse.MetaData</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.query.v1.QueryRequest.TuningOptions">
+  <span>
+    <a href="#message-couchbase.query.v1.QueryRequest.TuningOptions" title="couchbase.query.v1.QueryRequest.TuningOptions">message TuningOptions</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.query.v1.html#message-couchbase.query.v1.QueryRequest"><span title="couchbase.query.v1.QueryRequest">couchbase.query.v1.QueryRequest</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        max_parallelism
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        pipeline_batch
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        pipeline_cap
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        scan_wait
+      </td>
+      <td>
+        <code title="google.protobuf.Duration">
+          
+            optional
+          
+          <span>google.protobuf.Duration</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        scan_cap
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        disable_metrics
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.query.v1.QueryResponse.MetaData.Warning">
+  <span>
+    <a href="#message-couchbase.query.v1.QueryResponse.MetaData.Warning" title="couchbase.query.v1.QueryResponse.MetaData.Warning">message Warning</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.query.v1.html#message-couchbase.query.v1.QueryResponse.MetaData"><span title="couchbase.query.v1.QueryResponse.MetaData">couchbase.query.v1.QueryResponse.MetaData</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        code
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        message
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Enums
+    </h3>
+
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.query.v1.QueryRequest.DurabilityLevel">
+  <a href="#enum-couchbase.query.v1.QueryRequest.DurabilityLevel" title="couchbase.query.v1.QueryRequest.DurabilityLevel">enum DurabilityLevel</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>DURABILITY_LEVEL_NONE</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>DURABILITY_LEVEL_MAJORITY</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>DURABILITY_LEVEL_MAJORITY_AND_PERSIST_TO_ACTIVE</code></td>
+      <td>2</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>DURABILITY_LEVEL_PERSIST_TO_MAJORITY</code></td>
+      <td>3</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.query.v1.QueryRequest.ProfileMode">
+  <a href="#enum-couchbase.query.v1.QueryRequest.ProfileMode" title="couchbase.query.v1.QueryRequest.ProfileMode">enum ProfileMode</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>PROFILE_MODE_OFF</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>PROFILE_MODE_PHASES</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>PROFILE_MODE_TIMINGS</code></td>
+      <td>2</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.query.v1.QueryRequest.ScanConsistency">
+  <a href="#enum-couchbase.query.v1.QueryRequest.ScanConsistency" title="couchbase.query.v1.QueryRequest.ScanConsistency">enum ScanConsistency</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>SCAN_CONSISTENCY_NOT_BOUNDED</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>SCAN_CONSISTENCY_REQUEST_PLUS</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.query.v1.QueryResponse.MetaData.Status">
+  <a href="#enum-couchbase.query.v1.QueryResponse.MetaData.Status" title="couchbase.query.v1.QueryResponse.MetaData.Status">enum Status</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>STATUS_RUNNING</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>STATUS_SUCCESS</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>STATUS_ERRORS</code></td>
+      <td>2</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>STATUS_COMPLETED</code></td>
+      <td>3</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>STATUS_STOPPED</code></td>
+      <td>4</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>STATUS_TIMEOUT</code></td>
+      <td>5</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>STATUS_CLOSED</code></td>
+      <td>6</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>STATUS_FATAL</code></td>
+      <td>7</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>STATUS_ABORTED</code></td>
+      <td>8</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>STATUS_UNKNOWN</code></td>
+      <td>9</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+
+  
+
+</div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        
+        <p>Built with <strong><a href="https://github.com/markvincze/sabledocs" target="_blank">sabledocs</a></strong>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

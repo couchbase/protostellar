@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Protostellar API Reference</title>
+    <link rel="stylesheet" href="static/mystyles.css" />
+    <script src="static/fontawesome.js"></script>
+    <script src="static/lunr.js"></script>
+    <script src="static/theme.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="level pt-6 mb-5 pb-2 bottom-border">
+        <div class="level-left">
+          <p class="level-item has-text-centered is-size-3 has-text-weight-medium">
+            <a class="link is-info" href="index.html">
+              Protostellar API Reference
+            </a>
+          </p>
+        </div>
+
+        <div class="level-right">
+          
+          <form action="search.html" class="mr-2 has-text-centered">
+            <input type="text" name="query" class="input mr-3 navbar-search-query-input" placeholder="Search">
+            <input type="submit" class="button is-primary mr-5" value="Search" />
+          </form>
+          
+
+          <p class="level-item has-text-centered is-size-5">
+            <a href="" class="link is-info mr-5" target="_blank">
+              
+              <span>Source</span>
+            </a>
+
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite" type="button">
+              <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <mask class="moon" id="moon-mask">
+                  <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                  <circle cx="24" cy="10" r="6" fill="black" />
+                </mask>
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                <g class="sun-beams" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+              </svg>
+            </button>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <div id="main-content" class="container mb-6">
+  <p class="mb-2">
+    <a style="font-size: 0.9em" href="index.html">← Back to packages</a>
+  </p>
+  <h3 class="title is-3">
+    
+    Package <code>couchbase.admin.collection.v1</code>
+    
+  </h3>
+
+  <div class="block">
+    
+    <p>
+      <a href="#service-couchbase.admin.collection.v1.CollectionAdminService">
+        <span class="tag" style="min-width: 6em">Service</span>
+        <code>CollectionAdminService</code> 
+      </a>
+    </p>
+    
+
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.ListCollectionsResponse.Collection">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Collection</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.CreateCollectionRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreateCollectionRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.CreateCollectionResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreateCollectionResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.CreateScopeRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreateScopeRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.CreateScopeResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreateScopeResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.DeleteCollectionRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DeleteCollectionRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.DeleteCollectionResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DeleteCollectionResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.DeleteScopeRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DeleteScopeRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.DeleteScopeResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DeleteScopeResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.ListCollectionsRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ListCollectionsRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.ListCollectionsResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ListCollectionsResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.ListCollectionsResponse.Scope">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Scope</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.UpdateCollectionRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UpdateCollectionRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.collection.v1.UpdateCollectionResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UpdateCollectionResponse</code> 
+        </a>
+      </p>
+      
+    
+
+    
+  </div>
+
+  <div class="block">
+      
+  </div>
+
+  
+
+  <div class="block">
+    <h3 class="title is-3">
+      Services
+    </h3>
+
+    
+    <div>
+      
+
+<h4 class="title is-4 type-heading" id="service-couchbase.admin.collection.v1.CollectionAdminService">
+  <a href="#service-couchbase.admin.collection.v1.CollectionAdminService" title="couchbase.admin.collection.v1.CollectionAdminService">service CollectionAdminService</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.collection.v1.CollectionAdminService-ListCollections">
+      <a href="#service-couchbase.admin.collection.v1.CollectionAdminService-ListCollections">
+        rpc <code>ListCollections</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.ListCollectionsRequest"><span title="couchbase.admin.collection.v1.ListCollectionsRequest">couchbase.admin.collection.v1.ListCollectionsRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.ListCollectionsResponse"><span title="couchbase.admin.collection.v1.ListCollectionsResponse">couchbase.admin.collection.v1.ListCollectionsResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.collection.v1.CollectionAdminService-CreateScope">
+      <a href="#service-couchbase.admin.collection.v1.CollectionAdminService-CreateScope">
+        rpc <code>CreateScope</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.CreateScopeRequest"><span title="couchbase.admin.collection.v1.CreateScopeRequest">couchbase.admin.collection.v1.CreateScopeRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.CreateScopeResponse"><span title="couchbase.admin.collection.v1.CreateScopeResponse">couchbase.admin.collection.v1.CreateScopeResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.collection.v1.CollectionAdminService-DeleteScope">
+      <a href="#service-couchbase.admin.collection.v1.CollectionAdminService-DeleteScope">
+        rpc <code>DeleteScope</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.DeleteScopeRequest"><span title="couchbase.admin.collection.v1.DeleteScopeRequest">couchbase.admin.collection.v1.DeleteScopeRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.DeleteScopeResponse"><span title="couchbase.admin.collection.v1.DeleteScopeResponse">couchbase.admin.collection.v1.DeleteScopeResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.collection.v1.CollectionAdminService-CreateCollection">
+      <a href="#service-couchbase.admin.collection.v1.CollectionAdminService-CreateCollection">
+        rpc <code>CreateCollection</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.CreateCollectionRequest"><span title="couchbase.admin.collection.v1.CreateCollectionRequest">couchbase.admin.collection.v1.CreateCollectionRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.CreateCollectionResponse"><span title="couchbase.admin.collection.v1.CreateCollectionResponse">couchbase.admin.collection.v1.CreateCollectionResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.collection.v1.CollectionAdminService-UpdateCollection">
+      <a href="#service-couchbase.admin.collection.v1.CollectionAdminService-UpdateCollection">
+        rpc <code>UpdateCollection</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.UpdateCollectionRequest"><span title="couchbase.admin.collection.v1.UpdateCollectionRequest">couchbase.admin.collection.v1.UpdateCollectionRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.UpdateCollectionResponse"><span title="couchbase.admin.collection.v1.UpdateCollectionResponse">couchbase.admin.collection.v1.UpdateCollectionResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.collection.v1.CollectionAdminService-DeleteCollection">
+      <a href="#service-couchbase.admin.collection.v1.CollectionAdminService-DeleteCollection">
+        rpc <code>DeleteCollection</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.DeleteCollectionRequest"><span title="couchbase.admin.collection.v1.DeleteCollectionRequest">couchbase.admin.collection.v1.DeleteCollectionRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.DeleteCollectionResponse"><span title="couchbase.admin.collection.v1.DeleteCollectionResponse">couchbase.admin.collection.v1.DeleteCollectionResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+ 
+    </div>
+    
+  </div>
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Messages
+    </h3>
+
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.ListCollectionsResponse.Collection">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.ListCollectionsResponse.Collection" title="couchbase.admin.collection.v1.ListCollectionsResponse.Collection">message Collection</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.ListCollectionsResponse"><span title="couchbase.admin.collection.v1.ListCollectionsResponse">couchbase.admin.collection.v1.ListCollectionsResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        max_expiry_secs
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        history_retention_enabled
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.CreateCollectionRequest">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.CreateCollectionRequest" title="couchbase.admin.collection.v1.CreateCollectionRequest">message CreateCollectionRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        max_expiry_secs
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        history_retention_enabled
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.CreateCollectionResponse">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.CreateCollectionResponse" title="couchbase.admin.collection.v1.CreateCollectionResponse">message CreateCollectionResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        manifest_uid
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.CreateScopeRequest">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.CreateScopeRequest" title="couchbase.admin.collection.v1.CreateScopeRequest">message CreateScopeRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.CreateScopeResponse">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.CreateScopeResponse" title="couchbase.admin.collection.v1.CreateScopeResponse">message CreateScopeResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        manifest_uid
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.DeleteCollectionRequest">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.DeleteCollectionRequest" title="couchbase.admin.collection.v1.DeleteCollectionRequest">message DeleteCollectionRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.DeleteCollectionResponse">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.DeleteCollectionResponse" title="couchbase.admin.collection.v1.DeleteCollectionResponse">message DeleteCollectionResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        manifest_uid
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.DeleteScopeRequest">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.DeleteScopeRequest" title="couchbase.admin.collection.v1.DeleteScopeRequest">message DeleteScopeRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.DeleteScopeResponse">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.DeleteScopeResponse" title="couchbase.admin.collection.v1.DeleteScopeResponse">message DeleteScopeResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        manifest_uid
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.ListCollectionsRequest">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.ListCollectionsRequest" title="couchbase.admin.collection.v1.ListCollectionsRequest">message ListCollectionsRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.ListCollectionsResponse">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.ListCollectionsResponse" title="couchbase.admin.collection.v1.ListCollectionsResponse">message ListCollectionsResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        scopes
+      </td>
+      <td>
+        <code title="couchbase.admin.collection.v1.ListCollectionsResponse.Scope">
+          
+            repeated
+          
+          <a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.ListCollectionsResponse.Scope"><span title="couchbase.admin.collection.v1.ListCollectionsResponse.Scope">couchbase.admin.collection.v1.ListCollectionsResponse.Scope</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        manifest_uid
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.ListCollectionsResponse.Scope">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.ListCollectionsResponse.Scope" title="couchbase.admin.collection.v1.ListCollectionsResponse.Scope">message Scope</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.ListCollectionsResponse"><span title="couchbase.admin.collection.v1.ListCollectionsResponse">couchbase.admin.collection.v1.ListCollectionsResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        collections
+      </td>
+      <td>
+        <code title="couchbase.admin.collection.v1.ListCollectionsResponse.Collection">
+          
+            repeated
+          
+          <a href="couchbase.admin.collection.v1.html#message-couchbase.admin.collection.v1.ListCollectionsResponse.Collection"><span title="couchbase.admin.collection.v1.ListCollectionsResponse.Collection">couchbase.admin.collection.v1.ListCollectionsResponse.Collection</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.UpdateCollectionRequest">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.UpdateCollectionRequest" title="couchbase.admin.collection.v1.UpdateCollectionRequest">message UpdateCollectionRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        max_expiry_secs
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        history_retention_enabled
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.collection.v1.UpdateCollectionResponse">
+  <span>
+    <a href="#message-couchbase.admin.collection.v1.UpdateCollectionResponse" title="couchbase.admin.collection.v1.UpdateCollectionResponse">message UpdateCollectionResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        manifest_uid
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+
+  
+
+  
+
+</div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        
+        <p>Built with <strong><a href="https://github.com/markvincze/sabledocs" target="_blank">sabledocs</a></strong>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Protostellar API Reference</title>
+    <link rel="stylesheet" href="static/mystyles.css" />
+    <script src="static/fontawesome.js"></script>
+    <script src="static/lunr.js"></script>
+    <script src="static/theme.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="level pt-6 mb-5 pb-2 bottom-border">
+        <div class="level-left">
+          <p class="level-item has-text-centered is-size-3 has-text-weight-medium">
+            <a class="link is-info" href="index.html">
+              Protostellar API Reference
+            </a>
+          </p>
+        </div>
+
+        <div class="level-right">
+          
+          <form action="search.html" class="mr-2 has-text-centered">
+            <input type="text" name="query" class="input mr-3 navbar-search-query-input" placeholder="Search">
+            <input type="submit" class="button is-primary mr-5" value="Search" />
+          </form>
+          
+
+          <p class="level-item has-text-centered is-size-5">
+            <a href="" class="link is-info mr-5" target="_blank">
+              
+              <span>Source</span>
+            </a>
+
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite" type="button">
+              <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <mask class="moon" id="moon-mask">
+                  <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                  <circle cx="24" cy="10" r="6" fill="black" />
+                </mask>
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                <g class="sun-beams" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+              </svg>
+            </button>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <div id="main-content" class="container mb-6">
+  <p class="mb-2">
+    <a style="font-size: 0.9em" href="index.html">← Back to packages</a>
+  </p>
+  <h3 class="title is-3">
+    
+    Package <code>couchbase.view.v1</code>
+    
+  </h3>
+
+  <div class="block">
+    
+    <p>
+      <a href="#service-couchbase.view.v1.ViewService">
+        <span class="tag" style="min-width: 6em">Service</span>
+        <code>ViewService</code> 
+      </a>
+    </p>
+    
+
+    
+      
+      <p>
+        <a href="#message-couchbase.view.v1.ViewQueryResponse.MetaData">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>MetaData</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.view.v1.ViewQueryResponse.Row">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Row</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.view.v1.ViewQueryRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ViewQueryRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.view.v1.ViewQueryResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ViewQueryResponse</code> 
+        </a>
+      </p>
+      
+    
+
+    
+      <p>
+        <a href="#enum-couchbase.view.v1.ViewQueryRequest.ErrorMode">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>ErrorMode</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.view.v1.ViewQueryRequest.Namespace">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>Namespace</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.view.v1.ViewQueryRequest.Order">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>Order</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.view.v1.ViewQueryRequest.ScanConsistency">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>ScanConsistency</code> 
+        </a>
+      </p>
+    
+  </div>
+
+  <div class="block">
+      
+  </div>
+
+  
+
+  <div class="block">
+    <h3 class="title is-3">
+      Services
+    </h3>
+
+    
+    <div>
+      
+
+<h4 class="title is-4 type-heading" id="service-couchbase.view.v1.ViewService">
+  <a href="#service-couchbase.view.v1.ViewService" title="couchbase.view.v1.ViewService">service ViewService</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.view.v1.ViewService-ViewQuery">
+      <a href="#service-couchbase.view.v1.ViewService-ViewQuery">
+        rpc <code>ViewQuery</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.view.v1.html#message-couchbase.view.v1.ViewQueryRequest"><span title="couchbase.view.v1.ViewQueryRequest">couchbase.view.v1.ViewQueryRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.view.v1.html#message-couchbase.view.v1.ViewQueryResponse"><span title="couchbase.view.v1.ViewQueryResponse">couchbase.view.v1.ViewQueryResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+ 
+    </div>
+    
+  </div>
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Messages
+    </h3>
+
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.view.v1.ViewQueryResponse.MetaData">
+  <span>
+    <a href="#message-couchbase.view.v1.ViewQueryResponse.MetaData" title="couchbase.view.v1.ViewQueryResponse.MetaData">message MetaData</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.view.v1.html#message-couchbase.view.v1.ViewQueryResponse"><span title="couchbase.view.v1.ViewQueryResponse">couchbase.view.v1.ViewQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        total_rows
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        debug
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.view.v1.ViewQueryResponse.Row">
+  <span>
+    <a href="#message-couchbase.view.v1.ViewQueryResponse.Row" title="couchbase.view.v1.ViewQueryResponse.Row">message Row</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.view.v1.html#message-couchbase.view.v1.ViewQueryResponse"><span title="couchbase.view.v1.ViewQueryResponse">couchbase.view.v1.ViewQueryResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        value
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.view.v1.ViewQueryRequest">
+  <span>
+    <a href="#message-couchbase.view.v1.ViewQueryRequest" title="couchbase.view.v1.ViewQueryRequest">message ViewQueryRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        design_document_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        view_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        skip
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        limit
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        scan_consistency
+      </td>
+      <td>
+        <code title="couchbase.view.v1.ViewQueryRequest.ScanConsistency">
+          
+            optional
+          
+          <a href="couchbase.view.v1.html#enum-couchbase.view.v1.ViewQueryRequest.ScanConsistency"><span title="couchbase.view.v1.ViewQueryRequest.ScanConsistency">couchbase.view.v1.ViewQueryRequest.ScanConsistency</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        reduce
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        group
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        group_level
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="bytes">
+          
+            optional
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>11</td>
+      <td>
+        keys
+      </td>
+      <td>
+        <code title="bytes">
+          
+            repeated
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>12</td>
+      <td>
+        start_key
+      </td>
+      <td>
+        <code title="bytes">
+          
+            optional
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>13</td>
+      <td>
+        end_key
+      </td>
+      <td>
+        <code title="bytes">
+          
+            optional
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>14</td>
+      <td>
+        inclusive_end
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>15</td>
+      <td>
+        start_key_doc_id
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>16</td>
+      <td>
+        end_key_doc_id
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>17</td>
+      <td>
+        on_error
+      </td>
+      <td>
+        <code title="couchbase.view.v1.ViewQueryRequest.ErrorMode">
+          
+            optional
+          
+          <a href="couchbase.view.v1.html#enum-couchbase.view.v1.ViewQueryRequest.ErrorMode"><span title="couchbase.view.v1.ViewQueryRequest.ErrorMode">couchbase.view.v1.ViewQueryRequest.ErrorMode</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>18</td>
+      <td>
+        debug
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>19</td>
+      <td>
+        namespace
+      </td>
+      <td>
+        <code title="couchbase.view.v1.ViewQueryRequest.Namespace">
+          
+            optional
+          
+          <a href="couchbase.view.v1.html#enum-couchbase.view.v1.ViewQueryRequest.Namespace"><span title="couchbase.view.v1.ViewQueryRequest.Namespace">couchbase.view.v1.ViewQueryRequest.Namespace</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>20</td>
+      <td>
+        order
+      </td>
+      <td>
+        <code title="couchbase.view.v1.ViewQueryRequest.Order">
+          
+            optional
+          
+          <a href="couchbase.view.v1.html#enum-couchbase.view.v1.ViewQueryRequest.Order"><span title="couchbase.view.v1.ViewQueryRequest.Order">couchbase.view.v1.ViewQueryRequest.Order</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.view.v1.ViewQueryResponse">
+  <span>
+    <a href="#message-couchbase.view.v1.ViewQueryResponse" title="couchbase.view.v1.ViewQueryResponse">message ViewQueryResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        rows
+      </td>
+      <td>
+        <code title="couchbase.view.v1.ViewQueryResponse.Row">
+          
+            repeated
+          
+          <a href="couchbase.view.v1.html#message-couchbase.view.v1.ViewQueryResponse.Row"><span title="couchbase.view.v1.ViewQueryResponse.Row">couchbase.view.v1.ViewQueryResponse.Row</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        meta_data
+      </td>
+      <td>
+        <code title="couchbase.view.v1.ViewQueryResponse.MetaData">
+          
+            optional
+          
+          <a href="couchbase.view.v1.html#message-couchbase.view.v1.ViewQueryResponse.MetaData"><span title="couchbase.view.v1.ViewQueryResponse.MetaData">couchbase.view.v1.ViewQueryResponse.MetaData</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Enums
+    </h3>
+
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.view.v1.ViewQueryRequest.ErrorMode">
+  <a href="#enum-couchbase.view.v1.ViewQueryRequest.ErrorMode" title="couchbase.view.v1.ViewQueryRequest.ErrorMode">enum ErrorMode</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>ERROR_MODE_CONTINUE</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>ERROR_MODE_STOP</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.view.v1.ViewQueryRequest.Namespace">
+  <a href="#enum-couchbase.view.v1.ViewQueryRequest.Namespace" title="couchbase.view.v1.ViewQueryRequest.Namespace">enum Namespace</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>NAMESPACE_PRODUCTION</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>NAMESPACE_DEVELOPMENT</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.view.v1.ViewQueryRequest.Order">
+  <a href="#enum-couchbase.view.v1.ViewQueryRequest.Order" title="couchbase.view.v1.ViewQueryRequest.Order">enum Order</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>ORDER_ASCENDING</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>ORDER_DESCENDING</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.view.v1.ViewQueryRequest.ScanConsistency">
+  <a href="#enum-couchbase.view.v1.ViewQueryRequest.ScanConsistency" title="couchbase.view.v1.ViewQueryRequest.ScanConsistency">enum ScanConsistency</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>SCAN_CONSISTENCY_NOT_BOUNDED</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>SCAN_CONSISTENCY_REQUEST_PLUS</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>SCAN_CONSISTENCY_UPDATE_AFTER</code></td>
+      <td>2</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+
+  
+
+</div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        
+        <p>Built with <strong><a href="https://github.com/markvincze/sabledocs" target="_blank">sabledocs</a></strong>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

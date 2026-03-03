@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Protostellar API Reference</title>
+    <link rel="stylesheet" href="static/mystyles.css" />
+    <script src="static/fontawesome.js"></script>
+    <script src="static/lunr.js"></script>
+    <script src="static/theme.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="level pt-6 mb-5 pb-2 bottom-border">
+        <div class="level-left">
+          <p class="level-item has-text-centered is-size-3 has-text-weight-medium">
+            <a class="link is-info" href="index.html">
+              Protostellar API Reference
+            </a>
+          </p>
+        </div>
+
+        <div class="level-right">
+          
+          <form action="search.html" class="mr-2 has-text-centered">
+            <input type="text" name="query" class="input mr-3 navbar-search-query-input" placeholder="Search">
+            <input type="submit" class="button is-primary mr-5" value="Search" />
+          </form>
+          
+
+          <p class="level-item has-text-centered is-size-5">
+            <a href="" class="link is-info mr-5" target="_blank">
+              
+              <span>Source</span>
+            </a>
+
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite" type="button">
+              <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <mask class="moon" id="moon-mask">
+                  <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                  <circle cx="24" cy="10" r="6" fill="black" />
+                </mask>
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                <g class="sun-beams" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+              </svg>
+            </button>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <div id="main-content" class="container mb-6">
+  <p class="mb-2">
+    <a style="font-size: 0.9em" href="index.html">← Back to packages</a>
+  </p>
+  <h3 class="title is-3">
+    
+    Package <code>couchbase.transactions.v1</code>
+    
+  </h3>
+
+  <div class="block">
+    
+    <p>
+      <a href="#service-couchbase.transactions.v1.TransactionsService">
+        <span class="tag" style="min-width: 6em">Service</span>
+        <code>TransactionsService</code> 
+      </a>
+    </p>
+    
+
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionBeginAttemptRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionBeginAttemptRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionBeginAttemptResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionBeginAttemptResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionCommitRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionCommitRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionCommitResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionCommitResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionGetRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionGetRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionGetResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionGetResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionInsertRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionInsertRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionInsertResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionInsertResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionRemoveRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionRemoveRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionRemoveResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionRemoveResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionReplaceRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionReplaceRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionReplaceResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionReplaceResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionRollbackRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionRollbackRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.transactions.v1.TransactionRollbackResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TransactionRollbackResponse</code> 
+        </a>
+      </p>
+      
+    
+
+    
+  </div>
+
+  <div class="block">
+      
+  </div>
+
+  
+
+  <div class="block">
+    <h3 class="title is-3">
+      Services
+    </h3>
+
+    
+    <div>
+      
+
+<h4 class="title is-4 type-heading" id="service-couchbase.transactions.v1.TransactionsService">
+  <a href="#service-couchbase.transactions.v1.TransactionsService" title="couchbase.transactions.v1.TransactionsService">service TransactionsService</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.transactions.v1.TransactionsService-TransactionBeginAttempt">
+      <a href="#service-couchbase.transactions.v1.TransactionsService-TransactionBeginAttempt">
+        rpc <code>TransactionBeginAttempt</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionBeginAttemptRequest"><span title="couchbase.transactions.v1.TransactionBeginAttemptRequest">couchbase.transactions.v1.TransactionBeginAttemptRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionBeginAttemptResponse"><span title="couchbase.transactions.v1.TransactionBeginAttemptResponse">couchbase.transactions.v1.TransactionBeginAttemptResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.transactions.v1.TransactionsService-TransactionCommit">
+      <a href="#service-couchbase.transactions.v1.TransactionsService-TransactionCommit">
+        rpc <code>TransactionCommit</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionCommitRequest"><span title="couchbase.transactions.v1.TransactionCommitRequest">couchbase.transactions.v1.TransactionCommitRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionCommitResponse"><span title="couchbase.transactions.v1.TransactionCommitResponse">couchbase.transactions.v1.TransactionCommitResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.transactions.v1.TransactionsService-TransactionRollback">
+      <a href="#service-couchbase.transactions.v1.TransactionsService-TransactionRollback">
+        rpc <code>TransactionRollback</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionRollbackRequest"><span title="couchbase.transactions.v1.TransactionRollbackRequest">couchbase.transactions.v1.TransactionRollbackRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionRollbackResponse"><span title="couchbase.transactions.v1.TransactionRollbackResponse">couchbase.transactions.v1.TransactionRollbackResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.transactions.v1.TransactionsService-TransactionGet">
+      <a href="#service-couchbase.transactions.v1.TransactionsService-TransactionGet">
+        rpc <code>TransactionGet</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionGetRequest"><span title="couchbase.transactions.v1.TransactionGetRequest">couchbase.transactions.v1.TransactionGetRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionGetResponse"><span title="couchbase.transactions.v1.TransactionGetResponse">couchbase.transactions.v1.TransactionGetResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.transactions.v1.TransactionsService-TransactionInsert">
+      <a href="#service-couchbase.transactions.v1.TransactionsService-TransactionInsert">
+        rpc <code>TransactionInsert</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionInsertRequest"><span title="couchbase.transactions.v1.TransactionInsertRequest">couchbase.transactions.v1.TransactionInsertRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionInsertResponse"><span title="couchbase.transactions.v1.TransactionInsertResponse">couchbase.transactions.v1.TransactionInsertResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.transactions.v1.TransactionsService-TransactionReplace">
+      <a href="#service-couchbase.transactions.v1.TransactionsService-TransactionReplace">
+        rpc <code>TransactionReplace</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionReplaceRequest"><span title="couchbase.transactions.v1.TransactionReplaceRequest">couchbase.transactions.v1.TransactionReplaceRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionReplaceResponse"><span title="couchbase.transactions.v1.TransactionReplaceResponse">couchbase.transactions.v1.TransactionReplaceResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.transactions.v1.TransactionsService-TransactionRemove">
+      <a href="#service-couchbase.transactions.v1.TransactionsService-TransactionRemove">
+        rpc <code>TransactionRemove</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionRemoveRequest"><span title="couchbase.transactions.v1.TransactionRemoveRequest">couchbase.transactions.v1.TransactionRemoveRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.transactions.v1.html#message-couchbase.transactions.v1.TransactionRemoveResponse"><span title="couchbase.transactions.v1.TransactionRemoveResponse">couchbase.transactions.v1.TransactionRemoveResponse</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+ 
+    </div>
+    
+  </div>
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Messages
+    </h3>
+
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionBeginAttemptRequest">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionBeginAttemptRequest" title="couchbase.transactions.v1.TransactionBeginAttemptRequest">message TransactionBeginAttemptRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        transaction_id
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionBeginAttemptResponse">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionBeginAttemptResponse" title="couchbase.transactions.v1.TransactionBeginAttemptResponse">message TransactionBeginAttemptResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        transaction_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        attempt_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionCommitRequest">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionCommitRequest" title="couchbase.transactions.v1.TransactionCommitRequest">message TransactionCommitRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        transaction_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        attempt_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionCommitResponse">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionCommitResponse" title="couchbase.transactions.v1.TransactionCommitResponse">message TransactionCommitResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionGetRequest">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionGetRequest" title="couchbase.transactions.v1.TransactionGetRequest">message TransactionGetRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        transaction_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>transaction_id and attempt_id are optional to allow read-only transactions.
+clients are not permitted to use this functionality to optimize
+non-read-only transactions.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        attempt_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionGetResponse">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionGetResponse" title="couchbase.transactions.v1.TransactionGetResponse">message TransactionGetResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        value
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionInsertRequest">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionInsertRequest" title="couchbase.transactions.v1.TransactionInsertRequest">message TransactionInsertRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        transaction_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        attempt_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        value
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionInsertResponse">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionInsertResponse" title="couchbase.transactions.v1.TransactionInsertResponse">message TransactionInsertResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionRemoveRequest">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionRemoveRequest" title="couchbase.transactions.v1.TransactionRemoveRequest">message TransactionRemoveRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        transaction_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        attempt_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionRemoveResponse">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionRemoveResponse" title="couchbase.transactions.v1.TransactionRemoveResponse">message TransactionRemoveResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionReplaceRequest">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionReplaceRequest" title="couchbase.transactions.v1.TransactionReplaceRequest">message TransactionReplaceRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        transaction_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        attempt_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        value
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionReplaceResponse">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionReplaceResponse" title="couchbase.transactions.v1.TransactionReplaceResponse">message TransactionReplaceResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        cas
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionRollbackRequest">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionRollbackRequest" title="couchbase.transactions.v1.TransactionRollbackRequest">message TransactionRollbackRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        transaction_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        attempt_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.transactions.v1.TransactionRollbackResponse">
+  <span>
+    <a href="#message-couchbase.transactions.v1.TransactionRollbackResponse" title="couchbase.transactions.v1.TransactionRollbackResponse">message TransactionRollbackResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+
+  
+
+  
+
+</div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        
+        <p>Built with <strong><a href="https://github.com/markvincze/sabledocs" target="_blank">sabledocs</a></strong>.</p>
+      </div>
+    </footer>
+  </body>
+</html>
