@@ -165,7 +165,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>AnalyticsService provides SQL++ analytics query execution.</p></p>
 </div>
 
 
@@ -182,6 +182,11 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>AnalyticsQuery executes an analytics statement and streams back result
+rows and metadata. The final streamed response contains MetaData.</p></p>
+  </div>
   
 </div>
  
@@ -211,7 +216,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>AnalyticsQueryRequest contains the analytics statement and execution options.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -237,7 +242,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The SQL++ analytics statement to execute.</p></td>
       
     </tr>
     
@@ -254,7 +259,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, the query is read-only and will not modify any data.</p></td>
       
     </tr>
     
@@ -271,7 +276,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>An opaque identifier for client-side request correlation.</p></td>
       
     </tr>
     
@@ -288,7 +293,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, this query receives priority scheduling on the analytics node.</p></td>
       
     </tr>
     
@@ -323,7 +328,7 @@
           <span>bytes</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Positional parameters ($1, $2, etc.). Each element is JSON-encoded.</p></td>
       
     </tr>
     
@@ -338,7 +343,8 @@
           <span>map&lt;string, bytes&gt;</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Named parameters ($name). Keys are parameter names, values are
+JSON-encoded.</p></td>
       
     </tr>
     
@@ -355,7 +361,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The analytics scope to execute the query against.</p></td>
       
     </tr>
     
@@ -390,7 +396,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, include the logical plan in the response metadata.</p></td>
       
     </tr>
     
@@ -407,7 +413,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, include the organized (optimized) logical plan.</p></td>
       
     </tr>
     
@@ -424,7 +430,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, include the expression tree in the response metadata.</p></td>
       
     </tr>
     
@@ -441,7 +447,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, include the rewritten expression tree.</p></td>
       
     </tr>
     
@@ -458,7 +464,7 @@
           <span>int32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Maximum number of warnings to include in the response.</p></td>
       
     </tr>
     
@@ -482,7 +488,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>AnalyticsQueryResponse is streamed back to the client. Early responses
+contain rows; the final response includes MetaData.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -510,7 +517,7 @@
           <span>bytes</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Result rows, each as a JSON-encoded byte array.</p></td>
       
     </tr>
     
@@ -555,7 +562,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>MetaData is included in the final streamed response.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -581,7 +588,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The unique identifier assigned to this query by the server.</p></td>
       
     </tr>
     
@@ -596,7 +603,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The client_context_id echoed back from the request.</p></td>
       
     </tr>
     
@@ -612,7 +619,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Execution metrics for this query.</p></td>
       
     </tr>
     
@@ -627,7 +634,7 @@
           <span>bytes</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The schema signature of the results. JSON-encoded.</p></td>
       
     </tr>
     
@@ -645,7 +652,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Warnings encountered during execution.</p></td>
       
     </tr>
     
@@ -660,7 +667,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The analytics execution status string.</p></td>
       
     </tr>
     
@@ -677,7 +684,7 @@
           <span>bytes</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The logical plan, if requested. JSON-encoded.</p></td>
       
     </tr>
     
@@ -694,7 +701,7 @@
           <span>bytes</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The optimized logical plan, if requested. JSON-encoded.</p></td>
       
     </tr>
     
@@ -711,7 +718,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The expression tree, if requested.</p></td>
       
     </tr>
     
@@ -728,7 +735,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The rewritten expression tree, if requested.</p></td>
       
     </tr>
     
@@ -755,7 +762,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Metrics contains execution timing and count statistics for the query.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -781,7 +788,7 @@
           <span>google.protobuf.Duration</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Total wall-clock time for the query.</p></td>
       
     </tr>
     
@@ -796,7 +803,7 @@
           <span>google.protobuf.Duration</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Time spent executing (excludes queue wait).</p></td>
       
     </tr>
     
@@ -811,7 +818,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of result rows returned.</p></td>
       
     </tr>
     
@@ -826,7 +833,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Total size of result rows in bytes.</p></td>
       
     </tr>
     
@@ -841,7 +848,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of mutations performed.</p></td>
       
     </tr>
     
@@ -856,7 +863,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of items sorted.</p></td>
       
     </tr>
     
@@ -871,7 +878,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of errors encountered.</p></td>
       
     </tr>
     
@@ -886,7 +893,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of warnings encountered.</p></td>
       
     </tr>
     
@@ -901,7 +908,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of objects processed by the analytics engine.</p></td>
       
     </tr>
     
@@ -930,7 +937,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Warning represents a non-fatal issue during query execution.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -999,7 +1006,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>PlanFormat controls the output format for query execution plans.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1015,13 +1022,13 @@
     <tr>
       <td><code>PLAN_FORMAT_JSON</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>Return the plan as a JSON object.</p></td>
     </tr>
     
     <tr>
       <td><code>PLAN_FORMAT_STRING</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>Return the plan as a human-readable string.</p></td>
     </tr>
     
   </tbody>
@@ -1035,7 +1042,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>ScanConsistency controls data consistency for the analytics query.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1051,13 +1058,13 @@
     <tr>
       <td><code>SCAN_CONSISTENCY_NOT_BOUNDED</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>No consistency required — may return stale results.</p></td>
     </tr>
     
     <tr>
       <td><code>SCAN_CONSISTENCY_REQUEST_PLUS</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>Wait for all prior mutations to be ingested before executing.</p></td>
     </tr>
     
   </tbody>

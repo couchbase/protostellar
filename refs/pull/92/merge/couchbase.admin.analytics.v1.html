@@ -352,7 +352,8 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>AnalyticsAdminService provides CRUD for analytics links and
+ingestion status monitoring.</p></p>
 </div>
 
 
@@ -370,6 +371,10 @@
   </div>
 
   
+  <div class="block">
+    <p><p>CreateLink creates a new analytics link.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -385,6 +390,11 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>GetLink retrieves an analytics link's configuration.
+Sensitive fields (passwords, secret keys) are omitted from the response.</p></p>
+  </div>
   
 </div>
 
@@ -402,6 +412,10 @@
   </div>
 
   
+  <div class="block">
+    <p><p>UpdateLink updates an existing analytics link's configuration.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -418,6 +432,10 @@
   </div>
 
   
+  <div class="block">
+    <p><p>DeleteLink removes an analytics link.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -433,6 +451,11 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>GetIngestionStatus returns the current ingestion status for all links,
+including progress, time lag, and scope/collection details.</p></p>
+  </div>
   
 </div>
  
@@ -465,7 +488,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>AzureBlobLink connects to an Azure Blob Storage data source.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -656,7 +679,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>AzureBlobLink — sensitive credential fields are omitted.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -684,7 +707,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"><p>account_key</p></td>
+      <td class="content"><p>account_key — omitted</p></td>
       
     </tr>
     
@@ -701,8 +724,8 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"><p>client_certificate
-client_certificate_password</p></td>
+      <td class="content"><p>client_certificate — omitted
+client_certificate_password — omitted</p></td>
       
     </tr>
     
@@ -717,7 +740,7 @@ client_certificate_password</p></td>
           <span>string</span>
         </code>
       </td>
-      <td class="content"><p>client_secret</p></td>
+      <td class="content"><p>client_secret — omitted</p></td>
       
     </tr>
     
@@ -751,7 +774,7 @@ client_certificate_password</p></td>
           <span>string</span>
         </code>
       </td>
-      <td class="content"><p>shared_access_signature</p></td>
+      <td class="content"><p>shared_access_signature — omitted</p></td>
       
     </tr>
     
@@ -969,7 +992,7 @@ client_certificate_password</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>Collection identifies a collection being ingested.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1022,7 +1045,7 @@ client_certificate_password</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>CouchbaseLink connects to a remote Couchbase cluster.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1176,7 +1199,7 @@ client_certificate_password</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>CouchbaseLink — sensitive fields (password, client_key) are omitted.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1280,9 +1303,9 @@ client_certificate_password</p></td>
     </a>
         </code>
       </td>
-      <td class="content"><p>client_certificate
-client_key
-cluster_compatibility</p></td>
+      <td class="content"><p>client_certificate — omitted
+client_key — omitted
+cluster_compatibility — omitted</p></td>
       
     </tr>
     
@@ -1297,8 +1320,8 @@ cluster_compatibility</p></td>
           <span>string</span>
         </code>
       </td>
-      <td class="content"><p>nodes</p>
-<p>password</p></td>
+      <td class="content"><p>nodes — omitted</p>
+<p>password — omitted</p></td>
       
     </tr>
     
@@ -1325,7 +1348,7 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>CouchbaseLink — same fields as CreateLinkRequest.CouchbaseLink.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1476,7 +1499,8 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>CreateLinkRequest creates a new analytics link. Exactly one link type
+must be specified via the oneof.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1502,7 +1526,7 @@ cluster_compatibility</p></td>
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The analytics scope this link belongs to.</p></td>
       
     </tr>
     
@@ -1517,7 +1541,7 @@ cluster_compatibility</p></td>
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The name of the link.</p></td>
       
     </tr>
     
@@ -1632,7 +1656,7 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>CreateLinkResponse is empty on success.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1667,7 +1691,7 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>DeleteLinkRequest removes an analytics link.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1732,7 +1756,7 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>DeleteLinkResponse is empty on success.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1770,7 +1794,7 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>GcsLink connects to a Google Cloud Storage data source.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1825,7 +1849,7 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>GcsLink — json_credentials are omitted.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1866,7 +1890,7 @@ cluster_compatibility</p></td>
           <span>string</span>
         </code>
       </td>
-      <td class="content"><p>json_credentials</p></td>
+      <td class="content"><p>json_credentials — omitted</p></td>
       
     </tr>
     
@@ -1945,7 +1969,7 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>GetIngestionStatusRequest retrieves ingestion status for all links.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1980,7 +2004,7 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>GetIngestionStatusResponse contains the ingestion status of all links.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2033,7 +2057,7 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>GetLinkRequest retrieves a link by scope and name.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2098,7 +2122,8 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>GetLinkResponse returns the link configuration with sensitive fields
+(passwords, secret keys, SAS tokens) omitted for security.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2227,7 +2252,7 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>Link contains the status and ingestion state for a single link.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2302,7 +2327,7 @@ cluster_compatibility</p></td>
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Historical and current ingestion states.</p></td>
       
     </tr>
     
@@ -2329,7 +2354,7 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>S3Link connects to an Amazon S3 data source.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2446,7 +2471,7 @@ cluster_compatibility</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>S3Link — secret_access_key and session_token are omitted.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2504,8 +2529,8 @@ cluster_compatibility</p></td>
           <span>string</span>
         </code>
       </td>
-      <td class="content"><p>secret_access_key
-session_token</p></td>
+      <td class="content"><p>secret_access_key — omitted
+session_token — omitted</p></td>
       
     </tr>
     
@@ -2649,7 +2674,7 @@ session_token</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>Scope identifies a scope being ingested.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2720,7 +2745,7 @@ session_token</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>State represents the ingestion state at a point in time.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2746,7 +2771,7 @@ session_token</p></td>
           <span>google.protobuf.Timestamp</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When this state snapshot was captured.</p></td>
       
     </tr>
     
@@ -2761,7 +2786,7 @@ session_token</p></td>
           <span>double</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Ingestion progress as a fraction (0.0 to 1.0).</p></td>
       
     </tr>
     
@@ -2778,7 +2803,7 @@ session_token</p></td>
           <span>int64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Time lag in milliseconds behind the source.</p></td>
       
     </tr>
     
@@ -2795,7 +2820,7 @@ session_token</p></td>
           <span>int64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of items processed so far.</p></td>
       
     </tr>
     
@@ -2812,7 +2837,7 @@ session_token</p></td>
           <span>int64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of sequence number advances.</p></td>
       
     </tr>
     
@@ -2830,7 +2855,7 @@ session_token</p></td>
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Scopes being ingested.</p></td>
       
     </tr>
     
@@ -2854,7 +2879,8 @@ session_token</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>UpdateLinkRequest updates an existing link. Same structure as
+CreateLinkRequest.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3010,7 +3036,7 @@ session_token</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>UpdateLinkResponse is empty on success.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3049,7 +3075,8 @@ session_token</p></td>
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>CouchbaseEncryptionMode controls the encryption level for
+remote Couchbase cluster links.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3065,19 +3092,19 @@ session_token</p></td>
     <tr>
       <td><code>COUCHBASE_ENCRYPTION_MODE_NONE</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>No encryption.</p></td>
     </tr>
     
     <tr>
       <td><code>COUCHBASE_ENCRYPTION_MODE_HALF</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>Encrypt password only.</p></td>
     </tr>
     
     <tr>
       <td><code>COUCHBASE_ENCRYPTION_MODE_FULL</code></td>
       <td>2</td>
-      <td class="content"></td>
+      <td class="content"><p>Full TLS encryption.</p></td>
     </tr>
     
   </tbody>
@@ -3091,7 +3118,7 @@ session_token</p></td>
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>LinkStatus describes the health state of an analytics link.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">

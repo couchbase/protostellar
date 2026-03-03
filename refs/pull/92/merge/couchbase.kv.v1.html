@@ -535,7 +535,9 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>KvService provides key-value document operations against a Couchbase cluster.
+Operations are organized into reads, mutations, counters, binary operations,
+sub-document operations, and replica reads.</p></p>
 </div>
 
 
@@ -553,6 +555,11 @@
   </div>
 
   
+  <div class="block">
+    <p><p>Get retrieves a document by key. Supports field-level projection via the
+<code>project</code> field and optional compressed responses.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -568,6 +575,10 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>GetAndTouch retrieves a document and simultaneously resets its expiry.</p></p>
+  </div>
   
 </div>
 
@@ -585,6 +596,12 @@
   </div>
 
   
+  <div class="block">
+    <p><p>GetAndLock retrieves a document and acquires a pessimistic lock for the
+specified duration. The lock must be released via Unlock or will
+auto-expire after lock_time_secs.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -600,6 +617,11 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>Unlock releases a pessimistic lock previously acquired by GetAndLock.
+Requires the CAS value returned by the locking operation.</p></p>
+  </div>
   
 </div>
 
@@ -617,6 +639,10 @@
   </div>
 
   
+  <div class="block">
+    <p><p>Touch resets a document's expiry without retrieving its content.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -632,6 +658,11 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>Exists checks whether a document exists without retrieving its content.
+Returns a boolean result and the current CAS.</p></p>
+  </div>
   
 </div>
 
@@ -649,6 +680,11 @@
   </div>
 
   
+  <div class="block">
+    <p><p>Insert creates a new document. Fails if the document already exists.
+Supports durability requirements.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -664,6 +700,11 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>Upsert creates or replaces a document unconditionally.
+Supports preserving the existing expiry on update.</p></p>
+  </div>
   
 </div>
 
@@ -681,6 +722,11 @@
   </div>
 
   
+  <div class="block">
+    <p><p>Replace updates an existing document. Fails if the document does not exist.
+Supports optimistic locking via optional CAS.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -696,6 +742,11 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>Remove deletes a document. Supports optimistic locking via optional CAS
+and durability requirements.</p></p>
+  </div>
   
 </div>
 
@@ -713,6 +764,12 @@
   </div>
 
   
+  <div class="block">
+    <p><p>Increment atomically increments a counter document by the specified delta.
+If the document does not exist and an initial value is provided, it is
+created with that value.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -728,6 +785,12 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>Decrement atomically decrements a counter document by the specified delta.
+If the document does not exist and an initial value is provided, it is
+created with that value.</p></p>
+  </div>
   
 </div>
 
@@ -745,6 +808,10 @@
   </div>
 
   
+  <div class="block">
+    <p><p>Append appends raw bytes to the end of an existing document's value.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -760,6 +827,11 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>Prepend prepends raw bytes to the beginning of an existing document's
+value.</p></p>
+  </div>
   
 </div>
 
@@ -777,6 +849,12 @@
   </div>
 
   
+  <div class="block">
+    <p><p>LookupIn performs one or more sub-document lookup operations (get, exists,
+count) on paths within a JSON document. Supports xattr and access_deleted
+flags.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -793,6 +871,12 @@
   </div>
 
   
+  <div class="block">
+    <p><p>MutateIn performs one or more sub-document mutation operations on paths
+within a JSON document. Supports insert, upsert, replace, remove, array
+operations, and counters at the sub-document level.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -808,6 +892,12 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>GetAllReplicas returns the document from the active node and all replica
+nodes as a server-streamed response. Each response indicates whether it
+is from a replica via the is_replica flag.</p></p>
+  </div>
   
 </div>
  
@@ -837,7 +927,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>AppendRequest appends raw bytes to the end of an existing document's value.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -923,7 +1013,7 @@
           <span>bytes</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The bytes to append to the existing document value.</p></td>
       
     </tr>
     
@@ -940,7 +1030,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Optional CAS for optimistic concurrency.</p></td>
       
     </tr>
     
@@ -982,7 +1072,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>AppendResponse returns the new CAS and mutation token.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1048,7 +1138,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DecrementRequest atomically decrements a counter document.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1134,7 +1224,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The amount to decrement the counter by.</p></td>
       
     </tr>
     
@@ -1151,7 +1241,8 @@
           <span>int64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>If the counter document does not exist, it will be created with this
+initial value.</p></td>
       
     </tr>
     
@@ -1242,7 +1333,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DecrementResponse returns the new counter value after decrementing.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1283,7 +1374,7 @@
           <span>int64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The counter value after the decrement operation.</p></td>
       
     </tr>
     
@@ -1323,7 +1414,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>ExistsRequest checks if a document exists by key.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1418,7 +1509,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>ExistsResponse indicates whether the document exists.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1444,7 +1535,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>True if the document exists.</p></td>
       
     </tr>
     
@@ -1459,7 +1550,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The current CAS value of the document, if it exists.</p></td>
       
     </tr>
     
@@ -1486,7 +1577,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Flags for this individual spec.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1514,7 +1605,8 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, operate on an extended attribute (xattr) rather
+than the document body.</p></td>
       
     </tr>
     
@@ -1541,7 +1633,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Document-level flags.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1569,7 +1661,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, allow lookups on deleted (tombstoned) documents.</p></td>
       
     </tr>
     
@@ -1596,7 +1688,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Flags for this individual spec.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1624,7 +1716,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, intermediate path elements are created if they don't exist.</p></td>
       
     </tr>
     
@@ -1641,7 +1733,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, operate on an extended attribute (xattr).</p></td>
       
     </tr>
     
@@ -1668,7 +1760,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Document-level flags.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1696,7 +1788,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, allow mutations on deleted (tombstoned) documents.</p></td>
       
     </tr>
     
@@ -1720,7 +1812,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GetAllReplicasRequest reads a document from the active node and all replicas.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1815,7 +1907,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GetAllReplicasResponse is streamed once per node (active + replicas).</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1841,7 +1933,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>True if this response came from a replica node, false if from the active.</p></td>
       
     </tr>
     
@@ -1910,7 +2002,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GetAndLockRequest retrieves a document and acquires a pessimistic lock.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1996,7 +2088,8 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Duration in seconds for the pessimistic lock. The lock auto-expires
+after this period if not explicitly released via Unlock.</p></td>
       
     </tr>
     
@@ -2038,7 +2131,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GetAndLockResponse contains the locked document's content and metadata.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2064,7 +2157,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The CAS value required to unlock or mutate the locked document.</p></td>
       
     </tr>
     
@@ -2167,7 +2260,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GetAndTouchRequest retrieves a document and simultaneously resets its expiry.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2329,7 +2422,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GetAndTouchResponse contains the retrieved document with its updated expiry.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2458,7 +2551,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GetRequest retrieves a document by its key.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2546,7 +2639,8 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Optional list of JSON field paths to project. When specified, only
+the requested fields are returned instead of the full document.</p></td>
       
     </tr>
     
@@ -2564,7 +2658,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Controls whether compressed content may be returned.</p></td>
       
     </tr>
     
@@ -2588,7 +2682,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GetResponse contains the retrieved document content and metadata.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2614,7 +2708,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The current Compare-And-Swap value for optimistic concurrency.</p></td>
       
     </tr>
     
@@ -2629,7 +2723,7 @@
           <span>google.protobuf.Timestamp</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The document's expiry time, if set.</p></td>
       
     </tr>
     
@@ -2644,7 +2738,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>SDK-specific flags describing the content encoding/type.</p></td>
       
     </tr>
     
@@ -2717,7 +2811,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>IncrementRequest atomically increments a counter document.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2803,7 +2897,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The amount to increment the counter by.</p></td>
       
     </tr>
     
@@ -2820,7 +2914,9 @@
           <span>int64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>If the counter document does not exist, it will be created with this
+initial value. If not provided and the document doesn't exist, the
+operation will fail.</p></td>
       
     </tr>
     
@@ -2911,7 +3007,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>IncrementResponse returns the new counter value after incrementing.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2952,7 +3048,7 @@
           <span>int64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The counter value after the increment operation.</p></td>
       
     </tr>
     
@@ -2992,7 +3088,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>InsertRequest creates a new document. Fails if the document already exists.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3081,7 +3177,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Optional durability requirements for this mutation.</p></td>
       
     </tr>
     
@@ -3096,7 +3192,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>SDK-specific flags describing the content encoding/type.</p></td>
       
     </tr>
     
@@ -3218,7 +3314,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>InsertResponse returns the CAS and mutation token for the new document.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3284,7 +3380,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>LegacyDurabilitySpec provides legacy-style observe-based durability by
+specifying the number of nodes that must replicate and persist the mutation.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3310,7 +3407,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of replica nodes that must acknowledge the mutation.</p></td>
       
     </tr>
     
@@ -3325,7 +3422,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of nodes (active + replicas) that must persist the mutation to disk.</p></td>
       
     </tr>
     
@@ -3349,7 +3446,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>LookupInRequest performs sub-document read operations on a JSON document.
+Multiple lookup specs can be executed atomically in a single request.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3438,7 +3536,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The list of sub-document lookup operations to perform.</p></td>
       
     </tr>
     
@@ -3480,7 +3578,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>LookupInResponse contains the results of sub-document lookup operations.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3509,7 +3607,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Results corresponding 1:1 to the specs in the request.</p></td>
       
     </tr>
     
@@ -3524,7 +3622,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The document's CAS at the time of the lookup.</p></td>
       
     </tr>
     
@@ -3548,7 +3646,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>MutateInRequest performs sub-document mutation operations on a JSON document.
+Multiple mutation specs can be executed atomically in a single request.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3637,7 +3736,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The list of sub-document mutations to perform atomically.</p></td>
       
     </tr>
     
@@ -3690,7 +3789,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Optional CAS for optimistic concurrency on the full document.</p></td>
       
     </tr>
     
@@ -3781,7 +3880,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>MutateInResponse contains the results of sub-document mutation operations.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3810,7 +3909,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Results corresponding 1:1 to the specs in the request.</p></td>
       
     </tr>
     
@@ -3865,7 +3964,9 @@
 </h4>
 
 <div class="block content">
-  
+  <p>MutationToken represents a point-in-time marker for a mutation on a specific
+vbucket. Used for read-your-own-writes consistency (e.g., at_plus scan
+consistency in query services).</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3891,7 +3992,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The bucket in which the mutation occurred.</p></td>
       
     </tr>
     
@@ -3906,7 +4007,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The vbucket where the mutation was applied.</p></td>
       
     </tr>
     
@@ -3921,7 +4022,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The UUID of the vbucket at the time of mutation.</p></td>
       
     </tr>
     
@@ -3936,7 +4037,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The sequence number assigned to the mutation.</p></td>
       
     </tr>
     
@@ -3960,7 +4061,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>PrependRequest prepends raw bytes to the beginning of an existing document's
+value.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4046,7 +4148,7 @@
           <span>bytes</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The bytes to prepend to the existing document value.</p></td>
       
     </tr>
     
@@ -4063,7 +4165,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Optional CAS for optimistic concurrency.</p></td>
       
     </tr>
     
@@ -4105,7 +4207,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>PrependResponse returns the new CAS and mutation token.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4171,7 +4273,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>RemoveRequest deletes a document by key.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4259,7 +4361,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Optional CAS for optimistic concurrency control.</p></td>
       
     </tr>
     
@@ -4301,7 +4403,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>RemoveResponse returns the resulting CAS and mutation token.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4367,7 +4469,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>ReplaceRequest updates an existing document. Fails if the document does not
+exist.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4455,7 +4558,8 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Optional CAS for optimistic concurrency. If provided, the replace
+will fail if the document has been modified since this CAS was obtained.</p></td>
       
     </tr>
     
@@ -4610,7 +4714,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>ReplaceResponse returns the new CAS and mutation token.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4679,7 +4783,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Spec defines a single sub-document lookup operation.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4721,7 +4825,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The JSON path to operate on (e.g., "address.city" or "tags[0]").</p></td>
       
     </tr>
     
@@ -4766,7 +4870,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Spec contains the result for a single lookup operation.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4792,7 +4896,8 @@
           <span>google.rpc.Status</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The status of this individual lookup operation. A non-OK status
+indicates the path was not found or another path-level error.</p></td>
       
     </tr>
     
@@ -4807,7 +4912,7 @@
           <span>bytes</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The content retrieved from the path, if the operation succeeded.</p></td>
       
     </tr>
     
@@ -4834,7 +4939,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Spec defines a single sub-document mutation operation.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4876,7 +4981,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The JSON path to operate on.</p></td>
       
     </tr>
     
@@ -4891,7 +4996,7 @@
           <span>bytes</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The value to apply (interpretation depends on the operation).</p></td>
       
     </tr>
     
@@ -4936,7 +5041,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Spec contains the result for a single mutation. Content is only
+populated for counter operations (returns the new counter value).</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4988,7 +5094,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>TouchRequest resets a document's expiry without retrieving its content.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5132,7 +5238,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>TouchResponse returns the updated CAS and mutation token.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5198,7 +5304,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>UnlockRequest releases a pessimistic lock on a document.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5284,7 +5390,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The CAS value returned by the GetAndLock that acquired the lock.</p></td>
       
     </tr>
     
@@ -5308,7 +5414,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>UnlockResponse is empty on success.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5343,7 +5449,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>UpsertRequest creates or fully replaces a document unconditionally.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5464,7 +5570,8 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true and the document already exists, the existing expiry is
+preserved rather than being replaced by the new expiry value.</p></td>
       
     </tr>
     
@@ -5586,7 +5693,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>UpsertResponse returns the CAS and mutation token.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5656,7 +5763,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>CompressionEnabled controls whether the server may return compressed content.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5672,13 +5779,13 @@
     <tr>
       <td><code>COMPRESSION_ENABLED_OPTIONAL</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>The server may return either compressed or uncompressed content.</p></td>
     </tr>
     
     <tr>
       <td><code>COMPRESSION_ENABLED_ALWAYS</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>The server should always return compressed content when possible.</p></td>
     </tr>
     
   </tbody>
@@ -5692,7 +5799,9 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>DurabilityLevel specifies the durability requirements for mutation
+operations. Controls how many nodes must acknowledge a write before it is
+considered successful.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5708,19 +5817,20 @@
     <tr>
       <td><code>DURABILITY_LEVEL_MAJORITY</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>The mutation must be replicated to a majority of data service nodes.</p></td>
     </tr>
     
     <tr>
       <td><code>DURABILITY_LEVEL_MAJORITY_AND_PERSIST_TO_ACTIVE</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>The mutation must be replicated to a majority of nodes and additionally
+persisted to disk on the active node.</p></td>
     </tr>
     
     <tr>
       <td><code>DURABILITY_LEVEL_PERSIST_TO_MAJORITY</code></td>
       <td>2</td>
-      <td class="content"></td>
+      <td class="content"><p>The mutation must be persisted to disk on a majority of data service nodes.</p></td>
     </tr>
     
   </tbody>
@@ -5734,7 +5844,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>The type of sub-document lookup to perform.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5750,19 +5860,20 @@
     <tr>
       <td><code>OPERATION_GET</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>Retrieve the value at the specified path.</p></td>
     </tr>
     
     <tr>
       <td><code>OPERATION_EXISTS</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>Check whether a value exists at the specified path.</p></td>
     </tr>
     
     <tr>
       <td><code>OPERATION_COUNT</code></td>
       <td>2</td>
-      <td class="content"></td>
+      <td class="content"><p>Count the number of elements in an array or keys in an object
+at the specified path.</p></td>
     </tr>
     
   </tbody>
@@ -5776,7 +5887,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>The type of sub-document mutation to perform.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5792,55 +5903,55 @@
     <tr>
       <td><code>OPERATION_INSERT</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>Insert a value at the specified path (fails if path exists).</p></td>
     </tr>
     
     <tr>
       <td><code>OPERATION_UPSERT</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>Insert or replace a value at the specified path.</p></td>
     </tr>
     
     <tr>
       <td><code>OPERATION_REPLACE</code></td>
       <td>2</td>
-      <td class="content"></td>
+      <td class="content"><p>Replace a value at the specified path (fails if path doesn't exist).</p></td>
     </tr>
     
     <tr>
       <td><code>OPERATION_REMOVE</code></td>
       <td>3</td>
-      <td class="content"></td>
+      <td class="content"><p>Remove the value at the specified path.</p></td>
     </tr>
     
     <tr>
       <td><code>OPERATION_ARRAY_APPEND</code></td>
       <td>4</td>
-      <td class="content"></td>
+      <td class="content"><p>Append a value to the end of an array.</p></td>
     </tr>
     
     <tr>
       <td><code>OPERATION_ARRAY_PREPEND</code></td>
       <td>5</td>
-      <td class="content"></td>
+      <td class="content"><p>Prepend a value to the beginning of an array.</p></td>
     </tr>
     
     <tr>
       <td><code>OPERATION_ARRAY_INSERT</code></td>
       <td>6</td>
-      <td class="content"></td>
+      <td class="content"><p>Insert a value at a specific index in an array.</p></td>
     </tr>
     
     <tr>
       <td><code>OPERATION_ARRAY_ADD_UNIQUE</code></td>
       <td>7</td>
-      <td class="content"></td>
+      <td class="content"><p>Add a value to an array only if it doesn't already exist.</p></td>
     </tr>
     
     <tr>
       <td><code>OPERATION_COUNTER</code></td>
       <td>8</td>
-      <td class="content"></td>
+      <td class="content"><p>Increment or decrement a numeric value at the specified path.</p></td>
     </tr>
     
   </tbody>
@@ -5854,7 +5965,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>StoreSemantic controls the document-level behavior of the mutation.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5870,19 +5981,19 @@
     <tr>
       <td><code>STORE_SEMANTIC_REPLACE</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>The document must already exist (default).</p></td>
     </tr>
     
     <tr>
       <td><code>STORE_SEMANTIC_UPSERT</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>Create the document if it doesn't exist, or update if it does.</p></td>
     </tr>
     
     <tr>
       <td><code>STORE_SEMANTIC_INSERT</code></td>
       <td>2</td>
-      <td class="content"></td>
+      <td class="content"><p>Create the document only if it doesn't exist (fail otherwise).</p></td>
     </tr>
     
   </tbody>

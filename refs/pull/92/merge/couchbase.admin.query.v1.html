@@ -262,7 +262,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>QueryAdminService provides N1QL index lifecycle management.</p></p>
 </div>
 
 
@@ -280,6 +280,10 @@
   </div>
 
   
+  <div class="block">
+    <p><p>GetAllIndexes returns all indexes matching the optional scope filter.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -295,6 +299,11 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>CreatePrimaryIndex creates a primary index on a collection.
+A primary index indexes all document keys.</p></p>
+  </div>
   
 </div>
 
@@ -312,6 +321,10 @@
   </div>
 
   
+  <div class="block">
+    <p><p>CreateIndex creates a secondary index on specific document fields.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -327,6 +340,10 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>DropPrimaryIndex removes a primary index.</p></p>
+  </div>
   
 </div>
 
@@ -344,6 +361,10 @@
   </div>
 
   
+  <div class="block">
+    <p><p>DropIndex removes a named secondary index.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -360,6 +381,11 @@
   </div>
 
   
+  <div class="block">
+    <p><p>BuildDeferredIndexes triggers the build of all indexes that were created
+with deferred=true. Returns the list of indexes that will be built.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -375,6 +401,10 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>WaitForIndexOnline blocks until the specified index reaches ONLINE state.</p></p>
+  </div>
   
 </div>
  
@@ -404,7 +434,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>BuildDeferredIndexesRequest triggers the build of all deferred indexes
+in the specified scope.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -488,7 +519,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>BuildDeferredIndexesResponse returns the indexes that will be built.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -541,7 +572,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>CreateIndexRequest creates a secondary index on specified fields.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -650,7 +681,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The field expressions to index.</p></td>
       
     </tr>
     
@@ -667,7 +698,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, create the index in deferred state.</p></td>
       
     </tr>
     
@@ -684,7 +715,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, do not error if the index already exists.</p></td>
       
     </tr>
     
@@ -708,7 +739,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>CreateIndexResponse is empty on success.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -743,7 +774,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>CreatePrimaryIndexRequest creates a primary index.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -820,7 +851,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Optional custom name for the primary index.</p></td>
       
     </tr>
     
@@ -837,7 +868,7 @@
           <span>int32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of index replicas.</p></td>
       
     </tr>
     
@@ -854,7 +885,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, create the index in deferred state (must be built later).</p></td>
       
     </tr>
     
@@ -871,7 +902,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, do not error if the index already exists.</p></td>
       
     </tr>
     
@@ -895,7 +926,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>CreatePrimaryIndexResponse is empty on success.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -930,7 +961,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DropIndexRequest drops a named secondary index.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1022,7 +1053,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, do not error if the index does not exist.</p></td>
       
     </tr>
     
@@ -1046,7 +1077,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DropIndexResponse is empty on success.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1081,7 +1112,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DropPrimaryIndexRequest drops a primary index.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1175,7 +1206,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, do not error if the index does not exist.</p></td>
       
     </tr>
     
@@ -1199,7 +1230,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DropPrimaryIndexResponse is empty on success.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1234,7 +1265,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GetAllIndexesRequest lists indexes, optionally filtered by scope.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1320,7 +1351,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GetAllIndexesResponse contains all matching indexes.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1376,7 +1407,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Index describes a single N1QL index.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1511,7 +1542,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The indexed field expressions.</p></td>
       
     </tr>
     
@@ -1528,7 +1559,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The WHERE clause condition, if any.</p></td>
       
     </tr>
     
@@ -1545,7 +1576,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The PARTITION BY expression, if any.</p></td>
       
     </tr>
     
@@ -1572,7 +1603,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Index identifies an index that is being built.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1671,7 +1702,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>WaitForIndexOnlineRequest blocks until the named index is online.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1766,7 +1797,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>WaitForIndexOnlineResponse is empty on success (the index is online).</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1805,7 +1836,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>IndexState represents the current lifecycle state of an index.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1821,43 +1852,43 @@
     <tr>
       <td><code>INDEX_STATE_DEFERRED</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>The index was created with deferred=true and has not been built yet.</p></td>
     </tr>
     
     <tr>
       <td><code>INDEX_STATE_BUILDING</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>The index is currently being built.</p></td>
     </tr>
     
     <tr>
       <td><code>INDEX_STATE_PENDING</code></td>
       <td>2</td>
-      <td class="content"></td>
+      <td class="content"><p>The index build is pending (queued).</p></td>
     </tr>
     
     <tr>
       <td><code>INDEX_STATE_ONLINE</code></td>
       <td>3</td>
-      <td class="content"></td>
+      <td class="content"><p>The index is online and ready for queries.</p></td>
     </tr>
     
     <tr>
       <td><code>INDEX_STATE_OFFLINE</code></td>
       <td>4</td>
-      <td class="content"></td>
+      <td class="content"><p>The index is offline.</p></td>
     </tr>
     
     <tr>
       <td><code>INDEX_STATE_ABRIDGED</code></td>
       <td>5</td>
-      <td class="content"></td>
+      <td class="content"><p>The index is in an abridged state.</p></td>
     </tr>
     
     <tr>
       <td><code>INDEX_STATE_SCHEDULED</code></td>
       <td>6</td>
-      <td class="content"></td>
+      <td class="content"><p>The index build is scheduled but not yet started.</p></td>
     </tr>
     
   </tbody>
@@ -1871,7 +1902,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>IndexType specifies the underlying index technology.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1887,13 +1918,13 @@
     <tr>
       <td><code>INDEX_TYPE_VIEW</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>A MapReduce view-based index.</p></td>
     </tr>
     
     <tr>
       <td><code>INDEX_TYPE_GSI</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>A Global Secondary Index (GSI).</p></td>
     </tr>
     
   </tbody>

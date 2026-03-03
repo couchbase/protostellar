@@ -230,7 +230,9 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>TransactionsService provides distributed ACID transactions.
+All data operations must reference a valid transaction_id and attempt_id
+obtained from TransactionBeginAttempt.</p></p>
 </div>
 
 
@@ -248,6 +250,13 @@
   </div>
 
   
+  <div class="block">
+    <p><p>TransactionBeginAttempt starts a new transaction attempt. Returns
+a transaction_id and attempt_id to use for all subsequent operations.
+If transaction_id is provided, this begins a retry attempt for an
+existing transaction.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -263,6 +272,11 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>TransactionCommit commits all mutations made within the transaction
+attempt, making them visible to other operations.</p></p>
+  </div>
   
 </div>
 
@@ -280,6 +294,11 @@
   </div>
 
   
+  <div class="block">
+    <p><p>TransactionRollback aborts the transaction attempt and discards
+all uncommitted mutations.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -295,6 +314,12 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>TransactionGet retrieves a document within the transaction context.
+The returned CAS must be used for subsequent Replace or Remove
+operations on this document within the same transaction.</p></p>
+  </div>
   
 </div>
 
@@ -312,6 +337,11 @@
   </div>
 
   
+  <div class="block">
+    <p><p>TransactionInsert creates a new document within the transaction.
+Fails if the document already exists.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -328,6 +358,11 @@
   </div>
 
   
+  <div class="block">
+    <p><p>TransactionReplace replaces an existing document within the transaction.
+Requires the CAS from a prior TransactionGet.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -343,6 +378,11 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>TransactionRemove removes a document within the transaction.
+Requires the CAS from a prior TransactionGet.</p></p>
+  </div>
   
 </div>
  
@@ -372,7 +412,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionBeginAttemptRequest starts a new transaction attempt.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -398,7 +438,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The bucket to use for transaction metadata storage.</p></td>
       
     </tr>
     
@@ -415,7 +455,8 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Optional. When provided, this begins a retry attempt for an existing
+transaction rather than starting a brand-new transaction.</p></td>
       
     </tr>
     
@@ -439,7 +480,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionBeginAttemptResponse contains the identifiers for the new attempt.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -465,7 +506,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The unique identifier for this transaction.</p></td>
       
     </tr>
     
@@ -480,7 +521,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The unique identifier for this specific attempt within the transaction.</p></td>
       
     </tr>
     
@@ -504,7 +545,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionCommitRequest commits a transaction attempt.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -584,7 +625,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionCommitResponse is empty on success.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -619,7 +660,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionGetRequest retrieves a document within a transaction.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -746,7 +787,7 @@ non-read-only transactions.</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionGetResponse returns the document content and CAS.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -772,7 +813,7 @@ non-read-only transactions.</p></td>
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The CAS value, required for subsequent Replace or Remove operations.</p></td>
       
     </tr>
     
@@ -787,7 +828,7 @@ non-read-only transactions.</p></td>
           <span>bytes</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The document body as raw bytes.</p></td>
       
     </tr>
     
@@ -811,7 +852,7 @@ non-read-only transactions.</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionInsertRequest creates a new document within the transaction.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -927,7 +968,7 @@ non-read-only transactions.</p></td>
           <span>bytes</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The document body to store.</p></td>
       
     </tr>
     
@@ -951,7 +992,7 @@ non-read-only transactions.</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionInsertResponse returns the CAS of the new document.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1001,7 +1042,7 @@ non-read-only transactions.</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionRemoveRequest removes a document within the transaction.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1117,7 +1158,7 @@ non-read-only transactions.</p></td>
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The CAS from a prior TransactionGet. Required for concurrency control.</p></td>
       
     </tr>
     
@@ -1141,7 +1182,7 @@ non-read-only transactions.</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionRemoveResponse returns the resulting CAS.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1191,7 +1232,8 @@ non-read-only transactions.</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionReplaceRequest replaces an existing document within the
+transaction.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1307,7 +1349,7 @@ non-read-only transactions.</p></td>
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The CAS from a prior TransactionGet. Required for concurrency control.</p></td>
       
     </tr>
     
@@ -1322,7 +1364,7 @@ non-read-only transactions.</p></td>
           <span>bytes</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The new document body.</p></td>
       
     </tr>
     
@@ -1346,7 +1388,7 @@ non-read-only transactions.</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionReplaceResponse returns the new CAS.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1396,7 +1438,7 @@ non-read-only transactions.</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionRollbackRequest rolls back a transaction attempt.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1476,7 +1518,7 @@ non-read-only transactions.</p></td>
 </h4>
 
 <div class="block content">
-  
+  <p>TransactionRollbackResponse is empty on success.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">

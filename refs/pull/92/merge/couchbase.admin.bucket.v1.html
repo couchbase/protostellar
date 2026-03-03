@@ -238,7 +238,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>BucketAdminService provides CRUD operations for Couchbase buckets.</p></p>
 </div>
 
 
@@ -256,6 +256,10 @@
   </div>
 
   
+  <div class="block">
+    <p><p>ListBuckets returns all buckets in the cluster with their configurations.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -271,6 +275,10 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>CreateBucket creates a new bucket with the specified configuration.</p></p>
+  </div>
   
 </div>
 
@@ -288,6 +296,11 @@
   </div>
 
   
+  <div class="block">
+    <p><p>UpdateBucket modifies the configuration of an existing bucket.
+Only mutable properties can be changed (e.g., ram_quota, replicas).</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -304,6 +317,10 @@
   </div>
 
   
+  <div class="block">
+    <p><p>DeleteBucket permanently removes a bucket and all its data.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -319,6 +336,11 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>FlushBucket removes all documents from a bucket while preserving its
+configuration. Requires flush_enabled to be true on the bucket.</p></p>
+  </div>
   
 </div>
  
@@ -351,7 +373,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Bucket describes a single bucket's configuration.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -569,7 +591,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Whether new collections default to having history retention enabled.</p></td>
       
     </tr>
     
@@ -586,7 +608,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Maximum size in bytes for retained history.</p></td>
       
     </tr>
     
@@ -603,7 +625,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Maximum duration in seconds for history retention.</p></td>
       
     </tr>
     
@@ -627,7 +649,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>CreateBucketRequest creates a new bucket. Only bucket_name and bucket_type
+are required; all other fields have server-side defaults.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -919,7 +942,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>CreateBucketResponse returns the UUID assigned to the new bucket.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -969,7 +992,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DeleteBucketRequest permanently deletes a bucket.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1019,7 +1042,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DeleteBucketResponse is empty on success.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1054,7 +1077,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>FlushBucketRequest removes all data from a bucket.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1104,7 +1127,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>FlushBucketResponse is empty on success.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1139,7 +1162,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>ListBucketsRequest requests all buckets in the cluster.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1174,7 +1197,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>ListBucketsResponse contains the list of all buckets and their
+configurations.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1227,7 +1251,9 @@
 </h4>
 
 <div class="block content">
-  
+  <p>UpdateBucketRequest modifies mutable properties of an existing bucket.
+Immutable properties (bucket_type, storage_backend, conflict_resolution_type)
+cannot be changed after creation.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1450,7 +1476,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>UpdateBucketResponse is empty on success.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1489,7 +1515,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>BucketType specifies the storage type of the bucket.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1505,13 +1531,13 @@
     <tr>
       <td><code>BUCKET_TYPE_COUCHBASE</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>Couchbase bucket — persistent, supports replicas and DCP.</p></td>
     </tr>
     
     <tr>
       <td><code>BUCKET_TYPE_EPHEMERAL</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>Ephemeral bucket — in-memory only, no persistence.</p></td>
     </tr>
     
   </tbody>
@@ -1525,7 +1551,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>CompressionMode controls document compression behavior.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1541,19 +1567,19 @@
     <tr>
       <td><code>COMPRESSION_MODE_OFF</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>Compression is disabled.</p></td>
     </tr>
     
     <tr>
       <td><code>COMPRESSION_MODE_PASSIVE</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>Accept compressed data but do not actively compress.</p></td>
     </tr>
     
     <tr>
       <td><code>COMPRESSION_MODE_ACTIVE</code></td>
       <td>2</td>
-      <td class="content"></td>
+      <td class="content"><p>Actively compress data during compaction.</p></td>
     </tr>
     
   </tbody>
@@ -1567,7 +1593,8 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>ConflictResolutionType specifies how conflicts are resolved during
+cross-datacenter replication (XDCR).</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1583,19 +1610,19 @@
     <tr>
       <td><code>CONFLICT_RESOLUTION_TYPE_TIMESTAMP</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>Resolve by highest timestamp (last-write-wins).</p></td>
     </tr>
     
     <tr>
       <td><code>CONFLICT_RESOLUTION_TYPE_SEQUENCE_NUMBER</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>Resolve by highest sequence number.</p></td>
     </tr>
     
     <tr>
       <td><code>CONFLICT_RESOLUTION_TYPE_CUSTOM</code></td>
       <td>2</td>
-      <td class="content"></td>
+      <td class="content"><p>Use custom conflict resolution logic.</p></td>
     </tr>
     
   </tbody>
@@ -1609,7 +1636,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>EvictionMode controls how items are ejected when memory is full.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1625,25 +1652,25 @@
     <tr>
       <td><code>EVICTION_MODE_FULL</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>Eject everything (metadata + value) from memory.</p></td>
     </tr>
     
     <tr>
       <td><code>EVICTION_MODE_NOT_RECENTLY_USED</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>Eject the least recently used items first (ephemeral buckets only).</p></td>
     </tr>
     
     <tr>
       <td><code>EVICTION_MODE_VALUE_ONLY</code></td>
       <td>2</td>
-      <td class="content"></td>
+      <td class="content"><p>Eject only the value, keeping metadata in memory.</p></td>
     </tr>
     
     <tr>
       <td><code>EVICTION_MODE_NONE</code></td>
       <td>3</td>
-      <td class="content"></td>
+      <td class="content"><p>No eviction — reject writes when memory is full (ephemeral buckets only).</p></td>
     </tr>
     
   </tbody>
@@ -1657,7 +1684,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>StorageBackend specifies the on-disk storage engine.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1673,13 +1700,13 @@
     <tr>
       <td><code>STORAGE_BACKEND_COUCHSTORE</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>Couchstore — the traditional storage engine.</p></td>
     </tr>
     
     <tr>
       <td><code>STORAGE_BACKEND_MAGMA</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>Magma — high-performance storage engine for large datasets.</p></td>
     </tr>
     
   </tbody>

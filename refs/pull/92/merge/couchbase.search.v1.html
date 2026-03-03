@@ -583,7 +583,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>SearchService provides full-text search query execution.</p></p>
 </div>
 
 
@@ -600,6 +600,11 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>SearchQuery executes a search query against a named index and streams
+back hits, facet results, and metadata.</p></p>
+  </div>
   
 </div>
  
@@ -629,7 +634,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>BooleanFieldQuery matches documents where a boolean field has the given
+value.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -713,7 +719,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>BooleanQuery combines must, must_not, and should clauses using boolean logic.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -759,7 +765,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>All queries in <code>must</code> must match (AND).</p></td>
       
     </tr>
     
@@ -777,7 +783,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>No queries in <code>must_not</code> may match.</p></td>
       
     </tr>
     
@@ -795,7 +801,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>At least one query in <code>should</code> should match (OR).</p></td>
       
     </tr>
     
@@ -819,7 +825,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>ConjunctionQuery requires all child queries to match (AND).</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -889,7 +895,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DateRange defines a named date range for faceting.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -973,7 +979,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DateRangeFacet aggregates results into named date ranges on a field.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1059,7 +1065,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DateRangeFacetResult contains the results of a date range facet.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1172,7 +1178,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DateRangeQuery matches documents with date field values within the
+specified range. Dates are parsed using the optional date_time_parser.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1295,7 +1302,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DateRangeResult is a single bucket in a date range facet.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1390,7 +1397,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DisjunctionQuery requires at least <code>minimum</code> child queries to match (OR).
+Defaults to minimum=1 if not specified.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1453,7 +1461,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Minimum number of child queries that must match. Default: 1.</p></td>
       
     </tr>
     
@@ -1477,7 +1485,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DocIdQuery matches documents by their document IDs.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1548,7 +1556,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Facet is the polymorphic wrapper for facet specifications.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1657,7 +1665,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>FacetResult contains the result for a single facet computation.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1767,7 +1775,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>FieldSorting sorts results by a document field value.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1823,7 +1831,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>How to handle documents missing this field ("first" or "last").</p></td>
       
     </tr>
     
@@ -1838,7 +1846,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Sort mode for multi-valued fields ("min", "max").</p></td>
       
     </tr>
     
@@ -1853,7 +1861,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Type hint for the field value ("auto", "string", "number", "date").</p></td>
       
     </tr>
     
@@ -1882,7 +1890,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Fragment contains highlighted text snippets for a field.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1936,7 +1944,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GeoBoundingBoxQuery matches documents with a geo field within the
+specified bounding box defined by top-left and bottom-right coordinates.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2037,7 +2046,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GeoDistanceQuery matches documents with a geo field within the
+specified distance from a center point.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2113,7 +2123,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The maximum distance from center, with unit (e.g., "10mi", "5km").</p></td>
       
     </tr>
     
@@ -2137,7 +2147,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GeoDistanceSorting sorts results by distance from a geographic point.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2209,7 +2219,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Distance unit (e.g., "mi", "km", "m").</p></td>
       
     </tr>
     
@@ -2233,7 +2243,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>GeoPolygonQuery matches documents with a geo field within the
+polygon defined by the given vertices.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2320,7 +2331,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>IdSorting sorts results by document ID.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2370,7 +2381,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>KnnQuery performs k-nearest-neighbor vector search on a vector field.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2396,7 +2407,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The vector index field name to search against.</p></td>
       
     </tr>
     
@@ -2411,7 +2422,7 @@
           <span>int64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of nearest neighbors to return.</p></td>
       
     </tr>
     
@@ -2428,7 +2439,7 @@
           <span>float</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The query vector to find neighbors for.</p></td>
       
     </tr>
     
@@ -2469,7 +2480,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>LatLng represents a geographic coordinate.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2537,7 +2548,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Location describes where a term was found within a document field.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2608,7 +2619,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Byte offset of the term start in the field value.</p></td>
       
     </tr>
     
@@ -2623,7 +2634,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Byte offset of the term end in the field value.</p></td>
       
     </tr>
     
@@ -2640,7 +2651,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Array positions if the field is an array.</p></td>
       
     </tr>
     
@@ -2664,7 +2675,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>MatchAllQuery matches every document in the index.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2699,7 +2710,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>MatchNoneQuery matches no documents. Useful as a placeholder.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2734,7 +2745,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>MatchPhraseQuery matches documents containing the exact phrase
+in the specified field, using the given analyzer.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2835,7 +2847,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>MatchQuery performs full-text matching on a field. Supports fuzziness,
+prefix length, and AND/OR operator modes.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -2895,7 +2908,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The text to match against the field.</p></td>
       
     </tr>
     
@@ -2929,7 +2942,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Maximum edit distance for fuzzy matching.</p></td>
       
     </tr>
     
@@ -2964,7 +2977,7 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of characters at the start of the term that must match exactly.</p></td>
       
     </tr>
     
@@ -2991,7 +3004,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>MetaData contains summary information about the search results.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3033,7 +3046,7 @@
           <span>map&lt;string, string&gt;</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Errors from individual search partitions, keyed by partition name.</p></td>
       
     </tr>
     
@@ -3057,7 +3070,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>NumericRange defines a named numeric range for faceting.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3141,7 +3154,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>NumericRangeFacet aggregates results into named numeric ranges on a field.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3227,7 +3240,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>NumericRangeFacetResult contains the results of a numeric range facet.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3340,7 +3353,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>NumericRangeQuery matches documents with a numeric field within the
+specified range.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3436,7 +3450,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Whether the min value is inclusive (default: true).</p></td>
       
     </tr>
     
@@ -3453,7 +3467,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Whether the max value is inclusive (default: false).</p></td>
       
     </tr>
     
@@ -3480,7 +3494,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>NumericRangeResult is a single bucket in a numeric range facet.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3575,7 +3589,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>PhraseQuery matches documents containing the exact sequence of terms
+in the specified field.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3661,7 +3676,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>PrefixQuery matches documents where the field value starts with
+the given prefix.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -3745,7 +3761,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Query is the polymorphic wrapper for all search query types.
+Exactly one query variant must be set.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4211,7 +4228,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>QueryStringQuery uses the FTS query string syntax to express complex
+queries in a single string (e.g., "+field:value -excluded").</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4278,7 +4296,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>RegexpQuery matches documents where the field value matches the
+given regular expression.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4362,7 +4381,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>ScoreSorting sorts results by relevance score.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4415,7 +4434,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>SearchMetrics contains timing and count statistics for the search.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4540,7 +4559,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>SearchQueryRequest specifies the search index, query, and all options.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4566,7 +4585,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The name of the search index to query.</p></td>
       
     </tr>
     
@@ -4582,7 +4601,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The search query to execute.</p></td>
       
     </tr>
     
@@ -4613,7 +4632,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Maximum number of hits to return.</p></td>
       
     </tr>
     
@@ -4628,7 +4647,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of hits to skip (for pagination).</p></td>
       
     </tr>
     
@@ -4643,7 +4662,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, include scoring explanations in each hit.</p></td>
       
     </tr>
     
@@ -4676,7 +4695,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Fields to apply highlighting to.</p></td>
       
     </tr>
     
@@ -4693,7 +4712,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Document fields to include in each hit (empty = all stored fields).</p></td>
       
     </tr>
     
@@ -4711,7 +4730,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Sort specifications. Applied in order.</p></td>
       
     </tr>
     
@@ -4726,7 +4745,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, do not compute relevance scores (faster for non-scored queries).</p></td>
       
     </tr>
     
@@ -4743,7 +4762,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Restrict the search to these collections within the index.</p></td>
       
     </tr>
     
@@ -4758,7 +4777,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>When true, include term location data in each hit.</p></td>
       
     </tr>
     
@@ -4773,7 +4792,7 @@
           <span>map&lt;string, Facet&gt;</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Facets to compute. Keys are facet names, values are facet specs.</p></td>
       
     </tr>
     
@@ -4790,7 +4809,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Optional bucket scope for scoped indexes.</p></td>
       
     </tr>
     
@@ -4825,7 +4844,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>KNN queries for vector search. Combined according to knn_operator.</p></td>
       
     </tr>
     
@@ -4843,7 +4862,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>How to combine multiple KNN queries. Default: OR.</p></td>
       
     </tr>
     
@@ -4867,7 +4886,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>SearchQueryResponse is streamed back containing hits, facets, and metadata.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4896,7 +4915,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The search hits matching the query.</p></td>
       
     </tr>
     
@@ -4911,7 +4930,7 @@
           <span>map&lt;string, FacetResult&gt;</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Facet results, keyed by facet name.</p></td>
       
     </tr>
     
@@ -4929,7 +4948,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Metadata about the search execution.</p></td>
       
     </tr>
     
@@ -4956,7 +4975,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>SearchQueryRow represents a single search hit.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -4982,7 +5001,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The document ID of the matching document.</p></td>
       
     </tr>
     
@@ -4997,7 +5016,7 @@
           <span>double</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The relevance score of this hit.</p></td>
       
     </tr>
     
@@ -5012,7 +5031,7 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The index partition that produced this hit.</p></td>
       
     </tr>
     
@@ -5027,7 +5046,7 @@
           <span>bytes</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Scoring explanation, if requested. JSON-encoded.</p></td>
       
     </tr>
     
@@ -5045,7 +5064,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Term location data, if requested.</p></td>
       
     </tr>
     
@@ -5060,7 +5079,7 @@
           <span>map&lt;string, Fragment&gt;</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Highlighted fragments, keyed by field name.</p></td>
       
     </tr>
     
@@ -5075,7 +5094,7 @@
           <span>map&lt;string, bytes&gt;</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Stored field values, keyed by field name. JSON-encoded values.</p></td>
       
     </tr>
     
@@ -5099,7 +5118,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Sorting is the polymorphic wrapper for sort specifications.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5225,7 +5244,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>TermFacet aggregates results by the most frequent terms in a field.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5266,7 +5285,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Maximum number of term buckets to return.</p></td>
       
     </tr>
     
@@ -5293,7 +5312,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>TermFacetResult contains the results of a term facet aggregation.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5406,7 +5425,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>TermQuery matches documents containing the exact term. Supports
+fuzziness for approximate matching.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5524,7 +5544,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>TermRangeQuery matches documents with a string field value within
+the specified lexicographic range.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5664,7 +5685,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>TermResult is a single term bucket in a term facet.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5744,7 +5765,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>WildcardQuery matches documents where the field value matches a
+wildcard pattern (* for any characters, ? for single character).</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5832,7 +5854,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>HighlightStyle controls how matching terms are highlighted in results.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5848,19 +5870,19 @@
     <tr>
       <td><code>HIGHLIGHT_STYLE_DEFAULT</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>Server default highlighting.</p></td>
     </tr>
     
     <tr>
       <td><code>HIGHLIGHT_STYLE_HTML</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>HTML tag highlighting (<mark>).</p></td>
     </tr>
     
     <tr>
       <td><code>HIGHLIGHT_STYLE_ANSI</code></td>
       <td>2</td>
-      <td class="content"></td>
+      <td class="content"><p>ANSI escape code highlighting (for terminals).</p></td>
     </tr>
     
   </tbody>
@@ -5874,7 +5896,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>KnnOperator controls how multiple KNN queries are combined.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5890,13 +5912,13 @@
     <tr>
       <td><code>KNN_OPERATOR_OR</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>Results from multiple KNN queries are combined with OR (union).</p></td>
     </tr>
     
     <tr>
       <td><code>KNN_OPERATOR_AND</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>Results from multiple KNN queries are combined with AND (intersection).</p></td>
     </tr>
     
   </tbody>
@@ -5910,7 +5932,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>Operator controls how multiple terms in the value are combined.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5926,13 +5948,13 @@
     <tr>
       <td><code>OPERATOR_OR</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>Any term may match (default).</p></td>
     </tr>
     
     <tr>
       <td><code>OPERATOR_AND</code></td>
       <td>1</td>
-      <td class="content"></td>
+      <td class="content"><p>All terms must match.</p></td>
     </tr>
     
   </tbody>
@@ -5946,7 +5968,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>ScanConsistency for search queries.</p></p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -5962,7 +5984,7 @@
     <tr>
       <td><code>SCAN_CONSISTENCY_NOT_BOUNDED</code></td>
       <td>0</td>
-      <td class="content"></td>
+      <td class="content"><p>No consistency required.</p></td>
     </tr>
     
   </tbody>

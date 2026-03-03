@@ -140,7 +140,9 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>RoutingService provides cluster topology updates as a server-streamed
+response. The stream emits a new WatchRoutingResponse whenever the
+cluster topology changes.</p></p>
 </div>
 
 
@@ -157,6 +159,12 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>WatchRouting opens a long-lived stream that delivers routing
+configuration updates. If bucket_name is specified, the response
+includes vbucket routing for that specific bucket.</p></p>
+  </div>
   
 </div>
  
@@ -186,7 +194,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>ServerRouting describes the number of servers available for a service,
+split by network locality.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -212,7 +221,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of servers in the local (same-datacenter) group.</p></td>
       
     </tr>
     
@@ -227,7 +236,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Number of servers in the remote (other-datacenter) group.</p></td>
       
     </tr>
     
@@ -251,7 +260,8 @@
 </h4>
 
 <div class="block content">
-  
+  <p>VbucketRouting describes the distribution of vbuckets across servers.
+Used for KV data operations to determine which server handles a given key.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -277,7 +287,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Total number of vbuckets for this bucket.</p></td>
       
     </tr>
     
@@ -294,7 +304,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Mapping of vbucket IDs to local server indices.</p></td>
       
     </tr>
     
@@ -311,7 +321,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Mapping of vbucket IDs to group (remote) server indices.</p></td>
       
     </tr>
     
@@ -335,7 +345,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>WatchRoutingRequest specifies the scope of routing information requested.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -363,7 +373,8 @@
           <span>string</span>
         </code>
       </td>
-      <td class="content"><p>Specifies the specific bucket that will be accessed.</p></td>
+      <td class="content"><p>When specified, include vbucket routing data for this bucket.
+When omitted, only service-level routing is returned.</p></td>
       
     </tr>
     
@@ -387,7 +398,9 @@
 </h4>
 
 <div class="block content">
-  
+  <p>WatchRoutingResponse contains the current cluster routing configuration.
+Each field is optional — only populated when the corresponding service
+is available in the cluster.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -416,7 +429,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Routing for the KV (data) service.</p></td>
       
     </tr>
     
@@ -434,7 +447,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Routing for the Views service.</p></td>
       
     </tr>
     
@@ -452,7 +465,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Routing for the Query (N1QL) service.</p></td>
       
     </tr>
     
@@ -470,7 +483,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Routing for the Search (FTS) service.</p></td>
       
     </tr>
     
@@ -488,7 +501,7 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Routing for the Analytics (CBAS) service.</p></td>
       
     </tr>
     
@@ -506,7 +519,8 @@
     </a>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Vbucket distribution for the KV data service. Only present when
+a bucket_name was specified in the request.</p></td>
       
     </tr>
     

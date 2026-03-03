@@ -230,7 +230,7 @@
 </h4>
 
 <div class="block content">
-  <p></p>
+  <p><p>CollectionAdminService provides CRUD for scopes and collections.</p></p>
 </div>
 
 
@@ -248,6 +248,11 @@
   </div>
 
   
+  <div class="block">
+    <p><p>ListCollections returns all scopes and collections within a bucket,
+along with the current manifest_uid.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -263,6 +268,10 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>CreateScope creates a new scope within a bucket.</p></p>
+  </div>
   
 </div>
 
@@ -280,6 +289,10 @@
   </div>
 
   
+  <div class="block">
+    <p><p>DeleteScope removes a scope and all its collections from a bucket.</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -295,6 +308,10 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>CreateCollection creates a new collection within a scope.</p></p>
+  </div>
   
 </div>
 
@@ -312,6 +329,10 @@
   </div>
 
   
+  <div class="block">
+    <p><p>UpdateCollection modifies a collection's configuration (e.g., max expiry).</p></p>
+  </div>
+  
 </div>
 
 <div class="box">
@@ -327,6 +348,10 @@
     </a></code><br>
   </div>
 
+  
+  <div class="block">
+    <p><p>DeleteCollection removes a collection from a scope.</p></p>
+  </div>
   
 </div>
  
@@ -359,7 +384,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Collection describes a single collection within a scope.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -402,7 +427,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Maximum document expiry in seconds. 0 means no maximum.</p></td>
       
     </tr>
     
@@ -419,7 +444,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Whether change history retention is enabled for this collection.</p></td>
       
     </tr>
     
@@ -443,7 +468,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>CreateCollectionRequest creates a new collection within a scope.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -516,7 +541,7 @@
           <span>uint32</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Maximum document expiry in seconds for this collection.</p></td>
       
     </tr>
     
@@ -533,7 +558,7 @@
           <span>bool</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>Whether to enable change history retention.</p></td>
       
     </tr>
     
@@ -557,7 +582,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>CreateCollectionResponse returns the new manifest version.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -607,7 +632,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>CreateScopeRequest creates a new scope.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -672,7 +697,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>CreateScopeResponse returns the new manifest version.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -722,7 +747,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DeleteCollectionRequest removes a collection.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -802,7 +827,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DeleteCollectionResponse returns the new manifest version.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -852,7 +877,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DeleteScopeRequest deletes a scope and all its collections.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -917,7 +942,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>DeleteScopeResponse returns the new manifest version.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -967,7 +992,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>ListCollectionsRequest requests all scopes and collections in a bucket.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1017,7 +1042,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>ListCollectionsResponse contains the scope/collection hierarchy.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1061,7 +1086,8 @@
           <span>uint64</span>
         </code>
       </td>
-      <td class="content"></td>
+      <td class="content"><p>The unique identifier for the current collection manifest version.
+Incremented on each scope/collection mutation.</p></td>
       
     </tr>
     
@@ -1088,7 +1114,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>Scope describes a scope and its collections.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1156,7 +1182,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>UpdateCollectionRequest modifies collection properties.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
@@ -1270,7 +1296,7 @@
 </h4>
 
 <div class="block content">
-  
+  <p>UpdateCollectionResponse returns the new manifest version.</p>
 </div>
 
 <table class="table is-fullwidth is-hoverable is-bordered">
