@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Protostellar API Reference</title>
+    <link rel="stylesheet" href="static/mystyles.css" />
+    <script src="static/fontawesome.js"></script>
+    <script src="static/lunr.js"></script>
+    <script src="static/theme.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="level pt-6 mb-5 pb-2 bottom-border">
+        <div class="level-left">
+          <p class="level-item has-text-centered is-size-3 has-text-weight-medium">
+            <a class="link is-info" href="index.html">
+              Protostellar API Reference
+            </a>
+          </p>
+        </div>
+
+        <div class="level-right">
+          
+          <form action="search.html" class="mr-2 has-text-centered">
+            <input type="text" name="query" class="input mr-3 navbar-search-query-input" placeholder="Search">
+            <input type="submit" class="button is-primary mr-5" value="Search" />
+          </form>
+          
+
+          <p class="level-item has-text-centered is-size-5">
+            <a href="" class="link is-info mr-5" target="_blank">
+              
+              <span>Source</span>
+            </a>
+
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite" type="button">
+              <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <mask class="moon" id="moon-mask">
+                  <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                  <circle cx="24" cy="10" r="6" fill="black" />
+                </mask>
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                <g class="sun-beams" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+              </svg>
+            </button>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <div id="main-content" class="container mb-6">
+  <p class="mb-2">
+    <a style="font-size: 0.9em" href="index.html">← Back to packages</a>
+  </p>
+  <h3 class="title is-3">
+    
+    Package <code>couchbase.admin.bucket.v1</code>
+    
+  </h3>
+
+  <div class="block">
+    
+    <p>
+      <a href="#service-couchbase.admin.bucket.v1.BucketAdminService">
+        <span class="tag" style="min-width: 6em">Service</span>
+        <code>BucketAdminService</code> 
+      </a>
+    </p>
+    
+
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.bucket.v1.ListBucketsResponse.Bucket">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Bucket</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.bucket.v1.CreateBucketRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreateBucketRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.bucket.v1.CreateBucketResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreateBucketResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.bucket.v1.DeleteBucketRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DeleteBucketRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.bucket.v1.DeleteBucketResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DeleteBucketResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.bucket.v1.FlushBucketRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>FlushBucketRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.bucket.v1.FlushBucketResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>FlushBucketResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.bucket.v1.ListBucketsRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ListBucketsRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.bucket.v1.ListBucketsResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ListBucketsResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.bucket.v1.UpdateBucketRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UpdateBucketRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.bucket.v1.UpdateBucketResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UpdateBucketResponse</code> 
+        </a>
+      </p>
+      
+    
+
+    
+      <p>
+        <a href="#enum-couchbase.admin.bucket.v1.BucketType">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>BucketType</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.admin.bucket.v1.CompressionMode">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>CompressionMode</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.admin.bucket.v1.ConflictResolutionType">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>ConflictResolutionType</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.admin.bucket.v1.EvictionMode">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>EvictionMode</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.admin.bucket.v1.StorageBackend">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>StorageBackend</code> 
+        </a>
+      </p>
+    
+  </div>
+
+  <div class="block">
+      
+  </div>
+
+  
+
+  <div class="block">
+    <h3 class="title is-3">
+      Services
+    </h3>
+
+    
+    <div>
+      
+
+<h4 class="title is-4 type-heading" id="service-couchbase.admin.bucket.v1.BucketAdminService">
+  <a href="#service-couchbase.admin.bucket.v1.BucketAdminService" title="couchbase.admin.bucket.v1.BucketAdminService">service BucketAdminService</a>
+  
+</h4>
+
+<div class="block content">
+  <p><p>BucketAdminService provides CRUD operations for Couchbase buckets.</p></p>
+</div>
+
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.bucket.v1.BucketAdminService-ListBuckets">
+      <a href="#service-couchbase.admin.bucket.v1.BucketAdminService-ListBuckets">
+        rpc <code>ListBuckets</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.bucket.v1.html#message-couchbase.admin.bucket.v1.ListBucketsRequest"><span title="couchbase.admin.bucket.v1.ListBucketsRequest">couchbase.admin.bucket.v1.ListBucketsRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.bucket.v1.html#message-couchbase.admin.bucket.v1.ListBucketsResponse"><span title="couchbase.admin.bucket.v1.ListBucketsResponse">couchbase.admin.bucket.v1.ListBucketsResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>ListBuckets returns all buckets in the cluster with their configurations.</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.bucket.v1.BucketAdminService-CreateBucket">
+      <a href="#service-couchbase.admin.bucket.v1.BucketAdminService-CreateBucket">
+        rpc <code>CreateBucket</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.bucket.v1.html#message-couchbase.admin.bucket.v1.CreateBucketRequest"><span title="couchbase.admin.bucket.v1.CreateBucketRequest">couchbase.admin.bucket.v1.CreateBucketRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.bucket.v1.html#message-couchbase.admin.bucket.v1.CreateBucketResponse"><span title="couchbase.admin.bucket.v1.CreateBucketResponse">couchbase.admin.bucket.v1.CreateBucketResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>CreateBucket creates a new bucket with the specified configuration.</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.bucket.v1.BucketAdminService-UpdateBucket">
+      <a href="#service-couchbase.admin.bucket.v1.BucketAdminService-UpdateBucket">
+        rpc <code>UpdateBucket</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.bucket.v1.html#message-couchbase.admin.bucket.v1.UpdateBucketRequest"><span title="couchbase.admin.bucket.v1.UpdateBucketRequest">couchbase.admin.bucket.v1.UpdateBucketRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.bucket.v1.html#message-couchbase.admin.bucket.v1.UpdateBucketResponse"><span title="couchbase.admin.bucket.v1.UpdateBucketResponse">couchbase.admin.bucket.v1.UpdateBucketResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>UpdateBucket modifies the configuration of an existing bucket.
+Only mutable properties can be changed (e.g., ram_quota, replicas).</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.bucket.v1.BucketAdminService-DeleteBucket">
+      <a href="#service-couchbase.admin.bucket.v1.BucketAdminService-DeleteBucket">
+        rpc <code>DeleteBucket</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.bucket.v1.html#message-couchbase.admin.bucket.v1.DeleteBucketRequest"><span title="couchbase.admin.bucket.v1.DeleteBucketRequest">couchbase.admin.bucket.v1.DeleteBucketRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.bucket.v1.html#message-couchbase.admin.bucket.v1.DeleteBucketResponse"><span title="couchbase.admin.bucket.v1.DeleteBucketResponse">couchbase.admin.bucket.v1.DeleteBucketResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>DeleteBucket permanently removes a bucket and all its data.</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.bucket.v1.BucketAdminService-FlushBucket">
+      <a href="#service-couchbase.admin.bucket.v1.BucketAdminService-FlushBucket">
+        rpc <code>FlushBucket</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.bucket.v1.html#message-couchbase.admin.bucket.v1.FlushBucketRequest"><span title="couchbase.admin.bucket.v1.FlushBucketRequest">couchbase.admin.bucket.v1.FlushBucketRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.bucket.v1.html#message-couchbase.admin.bucket.v1.FlushBucketResponse"><span title="couchbase.admin.bucket.v1.FlushBucketResponse">couchbase.admin.bucket.v1.FlushBucketResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>FlushBucket removes all documents from a bucket while preserving its
+configuration. Requires flush_enabled to be true on the bucket.</p></p>
+  </div>
+  
+</div>
+ 
+    </div>
+    
+  </div>
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Messages
+    </h3>
+
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.bucket.v1.ListBucketsResponse.Bucket">
+  <span>
+    <a href="#message-couchbase.admin.bucket.v1.ListBucketsResponse.Bucket" title="couchbase.admin.bucket.v1.ListBucketsResponse.Bucket">message Bucket</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.bucket.v1.html#message-couchbase.admin.bucket.v1.ListBucketsResponse"><span title="couchbase.admin.bucket.v1.ListBucketsResponse">couchbase.admin.bucket.v1.ListBucketsResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>Bucket describes a single bucket's configuration.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        flush_enabled
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        ram_quota_mb
+      </td>
+      <td>
+        <code title="uint64">
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        num_replicas
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        replica_indexes
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        bucket_type
+      </td>
+      <td>
+        <code title="couchbase.admin.bucket.v1.BucketType">
+          
+          <a href="couchbase.admin.bucket.v1.html#enum-couchbase.admin.bucket.v1.BucketType"><span title="couchbase.admin.bucket.v1.BucketType">couchbase.admin.bucket.v1.BucketType</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        eviction_mode
+      </td>
+      <td>
+        <code title="couchbase.admin.bucket.v1.EvictionMode">
+          
+          <a href="couchbase.admin.bucket.v1.html#enum-couchbase.admin.bucket.v1.EvictionMode"><span title="couchbase.admin.bucket.v1.EvictionMode">couchbase.admin.bucket.v1.EvictionMode</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        max_expiry_secs
+      </td>
+      <td>
+        <code title="uint32">
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        compression_mode
+      </td>
+      <td>
+        <code title="couchbase.admin.bucket.v1.CompressionMode">
+          
+          <a href="couchbase.admin.bucket.v1.html#enum-couchbase.admin.bucket.v1.CompressionMode"><span title="couchbase.admin.bucket.v1.CompressionMode">couchbase.admin.bucket.v1.CompressionMode</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>
+        minimum_durability_level
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.DurabilityLevel">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.DurabilityLevel"><span title="couchbase.kv.v1.DurabilityLevel">couchbase.kv.v1.DurabilityLevel</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>11</td>
+      <td>
+        storage_backend
+      </td>
+      <td>
+        <code title="couchbase.admin.bucket.v1.StorageBackend">
+          
+            optional
+          
+          <a href="couchbase.admin.bucket.v1.html#enum-couchbase.admin.bucket.v1.StorageBackend"><span title="couchbase.admin.bucket.v1.StorageBackend">couchbase.admin.bucket.v1.StorageBackend</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>12</td>
+      <td>
+        conflict_resolution_type
+      </td>
+      <td>
+        <code title="couchbase.admin.bucket.v1.ConflictResolutionType">
+          
+          <a href="couchbase.admin.bucket.v1.html#enum-couchbase.admin.bucket.v1.ConflictResolutionType"><span title="couchbase.admin.bucket.v1.ConflictResolutionType">couchbase.admin.bucket.v1.ConflictResolutionType</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>13</td>
+      <td>
+        history_retention_collection_default
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"><p>Whether new collections default to having history retention enabled.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>14</td>
+      <td>
+        history_retention_bytes
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"><p>Maximum size in bytes for retained history.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>15</td>
+      <td>
+        history_retention_duration_secs
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"><p>Maximum duration in seconds for history retention.</p></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.bucket.v1.CreateBucketRequest">
+  <span>
+    <a href="#message-couchbase.admin.bucket.v1.CreateBucketRequest" title="couchbase.admin.bucket.v1.CreateBucketRequest">message CreateBucketRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>CreateBucketRequest creates a new bucket. Only bucket_name and bucket_type
+are required; all other fields have server-side defaults.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        bucket_type
+      </td>
+      <td>
+        <code title="couchbase.admin.bucket.v1.BucketType">
+          
+          <a href="couchbase.admin.bucket.v1.html#enum-couchbase.admin.bucket.v1.BucketType"><span title="couchbase.admin.bucket.v1.BucketType">couchbase.admin.bucket.v1.BucketType</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        ram_quota_mb
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        num_replicas
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        flush_enabled
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        replica_indexes
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        eviction_mode
+      </td>
+      <td>
+        <code title="couchbase.admin.bucket.v1.EvictionMode">
+          
+            optional
+          
+          <a href="couchbase.admin.bucket.v1.html#enum-couchbase.admin.bucket.v1.EvictionMode"><span title="couchbase.admin.bucket.v1.EvictionMode">couchbase.admin.bucket.v1.EvictionMode</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        max_expiry_secs
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        compression_mode
+      </td>
+      <td>
+        <code title="couchbase.admin.bucket.v1.CompressionMode">
+          
+            optional
+          
+          <a href="couchbase.admin.bucket.v1.html#enum-couchbase.admin.bucket.v1.CompressionMode"><span title="couchbase.admin.bucket.v1.CompressionMode">couchbase.admin.bucket.v1.CompressionMode</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>
+        minimum_durability_level
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.DurabilityLevel">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.DurabilityLevel"><span title="couchbase.kv.v1.DurabilityLevel">couchbase.kv.v1.DurabilityLevel</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>11</td>
+      <td>
+        storage_backend
+      </td>
+      <td>
+        <code title="couchbase.admin.bucket.v1.StorageBackend">
+          
+            optional
+          
+          <a href="couchbase.admin.bucket.v1.html#enum-couchbase.admin.bucket.v1.StorageBackend"><span title="couchbase.admin.bucket.v1.StorageBackend">couchbase.admin.bucket.v1.StorageBackend</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>12</td>
+      <td>
+        conflict_resolution_type
+      </td>
+      <td>
+        <code title="couchbase.admin.bucket.v1.ConflictResolutionType">
+          
+            optional
+          
+          <a href="couchbase.admin.bucket.v1.html#enum-couchbase.admin.bucket.v1.ConflictResolutionType"><span title="couchbase.admin.bucket.v1.ConflictResolutionType">couchbase.admin.bucket.v1.ConflictResolutionType</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>13</td>
+      <td>
+        history_retention_collection_default
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>14</td>
+      <td>
+        history_retention_bytes
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>15</td>
+      <td>
+        history_retention_duration_secs
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.bucket.v1.CreateBucketResponse">
+  <span>
+    <a href="#message-couchbase.admin.bucket.v1.CreateBucketResponse" title="couchbase.admin.bucket.v1.CreateBucketResponse">message CreateBucketResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>CreateBucketResponse returns the UUID assigned to the new bucket.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_uuid
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.bucket.v1.DeleteBucketRequest">
+  <span>
+    <a href="#message-couchbase.admin.bucket.v1.DeleteBucketRequest" title="couchbase.admin.bucket.v1.DeleteBucketRequest">message DeleteBucketRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>DeleteBucketRequest permanently deletes a bucket.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.bucket.v1.DeleteBucketResponse">
+  <span>
+    <a href="#message-couchbase.admin.bucket.v1.DeleteBucketResponse" title="couchbase.admin.bucket.v1.DeleteBucketResponse">message DeleteBucketResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>DeleteBucketResponse is empty on success.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.bucket.v1.FlushBucketRequest">
+  <span>
+    <a href="#message-couchbase.admin.bucket.v1.FlushBucketRequest" title="couchbase.admin.bucket.v1.FlushBucketRequest">message FlushBucketRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>FlushBucketRequest removes all data from a bucket.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.bucket.v1.FlushBucketResponse">
+  <span>
+    <a href="#message-couchbase.admin.bucket.v1.FlushBucketResponse" title="couchbase.admin.bucket.v1.FlushBucketResponse">message FlushBucketResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>FlushBucketResponse is empty on success.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.bucket.v1.ListBucketsRequest">
+  <span>
+    <a href="#message-couchbase.admin.bucket.v1.ListBucketsRequest" title="couchbase.admin.bucket.v1.ListBucketsRequest">message ListBucketsRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>ListBucketsRequest requests all buckets in the cluster.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.bucket.v1.ListBucketsResponse">
+  <span>
+    <a href="#message-couchbase.admin.bucket.v1.ListBucketsResponse" title="couchbase.admin.bucket.v1.ListBucketsResponse">message ListBucketsResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>ListBucketsResponse contains the list of all buckets and their
+configurations.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        buckets
+      </td>
+      <td>
+        <code title="couchbase.admin.bucket.v1.ListBucketsResponse.Bucket">
+          
+            repeated
+          
+          <a href="couchbase.admin.bucket.v1.html#message-couchbase.admin.bucket.v1.ListBucketsResponse.Bucket"><span title="couchbase.admin.bucket.v1.ListBucketsResponse.Bucket">couchbase.admin.bucket.v1.ListBucketsResponse.Bucket</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.bucket.v1.UpdateBucketRequest">
+  <span>
+    <a href="#message-couchbase.admin.bucket.v1.UpdateBucketRequest" title="couchbase.admin.bucket.v1.UpdateBucketRequest">message UpdateBucketRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>UpdateBucketRequest modifies mutable properties of an existing bucket.
+Immutable properties (bucket_type, storage_backend, conflict_resolution_type)
+cannot be changed after creation.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        ram_quota_mb
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        num_replicas
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        flush_enabled
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        eviction_mode
+      </td>
+      <td>
+        <code title="couchbase.admin.bucket.v1.EvictionMode">
+          
+            optional
+          
+          <a href="couchbase.admin.bucket.v1.html#enum-couchbase.admin.bucket.v1.EvictionMode"><span title="couchbase.admin.bucket.v1.EvictionMode">couchbase.admin.bucket.v1.EvictionMode</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        max_expiry_secs
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        compression_mode
+      </td>
+      <td>
+        <code title="couchbase.admin.bucket.v1.CompressionMode">
+          
+            optional
+          
+          <a href="couchbase.admin.bucket.v1.html#enum-couchbase.admin.bucket.v1.CompressionMode"><span title="couchbase.admin.bucket.v1.CompressionMode">couchbase.admin.bucket.v1.CompressionMode</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        minimum_durability_level
+      </td>
+      <td>
+        <code title="couchbase.kv.v1.DurabilityLevel">
+          
+            optional
+          
+          <a href="couchbase.kv.v1.html#enum-couchbase.kv.v1.DurabilityLevel"><span title="couchbase.kv.v1.DurabilityLevel">couchbase.kv.v1.DurabilityLevel</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>
+        history_retention_collection_default
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>11</td>
+      <td>
+        history_retention_bytes
+      </td>
+      <td>
+        <code title="uint64">
+          
+            optional
+          
+          <span>uint64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>12</td>
+      <td>
+        history_retention_duration_secs
+      </td>
+      <td>
+        <code title="uint32">
+          
+            optional
+          
+          <span>uint32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.bucket.v1.UpdateBucketResponse">
+  <span>
+    <a href="#message-couchbase.admin.bucket.v1.UpdateBucketResponse" title="couchbase.admin.bucket.v1.UpdateBucketResponse">message UpdateBucketResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>UpdateBucketResponse is empty on success.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Enums
+    </h3>
+
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.admin.bucket.v1.BucketType">
+  <a href="#enum-couchbase.admin.bucket.v1.BucketType" title="couchbase.admin.bucket.v1.BucketType">enum BucketType</a>
+  
+</h4>
+
+<div class="block content">
+  <p><p>BucketType specifies the storage type of the bucket.</p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>BUCKET_TYPE_COUCHBASE</code></td>
+      <td>0</td>
+      <td class="content"><p>Couchbase bucket — persistent, supports replicas and DCP.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>BUCKET_TYPE_EPHEMERAL</code></td>
+      <td>1</td>
+      <td class="content"><p>Ephemeral bucket — in-memory only, no persistence.</p></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.admin.bucket.v1.CompressionMode">
+  <a href="#enum-couchbase.admin.bucket.v1.CompressionMode" title="couchbase.admin.bucket.v1.CompressionMode">enum CompressionMode</a>
+  
+</h4>
+
+<div class="block content">
+  <p><p>CompressionMode controls document compression behavior.</p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>COMPRESSION_MODE_OFF</code></td>
+      <td>0</td>
+      <td class="content"><p>Compression is disabled.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>COMPRESSION_MODE_PASSIVE</code></td>
+      <td>1</td>
+      <td class="content"><p>Accept compressed data but do not actively compress.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>COMPRESSION_MODE_ACTIVE</code></td>
+      <td>2</td>
+      <td class="content"><p>Actively compress data during compaction.</p></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.admin.bucket.v1.ConflictResolutionType">
+  <a href="#enum-couchbase.admin.bucket.v1.ConflictResolutionType" title="couchbase.admin.bucket.v1.ConflictResolutionType">enum ConflictResolutionType</a>
+  
+</h4>
+
+<div class="block content">
+  <p><p>ConflictResolutionType specifies how conflicts are resolved during
+cross-datacenter replication (XDCR).</p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>CONFLICT_RESOLUTION_TYPE_TIMESTAMP</code></td>
+      <td>0</td>
+      <td class="content"><p>Resolve by highest timestamp (last-write-wins).</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>CONFLICT_RESOLUTION_TYPE_SEQUENCE_NUMBER</code></td>
+      <td>1</td>
+      <td class="content"><p>Resolve by highest sequence number.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>CONFLICT_RESOLUTION_TYPE_CUSTOM</code></td>
+      <td>2</td>
+      <td class="content"><p>Use custom conflict resolution logic.</p></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.admin.bucket.v1.EvictionMode">
+  <a href="#enum-couchbase.admin.bucket.v1.EvictionMode" title="couchbase.admin.bucket.v1.EvictionMode">enum EvictionMode</a>
+  
+</h4>
+
+<div class="block content">
+  <p><p>EvictionMode controls how items are ejected when memory is full.</p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>EVICTION_MODE_FULL</code></td>
+      <td>0</td>
+      <td class="content"><p>Eject everything (metadata + value) from memory.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>EVICTION_MODE_NOT_RECENTLY_USED</code></td>
+      <td>1</td>
+      <td class="content"><p>Eject the least recently used items first (ephemeral buckets only).</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>EVICTION_MODE_VALUE_ONLY</code></td>
+      <td>2</td>
+      <td class="content"><p>Eject only the value, keeping metadata in memory.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>EVICTION_MODE_NONE</code></td>
+      <td>3</td>
+      <td class="content"><p>No eviction — reject writes when memory is full (ephemeral buckets only).</p></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.admin.bucket.v1.StorageBackend">
+  <a href="#enum-couchbase.admin.bucket.v1.StorageBackend" title="couchbase.admin.bucket.v1.StorageBackend">enum StorageBackend</a>
+  
+</h4>
+
+<div class="block content">
+  <p><p>StorageBackend specifies the on-disk storage engine.</p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>STORAGE_BACKEND_COUCHSTORE</code></td>
+      <td>0</td>
+      <td class="content"><p>Couchstore — the traditional storage engine.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>STORAGE_BACKEND_MAGMA</code></td>
+      <td>1</td>
+      <td class="content"><p>Magma — high-performance storage engine for large datasets.</p></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+
+  
+
+</div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        
+        <p>Built with <strong><a href="https://github.com/markvincze/sabledocs" target="_blank">sabledocs</a></strong>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,3180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Protostellar API Reference</title>
+    <link rel="stylesheet" href="static/mystyles.css" />
+    <script src="static/fontawesome.js"></script>
+    <script src="static/lunr.js"></script>
+    <script src="static/theme.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="level pt-6 mb-5 pb-2 bottom-border">
+        <div class="level-left">
+          <p class="level-item has-text-centered is-size-3 has-text-weight-medium">
+            <a class="link is-info" href="index.html">
+              Protostellar API Reference
+            </a>
+          </p>
+        </div>
+
+        <div class="level-right">
+          
+          <form action="search.html" class="mr-2 has-text-centered">
+            <input type="text" name="query" class="input mr-3 navbar-search-query-input" placeholder="Search">
+            <input type="submit" class="button is-primary mr-5" value="Search" />
+          </form>
+          
+
+          <p class="level-item has-text-centered is-size-5">
+            <a href="" class="link is-info mr-5" target="_blank">
+              
+              <span>Source</span>
+            </a>
+
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite" type="button">
+              <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <mask class="moon" id="moon-mask">
+                  <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                  <circle cx="24" cy="10" r="6" fill="black" />
+                </mask>
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                <g class="sun-beams" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+              </svg>
+            </button>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <div id="main-content" class="container mb-6">
+  <p class="mb-2">
+    <a style="font-size: 0.9em" href="index.html">← Back to packages</a>
+  </p>
+  <h3 class="title is-3">
+    
+    Package <code>couchbase.admin.analytics.v1</code>
+    
+  </h3>
+
+  <div class="block">
+    
+    <p>
+      <a href="#service-couchbase.admin.analytics.v1.AnalyticsAdminService">
+        <span class="tag" style="min-width: 6em">Service</span>
+        <code>AnalyticsAdminService</code> 
+      </a>
+    </p>
+    
+
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.CreateLinkRequest.AzureBlobLink">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>AzureBlobLink</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.GetLinkResponse.AzureBlobLink">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>AzureBlobLink</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.UpdateLinkRequest.AzureBlobLink">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>AzureBlobLink</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope.Collection">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Collection</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.CreateLinkRequest.CouchbaseLink">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CouchbaseLink</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.GetLinkResponse.CouchbaseLink">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CouchbaseLink</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.UpdateLinkRequest.CouchbaseLink">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CouchbaseLink</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.CreateLinkRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreateLinkRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.CreateLinkResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreateLinkResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.DeleteLinkRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DeleteLinkRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.DeleteLinkResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DeleteLinkResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.CreateLinkRequest.GcsLink">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GcsLink</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.GetLinkResponse.GcsLink">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GcsLink</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.UpdateLinkRequest.GcsLink">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GcsLink</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.GetIngestionStatusRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetIngestionStatusRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetIngestionStatusResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.GetLinkRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetLinkRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.GetLinkResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetLinkResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Link</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.CreateLinkRequest.S3Link">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>S3Link</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.GetLinkResponse.S3Link">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>S3Link</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.UpdateLinkRequest.S3Link">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>S3Link</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Scope</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>State</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.UpdateLinkRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UpdateLinkRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.analytics.v1.UpdateLinkResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UpdateLinkResponse</code> 
+        </a>
+      </p>
+      
+    
+
+    
+      <p>
+        <a href="#enum-couchbase.admin.analytics.v1.CouchbaseEncryptionMode">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>CouchbaseEncryptionMode</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.admin.analytics.v1.LinkStatus">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>LinkStatus</code> 
+        </a>
+      </p>
+    
+  </div>
+
+  <div class="block">
+      
+  </div>
+
+  
+
+  <div class="block">
+    <h3 class="title is-3">
+      Services
+    </h3>
+
+    
+    <div>
+      
+
+<h4 class="title is-4 type-heading" id="service-couchbase.admin.analytics.v1.AnalyticsAdminService">
+  <a href="#service-couchbase.admin.analytics.v1.AnalyticsAdminService" title="couchbase.admin.analytics.v1.AnalyticsAdminService">service AnalyticsAdminService</a>
+  
+</h4>
+
+<div class="block content">
+  <p><p>AnalyticsAdminService provides CRUD for analytics links and
+ingestion status monitoring.</p></p>
+</div>
+
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.analytics.v1.AnalyticsAdminService-CreateLink">
+      <a href="#service-couchbase.admin.analytics.v1.AnalyticsAdminService-CreateLink">
+        rpc <code>CreateLink</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.CreateLinkRequest"><span title="couchbase.admin.analytics.v1.CreateLinkRequest">couchbase.admin.analytics.v1.CreateLinkRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.CreateLinkResponse"><span title="couchbase.admin.analytics.v1.CreateLinkResponse">couchbase.admin.analytics.v1.CreateLinkResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>CreateLink creates a new analytics link.</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.analytics.v1.AnalyticsAdminService-GetLink">
+      <a href="#service-couchbase.admin.analytics.v1.AnalyticsAdminService-GetLink">
+        rpc <code>GetLink</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetLinkRequest"><span title="couchbase.admin.analytics.v1.GetLinkRequest">couchbase.admin.analytics.v1.GetLinkRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetLinkResponse"><span title="couchbase.admin.analytics.v1.GetLinkResponse">couchbase.admin.analytics.v1.GetLinkResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>GetLink retrieves an analytics link's configuration.
+Sensitive fields (passwords, secret keys) are omitted from the response.</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.analytics.v1.AnalyticsAdminService-UpdateLink">
+      <a href="#service-couchbase.admin.analytics.v1.AnalyticsAdminService-UpdateLink">
+        rpc <code>UpdateLink</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.UpdateLinkRequest"><span title="couchbase.admin.analytics.v1.UpdateLinkRequest">couchbase.admin.analytics.v1.UpdateLinkRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.UpdateLinkResponse"><span title="couchbase.admin.analytics.v1.UpdateLinkResponse">couchbase.admin.analytics.v1.UpdateLinkResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>UpdateLink updates an existing analytics link's configuration.</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.analytics.v1.AnalyticsAdminService-DeleteLink">
+      <a href="#service-couchbase.admin.analytics.v1.AnalyticsAdminService-DeleteLink">
+        rpc <code>DeleteLink</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.DeleteLinkRequest"><span title="couchbase.admin.analytics.v1.DeleteLinkRequest">couchbase.admin.analytics.v1.DeleteLinkRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.DeleteLinkResponse"><span title="couchbase.admin.analytics.v1.DeleteLinkResponse">couchbase.admin.analytics.v1.DeleteLinkResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>DeleteLink removes an analytics link.</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.analytics.v1.AnalyticsAdminService-GetIngestionStatus">
+      <a href="#service-couchbase.admin.analytics.v1.AnalyticsAdminService-GetIngestionStatus">
+        rpc <code>GetIngestionStatus</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetIngestionStatusRequest"><span title="couchbase.admin.analytics.v1.GetIngestionStatusRequest">couchbase.admin.analytics.v1.GetIngestionStatusRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse"><span title="couchbase.admin.analytics.v1.GetIngestionStatusResponse">couchbase.admin.analytics.v1.GetIngestionStatusResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>GetIngestionStatus returns the current ingestion status for all links,
+including progress, time lag, and scope/collection details.</p></p>
+  </div>
+  
+</div>
+ 
+    </div>
+    
+  </div>
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Messages
+    </h3>
+
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.CreateLinkRequest.AzureBlobLink">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.CreateLinkRequest.AzureBlobLink" title="couchbase.admin.analytics.v1.CreateLinkRequest.AzureBlobLink">message AzureBlobLink</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.CreateLinkRequest"><span title="couchbase.admin.analytics.v1.CreateLinkRequest">couchbase.admin.analytics.v1.CreateLinkRequest</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>AzureBlobLink connects to an Azure Blob Storage data source.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        account_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        account_key
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        shared_access_signature
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        managed_identity_id
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        client_id
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        tenant_id
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        client_secret
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        client_certificate_password
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        endpoint
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.GetLinkResponse.AzureBlobLink">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.GetLinkResponse.AzureBlobLink" title="couchbase.admin.analytics.v1.GetLinkResponse.AzureBlobLink">message AzureBlobLink</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetLinkResponse"><span title="couchbase.admin.analytics.v1.GetLinkResponse">couchbase.admin.analytics.v1.GetLinkResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>AzureBlobLink — sensitive credential fields are omitted.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        account_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>account_key — omitted</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        client_id
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>client_certificate — omitted
+client_certificate_password — omitted</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        endpoint
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>client_secret — omitted</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        managed_identity_id
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        tenant_id
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>shared_access_signature — omitted</p></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.UpdateLinkRequest.AzureBlobLink">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.UpdateLinkRequest.AzureBlobLink" title="couchbase.admin.analytics.v1.UpdateLinkRequest.AzureBlobLink">message AzureBlobLink</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.UpdateLinkRequest"><span title="couchbase.admin.analytics.v1.UpdateLinkRequest">couchbase.admin.analytics.v1.UpdateLinkRequest</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        account_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        account_key
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        shared_access_signature
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        managed_identity_id
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        client_id
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        tenant_id
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        client_secret
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        client_certificate_password
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        endpoint
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope.Collection">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope.Collection" title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope.Collection">message Collection</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope"><span title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope">couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>Collection identifies a collection being ingested.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.CreateLinkRequest.CouchbaseLink">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.CreateLinkRequest.CouchbaseLink" title="couchbase.admin.analytics.v1.CreateLinkRequest.CouchbaseLink">message CouchbaseLink</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.CreateLinkRequest"><span title="couchbase.admin.analytics.v1.CreateLinkRequest">couchbase.admin.analytics.v1.CreateLinkRequest</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>CouchbaseLink connects to a remote Couchbase cluster.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        hostname
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        encryption_mode
+      </td>
+      <td>
+        <code title="couchbase.admin.analytics.v1.CouchbaseEncryptionMode">
+          
+          <a href="couchbase.admin.analytics.v1.html#enum-couchbase.admin.analytics.v1.CouchbaseEncryptionMode"><span title="couchbase.admin.analytics.v1.CouchbaseEncryptionMode">couchbase.admin.analytics.v1.CouchbaseEncryptionMode</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        username
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        password
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        certificate
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        client_certificate
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        client_key
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.GetLinkResponse.CouchbaseLink">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.GetLinkResponse.CouchbaseLink" title="couchbase.admin.analytics.v1.GetLinkResponse.CouchbaseLink">message CouchbaseLink</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetLinkResponse"><span title="couchbase.admin.analytics.v1.GetLinkResponse">couchbase.admin.analytics.v1.GetLinkResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>CouchbaseLink — sensitive fields (password, client_key) are omitted.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        uuid
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        active_hostname
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        bootstrap_hostname
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        is_bootstrap_alternate_address
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        certificate
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        encryption_mode
+      </td>
+      <td>
+        <code title="couchbase.admin.analytics.v1.CouchbaseEncryptionMode">
+          
+          <a href="couchbase.admin.analytics.v1.html#enum-couchbase.admin.analytics.v1.CouchbaseEncryptionMode"><span title="couchbase.admin.analytics.v1.CouchbaseEncryptionMode">couchbase.admin.analytics.v1.CouchbaseEncryptionMode</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"><p>client_certificate — omitted
+client_key — omitted
+cluster_compatibility — omitted</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        username
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>nodes — omitted</p>
+<p>password — omitted</p></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.UpdateLinkRequest.CouchbaseLink">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.UpdateLinkRequest.CouchbaseLink" title="couchbase.admin.analytics.v1.UpdateLinkRequest.CouchbaseLink">message CouchbaseLink</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.UpdateLinkRequest"><span title="couchbase.admin.analytics.v1.UpdateLinkRequest">couchbase.admin.analytics.v1.UpdateLinkRequest</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>CouchbaseLink — same fields as CreateLinkRequest.CouchbaseLink.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        hostname
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        encryption_mode
+      </td>
+      <td>
+        <code title="couchbase.admin.analytics.v1.CouchbaseEncryptionMode">
+          
+          <a href="couchbase.admin.analytics.v1.html#enum-couchbase.admin.analytics.v1.CouchbaseEncryptionMode"><span title="couchbase.admin.analytics.v1.CouchbaseEncryptionMode">couchbase.admin.analytics.v1.CouchbaseEncryptionMode</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        username
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        password
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        certificate
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        client_certificate
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        client_key
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.CreateLinkRequest">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.CreateLinkRequest" title="couchbase.admin.analytics.v1.CreateLinkRequest">message CreateLinkRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>CreateLinkRequest creates a new analytics link. Exactly one link type
+must be specified via the oneof.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        analytics_scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>The analytics scope this link belongs to.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        link_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>The name of the link.</p></td>
+      
+    </tr>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof link</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            3
+          </td>
+          <td>
+            couchbase_link
+          </td>
+          <td>
+            <code title="couchbase.admin.analytics.v1.CreateLinkRequest.CouchbaseLink">
+              
+              <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.CreateLinkRequest.CouchbaseLink"><span title="couchbase.admin.analytics.v1.CreateLinkRequest.CouchbaseLink">couchbase.admin.analytics.v1.CreateLinkRequest.CouchbaseLink</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            4
+          </td>
+          <td>
+            s3_link
+          </td>
+          <td>
+            <code title="couchbase.admin.analytics.v1.CreateLinkRequest.S3Link">
+              
+              <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.CreateLinkRequest.S3Link"><span title="couchbase.admin.analytics.v1.CreateLinkRequest.S3Link">couchbase.admin.analytics.v1.CreateLinkRequest.S3Link</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            5
+          </td>
+          <td>
+            azureblob_link
+          </td>
+          <td>
+            <code title="couchbase.admin.analytics.v1.CreateLinkRequest.AzureBlobLink">
+              
+              <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.CreateLinkRequest.AzureBlobLink"><span title="couchbase.admin.analytics.v1.CreateLinkRequest.AzureBlobLink">couchbase.admin.analytics.v1.CreateLinkRequest.AzureBlobLink</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            6
+          </td>
+          <td>
+            gcs_link
+          </td>
+          <td>
+            <code title="couchbase.admin.analytics.v1.CreateLinkRequest.GcsLink">
+              
+              <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.CreateLinkRequest.GcsLink"><span title="couchbase.admin.analytics.v1.CreateLinkRequest.GcsLink">couchbase.admin.analytics.v1.CreateLinkRequest.GcsLink</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.CreateLinkResponse">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.CreateLinkResponse" title="couchbase.admin.analytics.v1.CreateLinkResponse">message CreateLinkResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>CreateLinkResponse is empty on success.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.DeleteLinkRequest">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.DeleteLinkRequest" title="couchbase.admin.analytics.v1.DeleteLinkRequest">message DeleteLinkRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>DeleteLinkRequest removes an analytics link.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        analytics_scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        link_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.DeleteLinkResponse">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.DeleteLinkResponse" title="couchbase.admin.analytics.v1.DeleteLinkResponse">message DeleteLinkResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>DeleteLinkResponse is empty on success.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.CreateLinkRequest.GcsLink">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.CreateLinkRequest.GcsLink" title="couchbase.admin.analytics.v1.CreateLinkRequest.GcsLink">message GcsLink</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.CreateLinkRequest"><span title="couchbase.admin.analytics.v1.CreateLinkRequest">couchbase.admin.analytics.v1.CreateLinkRequest</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>GcsLink connects to a Google Cloud Storage data source.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        json_credentials
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.GetLinkResponse.GcsLink">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.GetLinkResponse.GcsLink" title="couchbase.admin.analytics.v1.GetLinkResponse.GcsLink">message GcsLink</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetLinkResponse"><span title="couchbase.admin.analytics.v1.GetLinkResponse">couchbase.admin.analytics.v1.GetLinkResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>GcsLink — json_credentials are omitted.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        use_application_default_credentials
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        endpoint
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>json_credentials — omitted</p></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.UpdateLinkRequest.GcsLink">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.UpdateLinkRequest.GcsLink" title="couchbase.admin.analytics.v1.UpdateLinkRequest.GcsLink">message GcsLink</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.UpdateLinkRequest"><span title="couchbase.admin.analytics.v1.UpdateLinkRequest">couchbase.admin.analytics.v1.UpdateLinkRequest</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        json_credentials
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.GetIngestionStatusRequest">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.GetIngestionStatusRequest" title="couchbase.admin.analytics.v1.GetIngestionStatusRequest">message GetIngestionStatusRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>GetIngestionStatusRequest retrieves ingestion status for all links.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.GetIngestionStatusResponse">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse" title="couchbase.admin.analytics.v1.GetIngestionStatusResponse">message GetIngestionStatusResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>GetIngestionStatusResponse contains the ingestion status of all links.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        links
+      </td>
+      <td>
+        <code title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link">
+          
+            repeated
+          
+          <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link"><span title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link">couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.GetLinkRequest">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.GetLinkRequest" title="couchbase.admin.analytics.v1.GetLinkRequest">message GetLinkRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>GetLinkRequest retrieves a link by scope and name.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        analytics_scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        link_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.GetLinkResponse">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.GetLinkResponse" title="couchbase.admin.analytics.v1.GetLinkResponse">message GetLinkResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>GetLinkResponse returns the link configuration with sensitive fields
+(passwords, secret keys, SAS tokens) omitted for security.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof link</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            1
+          </td>
+          <td>
+            couchbase_link
+          </td>
+          <td>
+            <code title="couchbase.admin.analytics.v1.GetLinkResponse.CouchbaseLink">
+              
+              <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetLinkResponse.CouchbaseLink"><span title="couchbase.admin.analytics.v1.GetLinkResponse.CouchbaseLink">couchbase.admin.analytics.v1.GetLinkResponse.CouchbaseLink</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            2
+          </td>
+          <td>
+            s3_link
+          </td>
+          <td>
+            <code title="couchbase.admin.analytics.v1.GetLinkResponse.S3Link">
+              
+              <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetLinkResponse.S3Link"><span title="couchbase.admin.analytics.v1.GetLinkResponse.S3Link">couchbase.admin.analytics.v1.GetLinkResponse.S3Link</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            3
+          </td>
+          <td>
+            azureblob_link
+          </td>
+          <td>
+            <code title="couchbase.admin.analytics.v1.GetLinkResponse.AzureBlobLink">
+              
+              <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetLinkResponse.AzureBlobLink"><span title="couchbase.admin.analytics.v1.GetLinkResponse.AzureBlobLink">couchbase.admin.analytics.v1.GetLinkResponse.AzureBlobLink</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            4
+          </td>
+          <td>
+            gcs_link
+          </td>
+          <td>
+            <code title="couchbase.admin.analytics.v1.GetLinkResponse.GcsLink">
+              
+              <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetLinkResponse.GcsLink"><span title="couchbase.admin.analytics.v1.GetLinkResponse.GcsLink">couchbase.admin.analytics.v1.GetLinkResponse.GcsLink</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link" title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link">message Link</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse"><span title="couchbase.admin.analytics.v1.GetIngestionStatusResponse">couchbase.admin.analytics.v1.GetIngestionStatusResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>Link contains the status and ingestion state for a single link.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        link_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        analytics_scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        status
+      </td>
+      <td>
+        <code title="couchbase.admin.analytics.v1.LinkStatus">
+          
+          <a href="couchbase.admin.analytics.v1.html#enum-couchbase.admin.analytics.v1.LinkStatus"><span title="couchbase.admin.analytics.v1.LinkStatus">couchbase.admin.analytics.v1.LinkStatus</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        states
+      </td>
+      <td>
+        <code title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State">
+          
+            repeated
+          
+          <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State"><span title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State">couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"><p>Historical and current ingestion states.</p></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.CreateLinkRequest.S3Link">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.CreateLinkRequest.S3Link" title="couchbase.admin.analytics.v1.CreateLinkRequest.S3Link">message S3Link</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.CreateLinkRequest"><span title="couchbase.admin.analytics.v1.CreateLinkRequest">couchbase.admin.analytics.v1.CreateLinkRequest</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>S3Link connects to an Amazon S3 data source.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        access_key_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        secret_access_key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        session_token
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        region
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        service_endpoint
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.GetLinkResponse.S3Link">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.GetLinkResponse.S3Link" title="couchbase.admin.analytics.v1.GetLinkResponse.S3Link">message S3Link</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetLinkResponse"><span title="couchbase.admin.analytics.v1.GetLinkResponse">couchbase.admin.analytics.v1.GetLinkResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>S3Link — secret_access_key and session_token are omitted.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        access_key_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        region
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        service_endpoint
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>secret_access_key — omitted
+session_token — omitted</p></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.UpdateLinkRequest.S3Link">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.UpdateLinkRequest.S3Link" title="couchbase.admin.analytics.v1.UpdateLinkRequest.S3Link">message S3Link</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.UpdateLinkRequest"><span title="couchbase.admin.analytics.v1.UpdateLinkRequest">couchbase.admin.analytics.v1.UpdateLinkRequest</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        access_key_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        secret_access_key
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        session_token
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        region
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        service_endpoint
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope" title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope">message Scope</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State"><span title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State">couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>Scope identifies a scope being ingested.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        collections
+      </td>
+      <td>
+        <code title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope.Collection">
+          
+            repeated
+          
+          <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope.Collection"><span title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope.Collection">couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope.Collection</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State" title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State">message State</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link"><span title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link">couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>State represents the ingestion state at a point in time.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        timestamp
+      </td>
+      <td>
+        <code title="google.protobuf.Timestamp">
+          
+          <span>google.protobuf.Timestamp</span>
+        </code>
+      </td>
+      <td class="content"><p>When this state snapshot was captured.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        progress
+      </td>
+      <td>
+        <code title="double">
+          
+          <span>double</span>
+        </code>
+      </td>
+      <td class="content"><p>Ingestion progress as a fraction (0.0 to 1.0).</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        time_lag_ms
+      </td>
+      <td>
+        <code title="int64">
+          
+            optional
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"><p>Time lag in milliseconds behind the source.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        items_processed
+      </td>
+      <td>
+        <code title="int64">
+          
+            optional
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"><p>Number of items processed so far.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        seqno_advances
+      </td>
+      <td>
+        <code title="int64">
+          
+            optional
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"><p>Number of sequence number advances.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        scopes
+      </td>
+      <td>
+        <code title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope">
+          
+            repeated
+          
+          <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope"><span title="couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope">couchbase.admin.analytics.v1.GetIngestionStatusResponse.Link.State.Scope</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"><p>Scopes being ingested.</p></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.UpdateLinkRequest">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.UpdateLinkRequest" title="couchbase.admin.analytics.v1.UpdateLinkRequest">message UpdateLinkRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>UpdateLinkRequest updates an existing link. Same structure as
+CreateLinkRequest.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        analytics_scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        link_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+      
+        
+          <tr class="nohover"><td style="border: 0px"></td></tr>
+          <tr class="nohover">
+            <td class="oneof-heading" colspan="4">
+              <div class="oneof-heading">
+                <strong>oneof link</strong>
+              </div>
+            </td>
+          </tr>
+        
+
+        <tr>
+          <td>
+            3
+          </td>
+          <td>
+            couchbase_link
+          </td>
+          <td>
+            <code title="couchbase.admin.analytics.v1.UpdateLinkRequest.CouchbaseLink">
+              
+              <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.UpdateLinkRequest.CouchbaseLink"><span title="couchbase.admin.analytics.v1.UpdateLinkRequest.CouchbaseLink">couchbase.admin.analytics.v1.UpdateLinkRequest.CouchbaseLink</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            4
+          </td>
+          <td>
+            s3_link
+          </td>
+          <td>
+            <code title="couchbase.admin.analytics.v1.UpdateLinkRequest.S3Link">
+              
+              <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.UpdateLinkRequest.S3Link"><span title="couchbase.admin.analytics.v1.UpdateLinkRequest.S3Link">couchbase.admin.analytics.v1.UpdateLinkRequest.S3Link</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            5
+          </td>
+          <td>
+            azureblob_link
+          </td>
+          <td>
+            <code title="couchbase.admin.analytics.v1.UpdateLinkRequest.AzureBlobLink">
+              
+              <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.UpdateLinkRequest.AzureBlobLink"><span title="couchbase.admin.analytics.v1.UpdateLinkRequest.AzureBlobLink">couchbase.admin.analytics.v1.UpdateLinkRequest.AzureBlobLink</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+        
+
+        <tr>
+          <td>
+            6
+          </td>
+          <td>
+            gcs_link
+          </td>
+          <td>
+            <code title="couchbase.admin.analytics.v1.UpdateLinkRequest.GcsLink">
+              
+              <a href="couchbase.admin.analytics.v1.html#message-couchbase.admin.analytics.v1.UpdateLinkRequest.GcsLink"><span title="couchbase.admin.analytics.v1.UpdateLinkRequest.GcsLink">couchbase.admin.analytics.v1.UpdateLinkRequest.GcsLink</span>
+    </a>
+            </code>
+          </td>
+          <td class="content"></td>
+          
+        </tr>
+      
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.analytics.v1.UpdateLinkResponse">
+  <span>
+    <a href="#message-couchbase.admin.analytics.v1.UpdateLinkResponse" title="couchbase.admin.analytics.v1.UpdateLinkResponse">message UpdateLinkResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>UpdateLinkResponse is empty on success.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Enums
+    </h3>
+
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.admin.analytics.v1.CouchbaseEncryptionMode">
+  <a href="#enum-couchbase.admin.analytics.v1.CouchbaseEncryptionMode" title="couchbase.admin.analytics.v1.CouchbaseEncryptionMode">enum CouchbaseEncryptionMode</a>
+  
+</h4>
+
+<div class="block content">
+  <p><p>CouchbaseEncryptionMode controls the encryption level for
+remote Couchbase cluster links.</p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>COUCHBASE_ENCRYPTION_MODE_NONE</code></td>
+      <td>0</td>
+      <td class="content"><p>No encryption.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>COUCHBASE_ENCRYPTION_MODE_HALF</code></td>
+      <td>1</td>
+      <td class="content"><p>Encrypt password only.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>COUCHBASE_ENCRYPTION_MODE_FULL</code></td>
+      <td>2</td>
+      <td class="content"><p>Full TLS encryption.</p></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.admin.analytics.v1.LinkStatus">
+  <a href="#enum-couchbase.admin.analytics.v1.LinkStatus" title="couchbase.admin.analytics.v1.LinkStatus">enum LinkStatus</a>
+  
+</h4>
+
+<div class="block content">
+  <p><p>LinkStatus describes the health state of an analytics link.</p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>LINK_STATUS_UNKNOWN</code></td>
+      <td>0</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>LINK_STATUS_HEALTHY</code></td>
+      <td>1</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>LINK_STATUS_STOPPED</code></td>
+      <td>2</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>LINK_STATUS_UNHEALTHY</code></td>
+      <td>3</td>
+      <td class="content"></td>
+    </tr>
+    
+    <tr>
+      <td><code>LINK_STATUS_SUSPENDED</code></td>
+      <td>4</td>
+      <td class="content"></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+
+  
+
+</div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        
+        <p>Built with <strong><a href="https://github.com/markvincze/sabledocs" target="_blank">sabledocs</a></strong>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

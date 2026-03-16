@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Protostellar API Reference</title>
+    <link rel="stylesheet" href="static/mystyles.css" />
+    <script src="static/fontawesome.js"></script>
+    <script src="static/lunr.js"></script>
+    <script src="static/theme.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="level pt-6 mb-5 pb-2 bottom-border">
+        <div class="level-left">
+          <p class="level-item has-text-centered is-size-3 has-text-weight-medium">
+            <a class="link is-info" href="index.html">
+              Protostellar API Reference
+            </a>
+          </p>
+        </div>
+
+        <div class="level-right">
+          
+          <form action="search.html" class="mr-2 has-text-centered">
+            <input type="text" name="query" class="input mr-3 navbar-search-query-input" placeholder="Search">
+            <input type="submit" class="button is-primary mr-5" value="Search" />
+          </form>
+          
+
+          <p class="level-item has-text-centered is-size-5">
+            <a href="" class="link is-info mr-5" target="_blank">
+              
+              <span>Source</span>
+            </a>
+
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite" type="button">
+              <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <mask class="moon" id="moon-mask">
+                  <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                  <circle cx="24" cy="10" r="6" fill="black" />
+                </mask>
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                <g class="sun-beams" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+              </svg>
+            </button>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <div id="main-content" class="container mb-6">
+  <p class="mb-2">
+    <a style="font-size: 0.9em" href="index.html">← Back to packages</a>
+  </p>
+  <h3 class="title is-3">
+    
+    Package <code>couchbase.admin.query.v1</code>
+    
+  </h3>
+
+  <div class="block">
+    
+    <p>
+      <a href="#service-couchbase.admin.query.v1.QueryAdminService">
+        <span class="tag" style="min-width: 6em">Service</span>
+        <code>QueryAdminService</code> 
+      </a>
+    </p>
+    
+
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.BuildDeferredIndexesRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>BuildDeferredIndexesRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.BuildDeferredIndexesResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>BuildDeferredIndexesResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.CreateIndexRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreateIndexRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.CreateIndexResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreateIndexResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.CreatePrimaryIndexRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreatePrimaryIndexRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.CreatePrimaryIndexResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CreatePrimaryIndexResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.DropIndexRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DropIndexRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.DropIndexResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DropIndexResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.DropPrimaryIndexRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DropPrimaryIndexRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.DropPrimaryIndexResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DropPrimaryIndexResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.GetAllIndexesRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetAllIndexesRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.GetAllIndexesResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetAllIndexesResponse</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.GetAllIndexesResponse.Index">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Index</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.BuildDeferredIndexesResponse.Index">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>Index</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.WaitForIndexOnlineRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>WaitForIndexOnlineRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-couchbase.admin.query.v1.WaitForIndexOnlineResponse">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>WaitForIndexOnlineResponse</code> 
+        </a>
+      </p>
+      
+    
+
+    
+      <p>
+        <a href="#enum-couchbase.admin.query.v1.IndexState">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>IndexState</code> 
+        </a>
+      </p>
+    
+      <p>
+        <a href="#enum-couchbase.admin.query.v1.IndexType">
+          <span class="tag" style="min-width: 6em">Enum</span>
+          <code>IndexType</code> 
+        </a>
+      </p>
+    
+  </div>
+
+  <div class="block">
+      
+  </div>
+
+  
+
+  <div class="block">
+    <h3 class="title is-3">
+      Services
+    </h3>
+
+    
+    <div>
+      
+
+<h4 class="title is-4 type-heading" id="service-couchbase.admin.query.v1.QueryAdminService">
+  <a href="#service-couchbase.admin.query.v1.QueryAdminService" title="couchbase.admin.query.v1.QueryAdminService">service QueryAdminService</a>
+  
+</h4>
+
+<div class="block content">
+  <p><p>QueryAdminService provides N1QL index lifecycle management.</p></p>
+</div>
+
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.query.v1.QueryAdminService-GetAllIndexes">
+      <a href="#service-couchbase.admin.query.v1.QueryAdminService-GetAllIndexes">
+        rpc <code>GetAllIndexes</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.GetAllIndexesRequest"><span title="couchbase.admin.query.v1.GetAllIndexesRequest">couchbase.admin.query.v1.GetAllIndexesRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.GetAllIndexesResponse"><span title="couchbase.admin.query.v1.GetAllIndexesResponse">couchbase.admin.query.v1.GetAllIndexesResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>GetAllIndexes returns all indexes matching the optional scope filter.</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.query.v1.QueryAdminService-CreatePrimaryIndex">
+      <a href="#service-couchbase.admin.query.v1.QueryAdminService-CreatePrimaryIndex">
+        rpc <code>CreatePrimaryIndex</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.CreatePrimaryIndexRequest"><span title="couchbase.admin.query.v1.CreatePrimaryIndexRequest">couchbase.admin.query.v1.CreatePrimaryIndexRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.CreatePrimaryIndexResponse"><span title="couchbase.admin.query.v1.CreatePrimaryIndexResponse">couchbase.admin.query.v1.CreatePrimaryIndexResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>CreatePrimaryIndex creates a primary index on a collection.
+A primary index indexes all document keys.</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.query.v1.QueryAdminService-CreateIndex">
+      <a href="#service-couchbase.admin.query.v1.QueryAdminService-CreateIndex">
+        rpc <code>CreateIndex</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.CreateIndexRequest"><span title="couchbase.admin.query.v1.CreateIndexRequest">couchbase.admin.query.v1.CreateIndexRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.CreateIndexResponse"><span title="couchbase.admin.query.v1.CreateIndexResponse">couchbase.admin.query.v1.CreateIndexResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>CreateIndex creates a secondary index on specific document fields.</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.query.v1.QueryAdminService-DropPrimaryIndex">
+      <a href="#service-couchbase.admin.query.v1.QueryAdminService-DropPrimaryIndex">
+        rpc <code>DropPrimaryIndex</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.DropPrimaryIndexRequest"><span title="couchbase.admin.query.v1.DropPrimaryIndexRequest">couchbase.admin.query.v1.DropPrimaryIndexRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.DropPrimaryIndexResponse"><span title="couchbase.admin.query.v1.DropPrimaryIndexResponse">couchbase.admin.query.v1.DropPrimaryIndexResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>DropPrimaryIndex removes a primary index.</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.query.v1.QueryAdminService-DropIndex">
+      <a href="#service-couchbase.admin.query.v1.QueryAdminService-DropIndex">
+        rpc <code>DropIndex</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.DropIndexRequest"><span title="couchbase.admin.query.v1.DropIndexRequest">couchbase.admin.query.v1.DropIndexRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.DropIndexResponse"><span title="couchbase.admin.query.v1.DropIndexResponse">couchbase.admin.query.v1.DropIndexResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>DropIndex removes a named secondary index.</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.query.v1.QueryAdminService-BuildDeferredIndexes">
+      <a href="#service-couchbase.admin.query.v1.QueryAdminService-BuildDeferredIndexes">
+        rpc <code>BuildDeferredIndexes</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.BuildDeferredIndexesRequest"><span title="couchbase.admin.query.v1.BuildDeferredIndexesRequest">couchbase.admin.query.v1.BuildDeferredIndexesRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.BuildDeferredIndexesResponse"><span title="couchbase.admin.query.v1.BuildDeferredIndexesResponse">couchbase.admin.query.v1.BuildDeferredIndexesResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>BuildDeferredIndexes triggers the build of all indexes that were created
+with deferred=true. Returns the list of indexes that will be built.</p></p>
+  </div>
+  
+</div>
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-couchbase.admin.query.v1.QueryAdminService-WaitForIndexOnline">
+      <a href="#service-couchbase.admin.query.v1.QueryAdminService-WaitForIndexOnline">
+        rpc <code>WaitForIndexOnline</code>
+      </a>
+    </h5>
+    Request: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.WaitForIndexOnlineRequest"><span title="couchbase.admin.query.v1.WaitForIndexOnlineRequest">couchbase.admin.query.v1.WaitForIndexOnlineRequest</span>
+    </a></code><br>
+    Response: <code><a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.WaitForIndexOnlineResponse"><span title="couchbase.admin.query.v1.WaitForIndexOnlineResponse">couchbase.admin.query.v1.WaitForIndexOnlineResponse</span>
+    </a></code><br>
+  </div>
+
+  
+  <div class="block">
+    <p><p>WaitForIndexOnline blocks until the specified index reaches ONLINE state.</p></p>
+  </div>
+  
+</div>
+ 
+    </div>
+    
+  </div>
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Messages
+    </h3>
+
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.BuildDeferredIndexesRequest">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.BuildDeferredIndexesRequest" title="couchbase.admin.query.v1.BuildDeferredIndexesRequest">message BuildDeferredIndexesRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>BuildDeferredIndexesRequest triggers the build of all deferred indexes
+in the specified scope.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.BuildDeferredIndexesResponse">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.BuildDeferredIndexesResponse" title="couchbase.admin.query.v1.BuildDeferredIndexesResponse">message BuildDeferredIndexesResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>BuildDeferredIndexesResponse returns the indexes that will be built.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        indexes
+      </td>
+      <td>
+        <code title="couchbase.admin.query.v1.BuildDeferredIndexesResponse.Index">
+          
+            repeated
+          
+          <a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.BuildDeferredIndexesResponse.Index"><span title="couchbase.admin.query.v1.BuildDeferredIndexesResponse.Index">couchbase.admin.query.v1.BuildDeferredIndexesResponse.Index</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.CreateIndexRequest">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.CreateIndexRequest" title="couchbase.admin.query.v1.CreateIndexRequest">message CreateIndexRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>CreateIndexRequest creates a secondary index on specified fields.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        num_replicas
+      </td>
+      <td>
+        <code title="int32">
+          
+            optional
+          
+          <span>int32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        fields
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>The field expressions to index.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        deferred
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"><p>When true, create the index in deferred state.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        ignore_if_exists
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"><p>When true, do not error if the index already exists.</p></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.CreateIndexResponse">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.CreateIndexResponse" title="couchbase.admin.query.v1.CreateIndexResponse">message CreateIndexResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>CreateIndexResponse is empty on success.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.CreatePrimaryIndexRequest">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.CreatePrimaryIndexRequest" title="couchbase.admin.query.v1.CreatePrimaryIndexRequest">message CreatePrimaryIndexRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>CreatePrimaryIndexRequest creates a primary index.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>Optional custom name for the primary index.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        num_replicas
+      </td>
+      <td>
+        <code title="int32">
+          
+            optional
+          
+          <span>int32</span>
+        </code>
+      </td>
+      <td class="content"><p>Number of index replicas.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        deferred
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"><p>When true, create the index in deferred state (must be built later).</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        ignore_if_exists
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"><p>When true, do not error if the index already exists.</p></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.CreatePrimaryIndexResponse">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.CreatePrimaryIndexResponse" title="couchbase.admin.query.v1.CreatePrimaryIndexResponse">message CreatePrimaryIndexResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>CreatePrimaryIndexResponse is empty on success.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.DropIndexRequest">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.DropIndexRequest" title="couchbase.admin.query.v1.DropIndexRequest">message DropIndexRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>DropIndexRequest drops a named secondary index.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        ignore_if_missing
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"><p>When true, do not error if the index does not exist.</p></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.DropIndexResponse">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.DropIndexResponse" title="couchbase.admin.query.v1.DropIndexResponse">message DropIndexResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>DropIndexResponse is empty on success.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.DropPrimaryIndexRequest">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.DropPrimaryIndexRequest" title="couchbase.admin.query.v1.DropPrimaryIndexRequest">message DropPrimaryIndexRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>DropPrimaryIndexRequest drops a primary index.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        ignore_if_missing
+      </td>
+      <td>
+        <code title="bool">
+          
+            optional
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"><p>When true, do not error if the index does not exist.</p></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.DropPrimaryIndexResponse">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.DropPrimaryIndexResponse" title="couchbase.admin.query.v1.DropPrimaryIndexResponse">message DropPrimaryIndexResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>DropPrimaryIndexResponse is empty on success.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.GetAllIndexesRequest">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.GetAllIndexesRequest" title="couchbase.admin.query.v1.GetAllIndexesRequest">message GetAllIndexesRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>GetAllIndexesRequest lists indexes, optionally filtered by scope.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.GetAllIndexesResponse">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.GetAllIndexesResponse" title="couchbase.admin.query.v1.GetAllIndexesResponse">message GetAllIndexesResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>GetAllIndexesResponse contains all matching indexes.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        indexes
+      </td>
+      <td>
+        <code title="couchbase.admin.query.v1.GetAllIndexesResponse.Index">
+          
+            repeated
+          
+          <a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.GetAllIndexesResponse.Index"><span title="couchbase.admin.query.v1.GetAllIndexesResponse.Index">couchbase.admin.query.v1.GetAllIndexesResponse.Index</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.GetAllIndexesResponse.Index">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.GetAllIndexesResponse.Index" title="couchbase.admin.query.v1.GetAllIndexesResponse.Index">message Index</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.GetAllIndexesResponse"><span title="couchbase.admin.query.v1.GetAllIndexesResponse">couchbase.admin.query.v1.GetAllIndexesResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>Index describes a single N1QL index.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        is_primary
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        type
+      </td>
+      <td>
+        <code title="couchbase.admin.query.v1.IndexType">
+          
+          <a href="couchbase.admin.query.v1.html#enum-couchbase.admin.query.v1.IndexType"><span title="couchbase.admin.query.v1.IndexType">couchbase.admin.query.v1.IndexType</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        state
+      </td>
+      <td>
+        <code title="couchbase.admin.query.v1.IndexState">
+          
+          <a href="couchbase.admin.query.v1.html#enum-couchbase.admin.query.v1.IndexState"><span title="couchbase.admin.query.v1.IndexState">couchbase.admin.query.v1.IndexState</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        fields
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>The indexed field expressions.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        condition
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>The WHERE clause condition, if any.</p></td>
+      
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>
+        partition
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"><p>The PARTITION BY expression, if any.</p></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.BuildDeferredIndexesResponse.Index">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.BuildDeferredIndexesResponse.Index" title="couchbase.admin.query.v1.BuildDeferredIndexesResponse.Index">message Index</a>
+  
+    <span style="font-size: 0.7em; font-weight: normal">(Nested in <a href="couchbase.admin.query.v1.html#message-couchbase.admin.query.v1.BuildDeferredIndexesResponse"><span title="couchbase.admin.query.v1.BuildDeferredIndexesResponse">couchbase.admin.query.v1.BuildDeferredIndexesResponse</span>
+    </a>)</span>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>Index identifies an index that is being built.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+            optional
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.WaitForIndexOnlineRequest">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.WaitForIndexOnlineRequest" title="couchbase.admin.query.v1.WaitForIndexOnlineRequest">message WaitForIndexOnlineRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>WaitForIndexOnlineRequest blocks until the named index is online.</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        bucket_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        scope_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        collection_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-couchbase.admin.query.v1.WaitForIndexOnlineResponse">
+  <span>
+    <a href="#message-couchbase.admin.query.v1.WaitForIndexOnlineResponse" title="couchbase.admin.query.v1.WaitForIndexOnlineResponse">message WaitForIndexOnlineResponse</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  <p>WaitForIndexOnlineResponse is empty on success (the index is online).</p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Enums
+    </h3>
+
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.admin.query.v1.IndexState">
+  <a href="#enum-couchbase.admin.query.v1.IndexState" title="couchbase.admin.query.v1.IndexState">enum IndexState</a>
+  
+</h4>
+
+<div class="block content">
+  <p><p>IndexState represents the current lifecycle state of an index.</p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>INDEX_STATE_DEFERRED</code></td>
+      <td>0</td>
+      <td class="content"><p>The index was created with deferred=true and has not been built yet.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>INDEX_STATE_BUILDING</code></td>
+      <td>1</td>
+      <td class="content"><p>The index is currently being built.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>INDEX_STATE_PENDING</code></td>
+      <td>2</td>
+      <td class="content"><p>The index build is pending (queued).</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>INDEX_STATE_ONLINE</code></td>
+      <td>3</td>
+      <td class="content"><p>The index is online and ready for queries.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>INDEX_STATE_OFFLINE</code></td>
+      <td>4</td>
+      <td class="content"><p>The index is offline.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>INDEX_STATE_ABRIDGED</code></td>
+      <td>5</td>
+      <td class="content"><p>The index is in an abridged state.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>INDEX_STATE_SCHEDULED</code></td>
+      <td>6</td>
+      <td class="content"><p>The index build is scheduled but not yet started.</p></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+    <div class="block">
+      <h4 class="title is-4 type-heading" id="enum-couchbase.admin.query.v1.IndexType">
+  <a href="#enum-couchbase.admin.query.v1.IndexType" title="couchbase.admin.query.v1.IndexType">enum IndexType</a>
+  
+</h4>
+
+<div class="block content">
+  <p><p>IndexType specifies the underlying index technology.</p></p>
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><code>INDEX_TYPE_VIEW</code></td>
+      <td>0</td>
+      <td class="content"><p>A MapReduce view-based index.</p></td>
+    </tr>
+    
+    <tr>
+      <td><code>INDEX_TYPE_GSI</code></td>
+      <td>1</td>
+      <td class="content"><p>A Global Secondary Index (GSI).</p></td>
+    </tr>
+    
+  </tbody>
+</table> 
+    </div>
+    
+
+  
+
+</div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        
+        <p>Built with <strong><a href="https://github.com/markvincze/sabledocs" target="_blank">sabledocs</a></strong>.</p>
+      </div>
+    </footer>
+  </body>
+</html>
