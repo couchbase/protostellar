@@ -55,8 +55,19 @@ message HeartbeatResponse {}
 // GetClusterInfoRequest requests cluster identity information.
 message GetClusterInfoRequest {}
 
-// GetClusterInfoResponse returns the cluster UUID.
-message GetClusterInfoResponse { string cluster_uuid = 1; }
+// ClusterEdition indicates the edition of the Couchbase cluster.
+enum ClusterEdition {
+  CLUSTER_EDITION_COMMUNITY = 0;
+  CLUSTER_EDITION_ENTERPRISE = 1;
+}
+
+// GetClusterInfoResponse returns cluster identity and edition information.
+message GetClusterInfoResponse {
+  string cluster_uuid = 1;
+
+  // The edition of the cluster (Community or Enterprise).
+  optional ClusterEdition edition = 2;
+}
 
 // GetBucketInfoRequest requests bucket metadata.
 message GetBucketInfoRequest { string bucket_name = 1; }
