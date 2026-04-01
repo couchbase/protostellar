@@ -256,6 +256,9 @@ message CheckDocumentRequest {
 
   // Whether the source document is a tombstone.
   bool is_deleted = 10;
+
+  // The vbucket UUID for disambiguating cluster/bucket identity.
+  optional uint64 vb_uuid = 11;
 }
 
 // CheckDocumentResponse indicates whether the document already exists
