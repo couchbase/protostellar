@@ -59,6 +59,7 @@ message GetClusterInfoRequest {}
 enum ClusterEdition {
   CLUSTER_EDITION_COMMUNITY = 0;
   CLUSTER_EDITION_ENTERPRISE = 1;
+  CLUSTER_EDITION_MIXED = 2;
 }
 
 // GetClusterInfoResponse returns cluster identity and edition information.
