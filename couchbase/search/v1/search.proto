@@ -227,6 +227,38 @@ message WildcardQuery {
   string wildcard = 3;
 }
 
+// CustomScoreQuery uses a custom JavaScript function to score documents.
+message CustomScoreQuery {
+  // The inner query whose results are passed through the scoring function.
+  Query query = 1;
+
+  // The JavaScript function used to assign scores to documents.
+  string source = 2;
+
+  // Document fields that the function has access to. If "*" is included, the
+  // function has access to all fields of the documents.
+  repeated string fields = 3;
+  
+  // Any parameters that will be passed to the function. The values are JSON-encoded.
+  map<string, bytes> params = 4;
+}
+
+// CustomFilterQuery uses a custom JavaScript function to filter documents.
+message CustomFilterQuery {
+  // The inner query whose results are passed through the filtering function.
+  Query query = 1;
+
+  // The JavaScript function used to filter to documents.
+  string source = 2;
+
+  // Document fields that the function has access to. If "*" is included, the
+  // function has access to all fields of the documents.
+  repeated string fields = 3;
+  
+  // Any parameters that will be passed to the function. The values are JSON-encoded.
+  map<string, bytes> params = 4;
+}
+
 // Query is the polymorphic wrapper for all search query types.
 // Exactly one query variant must be set.
 message Query {
@@ -252,6 +284,8 @@ message Query {
     TermQuery term_query = 19;
     TermRangeQuery term_range_query = 20;
     WildcardQuery wildcard_query = 21;
+    CustomScoreQuery custom_score_query = 22;
+    CustomFilterQuery custom_filter_query = 23;
   }
 }
 
